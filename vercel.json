@@ -1,0 +1,97 @@
+{
+  "functions": {
+    "public_html/**/*.php": {
+      "runtime": "vercel-php@0.7.3"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/assets/:path*",
+      "destination": "/public_html/assets/:path*"
+    },
+    {
+      "source": "/ads.txt",
+      "destination": "/public_html/ads.txt"
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/public_html/robots.php"
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/public_html/sitemap.php"
+    },
+    {
+      "source": "/feed.xml",
+      "destination": "/public_html/rss.php"
+    },
+    {
+      "source": "/rss/:category.xml",
+      "destination": "/public_html/rss.php?category=:category"
+    },
+    {
+      "source": "/feed/:category.xml",
+      "destination": "/public_html/rss.php?category=:category"
+    },
+    {
+      "source": "/category/:category/feed.xml",
+      "destination": "/public_html/rss.php?category=:category"
+    },
+    {
+      "source": "/api/categories.php",
+      "destination": "/public_html/api/categories.php"
+    },
+    {
+      "source": "/api/latest.php",
+      "destination": "/public_html/api/latest.php"
+    },
+    {
+      "source": "/api/category.php",
+      "destination": "/public_html/api/category.php"
+    },
+    {
+      "source": "/api/category/:category.json",
+      "destination": "/public_html/api/category.php?category=:category"
+    },
+    {
+      "source": "/api/:category.json",
+      "destination": "/public_html/api/category.php?category=:category"
+    },
+    {
+      "source": "/article/:slug",
+      "destination": "/public_html/article.php?slug=:slug"
+    },
+    {
+      "source": "/category/:category",
+      "destination": "/public_html/category.php?category=:category"
+    },
+    {
+      "source": "/search.php",
+      "destination": "/public_html/search.php"
+    },
+    {
+      "source": "/about.php",
+      "destination": "/public_html/about.php"
+    },
+    {
+      "source": "/contact.php",
+      "destination": "/public_html/contact.php"
+    },
+    {
+      "source": "/privacy.php",
+      "destination": "/public_html/privacy.php"
+    },
+    {
+      "source": "/rss.php",
+      "destination": "/public_html/rss.php"
+    },
+    {
+      "source": "/",
+      "destination": "/public_html/index.php"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/public_html/index.php"
+    }
+  ]
+}
