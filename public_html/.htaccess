@@ -1,0 +1,26 @@
+Options -Indexes
+RewriteEngine On
+
+RewriteRule ^category/([^/]+)/feed\.xml$ rss.php?category=$1 [L,QSA]
+RewriteRule ^article/([^/]+)/?$ article.php?slug=$1 [L,QSA]
+RewriteRule ^category/([^/]+)/?$ category.php?category=$1 [L,QSA]
+RewriteRule ^rss/([^/]+)\.xml$ rss.php?category=$1 [L,QSA]
+RewriteRule ^feed/([^/]+)\.xml$ rss.php?category=$1 [L,QSA]
+RewriteRule ^api/category/([^/]+)\.json$ api/category.php?category=$1 [L,QSA]
+RewriteRule ^api/([^/]+)\.json$ api/category.php?category=$1 [L,QSA]
+RewriteRule ^feed\.xml$ rss.php [L]
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
+RewriteRule ^robots\.txt$ robots.php [L]
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json application/xml image/svg+xml
+</IfModule>
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 7 days"
+    ExpiresByType application/javascript "access plus 7 days"
+    ExpiresByType image/png "access plus 30 days"
+    ExpiresByType image/jpeg "access plus 30 days"
+    ExpiresByType image/webp "access plus 30 days"
+</IfModule>

@@ -1,0 +1,14 @@
+{
+  "name": "miyize-news-portal",
+  "version": "4.0.0",
+  "description": "MIYIZE Kannada News - High Performance Auto-Generating News Portal",
+  "main": "local-server.js",
+  "scripts": {
+    "start": "node local-server.js",
+    "dev": "node local-server.js"
+  },
+  "keywords": ["news", "kannada", "auto-generator", "seo", "glassmorphism"],
+  "author": "MIYIZE",
+  "license": "ISC",
+  "dependencies": {}
+}
