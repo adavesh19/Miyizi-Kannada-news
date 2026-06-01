@@ -1,7 +1,7 @@
 {
   "functions": {
-    "public_html/**/*.php": {
-      "runtime": "vercel-php@0.7.3"
+    "api/**/*.php": {
+      "runtime": "@vercel/php"
     }
   },
   "rewrites": [
@@ -15,83 +15,83 @@
     },
     {
       "source": "/robots.txt",
-      "destination": "/public_html/robots.php"
+      "destination": "/api/robots.php"
     },
     {
       "source": "/sitemap.xml",
-      "destination": "/public_html/sitemap.php"
+      "destination": "/api/sitemap.php"
     },
     {
       "source": "/feed.xml",
-      "destination": "/public_html/rss.php"
+      "destination": "/api/rss.php"
     },
     {
       "source": "/rss/:category.xml",
-      "destination": "/public_html/rss.php?category=:category"
+      "destination": "/api/rss.php?category=:category"
     },
     {
       "source": "/feed/:category.xml",
-      "destination": "/public_html/rss.php?category=:category"
+      "destination": "/api/rss.php?category=:category"
     },
     {
       "source": "/category/:category/feed.xml",
-      "destination": "/public_html/rss.php?category=:category"
+      "destination": "/api/rss.php?category=:category"
     },
     {
       "source": "/api/categories.php",
-      "destination": "/public_html/api/categories.php"
+      "destination": "/api/api/categories.php"
     },
     {
       "source": "/api/latest.php",
-      "destination": "/public_html/api/latest.php"
+      "destination": "/api/api/latest.php"
     },
     {
       "source": "/api/category.php",
-      "destination": "/public_html/api/category.php"
+      "destination": "/api/api/category.php"
     },
     {
       "source": "/api/category/:category.json",
-      "destination": "/public_html/api/category.php?category=:category"
+      "destination": "/api/api/category.php?category=:category"
     },
     {
       "source": "/api/:category.json",
-      "destination": "/public_html/api/category.php?category=:category"
+      "destination": "/api/api/category.php?category=:category"
     },
     {
       "source": "/article/:slug",
-      "destination": "/public_html/article.php?slug=:slug"
+      "destination": "/api/article.php?slug=:slug"
     },
     {
       "source": "/category/:category",
-      "destination": "/public_html/category.php?category=:category"
+      "destination": "/api/category.php?category=:category"
     },
     {
       "source": "/search.php",
-      "destination": "/public_html/search.php"
+      "destination": "/api/search.php"
     },
     {
       "source": "/about.php",
-      "destination": "/public_html/about.php"
+      "destination": "/api/about.php"
     },
     {
       "source": "/contact.php",
-      "destination": "/public_html/contact.php"
+      "destination": "/api/contact.php"
     },
     {
       "source": "/privacy.php",
-      "destination": "/public_html/privacy.php"
+      "destination": "/api/privacy.php"
     },
     {
       "source": "/rss.php",
-      "destination": "/public_html/rss.php"
+      "destination": "/api/rss.php"
     },
     {
       "source": "/",
-      "destination": "/public_html/index.php"
+      "destination": "/api/index.php"
     },
     {
       "source": "/(.*)",
-      "destination": "/public_html/index.php"
+      "destination": "/api/index.php"
     }
   ]
 }
