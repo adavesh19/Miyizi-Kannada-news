@@ -89,6 +89,12 @@ function page_head(string $title, string $description, string $canonicalPath = '
     </script>
 </head>
 <body>
+    <div class="gutter-ad gutter-ad--left">
+        <?php render_ad_slot('gutter'); ?>
+    </div>
+    <div class="gutter-ad gutter-ad--right">
+        <?php render_ad_slot('gutter'); ?>
+    </div>
     <?php
 }
 

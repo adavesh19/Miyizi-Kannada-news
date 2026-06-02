@@ -2307,3 +2307,32 @@ main{
   margin-bottom: 6px;
 }
 
+/* Gutter Ads (Left and Right Sidebars) */
+.gutter-ad {
+    display: none;
+    position: fixed;
+    top: 120px;
+    width: 300px;
+    height: 600px;
+    z-index: 99;
+    pointer-events: none; /* allow clicking through empty space */
+}
+.gutter-ad > div { pointer-events: auto; } /* make ad clickable */
+.gutter-ad--left { left: 10px; }
+.gutter-ad--right { right: 10px; }
+
+/* Desktop standard (1920x1080) fits full 300px ad without overlap */
+@media (min-width: 1900px) {
+    .gutter-ad { display: block; }
+}
+
+/* Medium Desktop (1500px+) fits scaled down ad */
+@media (min-width: 1450px) and (max-width: 1899px) {
+    .gutter-ad {
+        display: block;
+        transform: scale(0.65);
+        transform-origin: top center;
+    }
+    .gutter-ad--left { left: -30px; }
+    .gutter-ad--right { right: -30px; }
+}

@@ -704,6 +704,12 @@ function shell(title, description, active, body, article = null, canonicalPath =
     </script>
 </head>
 <body>
+    <div class="gutter-ad gutter-ad--left">
+        ${adSlot('gutter')}
+    </div>
+    <div class="gutter-ad gutter-ad--right">
+        ${adSlot('gutter')}
+    </div>
 <a class="skip-link" href="#main">ಮುಖ್ಯ ವಿಷಯಕ್ಕೆ ಹೋಗಿ</a>
     ${header(active)}
     <main id="main">${body}</main>
