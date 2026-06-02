@@ -33,10 +33,16 @@ $root   = __DIR__; // public_html parent
 require_once $root . '/public_html/includes/config.php';
 require_once $root . '/public_html/includes/functions.php';
 
-$opts    = getopt('', ['dry-run', 'category:', 'limit:', 'force-ai']);
-$dryRun  = isset($opts['dry-run']);
-$catOnly = (string) ($opts['category'] ?? '');
-$limit   = (int) ($opts['limit'] ?? 10);
+if ($isCli) {
+    $opts    = getopt('', ['dry-run', 'category:', 'limit:', 'force-ai']);
+    $dryRun  = isset($opts['dry-run']);
+    $catOnly = (string) ($opts['category'] ?? '');
+    $limit   = (int) ($opts['limit'] ?? 10);
+} else {
+    $dryRun  = isset($_GET['dry-run']);
+    $catOnly = (string) ($_GET['category'] ?? '');
+    $limit   = isset($_GET['limit']) ? (int) $_GET['limit'] : 2;
+}
 $limit   = max(1, min($limit, 30));
 
 // ── Logger ─────────────────────────────────────────────────────────────────────
@@ -155,6 +161,14 @@ agent_log('info', "Mode: " . ($dryRun ? 'DRY RUN' : 'LIVE') . " | Limit: {$limit
 $categories = categories();
 if ($catOnly && isset($categories[$catOnly])) {
     $categories = [$catOnly => $categories[$catOnly]];
+} elseif (!$isCli) {
+    // Select 2 random categories to process to avoid Vercel 10s Hobby timeout
+    $allCats = array_keys($categories);
+    $allCats = array_filter($allCats, function($c) { return $c !== 'latest'; });
+    shuffle($allCats);
+    $selectedCats = array_slice($allCats, 0, 2);
+    $categories = array_intersect_key($categories, array_flip($selectedCats));
+    agent_log('info', "Web mode: selected categories to update: " . implode(', ', $selectedCats));
 }
 
 // Load existing articles to avoid duplicates
