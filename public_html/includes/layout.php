@@ -29,15 +29,32 @@ function page_head(string $title, string $description, string $canonicalPath = '
     <title><?= e($pageTitle) ?></title>
     <meta name="description" content="<?= e($description) ?>">
     <meta name="keywords" content="<?= e($keywords) ?>">
+    <?php if ($article && !empty($article['tags']) && is_array($article['tags'])): ?>
+    <meta name="news_keywords" content="<?= e(implode(', ', array_slice(array_map('strval', $article['tags']), 0, 10))) ?>">
+    <?php endif; ?>
     <link rel="canonical" href="<?= e($canonical) ?>">
-    <meta name="robots" content="index,follow,max-image-preview:large">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="referrer" content="no-referrer-when-downgrade">
     <meta property="og:site_name" content="<?= e(MIYIZE_SITE_NAME) ?>">
     <meta property="og:title" content="<?= e($pageTitle) ?>">
     <meta property="og:description" content="<?= e($description) ?>">
     <meta property="og:type" content="<?= $article ? 'article' : 'website' ?>">
     <meta property="og:url" content="<?= e($canonical) ?>">
     <meta property="og:image" content="<?= e($imageUrl) ?>">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="kn_IN">
+    <?php if ($article): ?>
+    <meta property="article:published_time" content="<?= e((string) ($article['published_at'] ?? gmdate(DATE_ATOM))) ?>">
+    <meta property="article:modified_time" content="<?= e((string) ($article['updated_at'] ?? ($article['published_at'] ?? gmdate(DATE_ATOM)))) ?>">
+    <meta property="article:author" content="<?= e((string) ($article['source'] ?? MIYIZE_SITE_NAME)) ?>">
+    <meta property="article:publisher" content="<?= e(MIYIZE_SITE_URL) ?>">
+    <meta property="article:section" content="<?= e((string) ($article['category_label'] ?? 'ತಾಜಾ ಸುದ್ದಿ')) ?>">
+    <?php endif; ?>
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<?= e($pageTitle) ?>">
+    <meta name="twitter:description" content="<?= e($description) ?>">
+    <meta name="twitter:image" content="<?= e($imageUrl) ?>">
     <link rel="alternate" type="application/rss+xml" title="<?= e(MIYIZE_SITE_NAME) ?>" href="<?= e(site_path('/feed.xml')) ?>">
     <link rel="alternate" type="application/rss+xml" title="<?= e($pageTitle) ?> RSS" href="<?= e(site_path($activeRss)) ?>">
     <link rel="alternate" type="application/json" title="<?= e($pageTitle) ?> API" href="<?= e(site_path($activeApi)) ?>">

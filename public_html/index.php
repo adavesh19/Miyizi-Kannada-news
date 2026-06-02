@@ -39,6 +39,18 @@ $sectionSlugs = ['india', 'world', 'business', 'sports', 'cinema', 'technology',
 page_head(MIYIZE_SITE_NAME, MIYIZE_SITE_TAGLINE, '/');
 render_header('latest');
 ?>
+<!-- WebSite / Sitelinks searchbox schema -->
+<script type="application/ld+json"><?= json_encode([
+    '@context' => 'https://schema.org',
+    '@type'    => 'WebSite',
+    'name'     => MIYIZE_SITE_NAME,
+    'url'      => MIYIZE_SITE_URL,
+    'potentialAction' => [
+        '@type'       => 'SearchAction',
+        'target'      => ['@type' => 'EntryPoint', 'urlTemplate' => site_path('/search.php') . '?q={search_term_string}'],
+        'query-input' => 'required name=search_term_string',
+    ],
+], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?></script>
 <main id="main">
     <div class="container ref-home">
         <!-- Hero Grid -->
@@ -99,6 +111,12 @@ render_header('latest');
                 </div>
             </aside>
         </section>
+
+        <!-- Sponsor banner strip after hero -->
+        <div class="hp-sponsor-banner">
+            <div class="hp-sponsor-banner__label">ADVERTISEMENT</div>
+            <?php render_ad_slot('wide'); ?>
+        </div>
 
         <!-- Second Grid -->
         <section class="ref-second-grid">
@@ -166,6 +184,12 @@ render_header('latest');
             </div>
         </section>
 
+        <!-- Sponsor strip -->
+        <div class="hp-sponsor-strip">
+            <span class="hp-sponsor-strip__label">SPONSORED</span>
+            <?php render_ad_slot('wide'); ?>
+        </div>
+
         <!-- Category Columns Row -->
         <section class="ref-category-row">
             <?php foreach ($sectionSlugs as $slug): ?>
@@ -230,6 +254,25 @@ render_header('latest');
             </div>
         </section>
 
+        <!-- Sponsor block before dense grid -->
+        <div class="hp-sponsor-block">
+            <div class="hp-sponsor-block__inner">
+                <div class="hp-sponsor-block__cta">
+                    <h2>📱 WhatsApp ಸುದ್ದಿ ಅಲರ್ಟ್</h2>
+                    <p>ತಾಜಾ ಕನ್ನಡ ಸುದ್ದಿ ನೇರ ನಿಮ್ಮ ಫೋನಿಗೆ – ಉಚಿತ!</p>
+                    <a class="button" href="/contact.php">Subscribe →</a>
+                </div>
+                <div class="hp-sponsor-block__ad">
+                    <span class="hp-sponsor-block__adlabel">SPONSOR</span>
+                    <?php render_ad_slot('article'); ?>
+                </div>
+                <div class="hp-sponsor-block__ad">
+                    <span class="hp-sponsor-block__adlabel">ADVERTISEMENT</span>
+                    <?php render_ad_slot('article'); ?>
+                </div>
+            </div>
+        </div>
+
         <!-- All News Dense Grid -->
         <section class="ref-dense-section">
             <div class="section-title">
@@ -265,6 +308,9 @@ render_header('latest');
                 <?php endforeach; ?>
             </div>
         </section>
+
+        <!-- Footer sponsor strip -->
+        <?php render_ad_slot('wide'); ?>
     </div>
 </main>
 
