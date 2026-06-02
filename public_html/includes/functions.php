@@ -56,8 +56,8 @@ function write_json_file(string $path, array $data): void
 {
     ensure_data_dir();
     $tmp = $path . '.tmp';
-    file_put_contents($tmp, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
-    rename($tmp, $path);
+    @file_put_contents($tmp, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
+    @rename($tmp, $path);
 }
 
 function normalize_space(string $value): string

@@ -50,7 +50,7 @@ $logFile = MIYIZE_DATA_DIR . '/agent.log';
 function agent_log(string $level, string $msg): void {
     global $logFile;
     $line = '[' . date('Y-m-d H:i:s') . '] [' . strtoupper($level) . '] ' . $msg;
-    file_put_contents($logFile, $line . PHP_EOL, FILE_APPEND | LOCK_EX);
+    @file_put_contents($logFile, $line . PHP_EOL, FILE_APPEND | LOCK_EX);
     if (PHP_SAPI === 'cli') { echo $line . PHP_EOL; }
 }
 
