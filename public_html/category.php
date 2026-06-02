@@ -61,10 +61,6 @@ render_header($slug);
     <nav class="cat-breadcrumb" aria-label="breadcrumb">
         <a href="/">Home</a><span>›</span><span><?= e($label) ?></span>
     </nav>
-
-    <!-- Top leaderboard ad -->
-    <div class="cp-ad-leaderboard"><?php render_ad_slot('wide'); ?></div>
-
     <!-- Category heading pill -->
     <div class="cp-heading">
         <div class="cp-heading__pill">
@@ -90,10 +86,6 @@ render_header($slug);
             <?php endforeach; ?>
         </div>
     </div>
-
-    <!-- Mid-page wide ad -->
-    <div class="cp-ad-mid"><?php render_ad_slot('wide'); ?></div>
-
     <!-- ── BENTO GRID (like homepage) ───────────────────────────────── -->
     <?php if (!empty($gridArticles)): ?>
     <section class="cp-grid-section">
@@ -135,9 +127,6 @@ render_header($slug);
         </div>
     </section>
     <?php endif; ?>
-
-    <!-- Bottom wide ad -->
-    <div class="cp-ad-bottom"><?php render_ad_slot('wide'); ?></div>
 
     <!-- ── MORE STORIES DENSE ────────────────────────────────────────── -->
     <?php if (!empty($moreArticles)): ?>

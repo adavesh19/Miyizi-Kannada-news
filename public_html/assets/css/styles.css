@@ -2307,7 +2307,7 @@ main{
   margin-bottom: 6px;
 }
 
-/* Gutter Ads (Left and Right Sidebars) */
+/* Gutter Ads (Right Sidebar Only to save space) */
 .gutter-ad {
     display: none;
     position: fixed;
@@ -2315,24 +2315,48 @@ main{
     width: 300px;
     height: 600px;
     z-index: 99;
-    pointer-events: none; /* allow clicking through empty space */
+    pointer-events: none;
 }
-.gutter-ad > div { pointer-events: auto; } /* make ad clickable */
-.gutter-ad--left { left: 10px; }
-.gutter-ad--right { right: 10px; }
+.gutter-ad > div { pointer-events: auto; }
+.gutter-ad--left { display: none !important; } /* Hidden as per user request */
+.gutter-ad--right { right: 0; }
 
-/* Desktop standard (1920x1080) fits full 300px ad without overlap */
-@media (min-width: 1900px) {
-    .gutter-ad { display: block; }
-}
-
-/* Medium Desktop (1500px+) fits scaled down ad */
-@media (min-width: 1450px) and (max-width: 1899px) {
-    .gutter-ad {
+/* Show on typical laptops (1300px+), scaled to fit */
+@media (min-width: 1300px) {
+    .gutter-ad--right {
         display: block;
         transform: scale(0.65);
-        transform-origin: top center;
+        transform-origin: right top;
     }
-    .gutter-ad--left { left: -30px; }
-    .gutter-ad--right { right: -30px; }
+}
+
+/* Medium Desktop */
+@media (min-width: 1550px) {
+    .gutter-ad--right { transform: scale(0.85); }
+}
+
+/* Large Desktop */
+@media (min-width: 1800px) {
+    .gutter-ad--right { transform: scale(1); right: 20px; }
+}
+
+/* Fix category grid auto ad overlap */
+.cp-grid-ad {
+    grid-column: 1 / -1 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    background: linear-gradient(135deg, #fffcf7, #ffffff);
+    border: 1px dashed rgba(225, 6, 0, 0.24);
+    border-radius: 8px;
+    margin: 10px 0;
+    width: 100%;
+}
+.cp-grid-ad .cp-ad-tag {
+    font-size: 10px;
+    font-weight: 900;
+    color: #b35900;
+    margin-bottom: 8px;
 }
