@@ -18,11 +18,20 @@ const categories = {
     karnataka: 'ಕರ್ನಾಟಕ',
     india: 'ಭಾರತ',
     world: 'ವಿಶ್ವ',
+    politics: 'ರಾಜಕೀಯ',
     business: 'ವ್ಯಾಪಾರ',
     sports: 'ಕ್ರೀಡೆ',
     cinema: 'ಸಿನಿಮಾ',
     technology: 'ತಂತ್ರಜ್ಞಾನ',
+    health: 'ಆರೋಗ್ಯ',
+    education: 'ಶಿಕ್ಷಣ',
+    crime: 'ಅಪರಾಧ',
     'fact-check': 'ಫ್ಯಾಕ್ಟ್ ಚೆಕ್',
+    agriculture: 'ಕೃಷಿ',
+    lifestyle: 'ಜೀವನಶೈಲಿ',
+    automobile: 'ಆಟೋಮೊಬೈಲ್',
+    career: 'ಉದ್ಯೋಗ',
+    astrology: 'ಭವಿಷ್ಯ',
 };
 
 const feedQueries = {
@@ -30,11 +39,20 @@ const feedQueries = {
     karnataka: 'ಕರ್ನಾಟಕ ಸುದ್ದಿ ಬೆಂಗಳೂರು ಮೈಸೂರು',
     india: 'ಭಾರತ ಸುದ್ದಿ ಕನ್ನಡ',
     world: 'ವಿಶ್ವ ಸುದ್ದಿ ಕನ್ನಡ',
+    politics: 'ಕರ್ನಾಟಕ ರಾಜಕೀಯ',
     business: 'ವ್ಯಾಪಾರ ಆರ್ಥಿಕತೆ ಷೇರು ಮಾರುಕಟ್ಟೆ ಕನ್ನಡ',
     sports: 'ಕ್ರೀಡೆ ಕ್ರಿಕೆಟ್ ಕನ್ನಡ',
     cinema: 'ಕನ್ನಡ ಸಿನಿಮಾ ಸುದ್ದಿ',
     technology: 'ತಂತ್ರಜ್ಞಾನ AI ಮೊಬೈಲ್ ಕನ್ನಡ',
+    health: 'ಆರೋಗ್ಯ ಸುದ್ದಿ',
+    education: 'ಶಿಕ್ಷಣ ಸುದ್ದಿ',
+    crime: 'ಅಪರಾಧ ಸುದ್ದಿ ಕರ್ನಾಟಕ',
     'fact-check': 'ಫ್ಯಾಕ್ಟ್ ಚೆಕ್ ಕನ್ನಡ',
+    agriculture: 'ಕೃಷಿ ಸುದ್ದಿ',
+    lifestyle: 'ಜೀವನಶೈಲಿ ಫ್ಯಾಷನ್ ಆಹಾರ',
+    automobile: 'ಆಟೋಮೊಬೈಲ್ ಕಾರು ಬೈಕು launch',
+    career: 'ಉದ್ಯೋಗ ಸುದ್ದಿ',
+    astrology: 'ರಾಶಿ ಭವಿಷ್ಯ ದಿನಭವಿಷ್ಯ',
 };
 
 const directFeeds = [

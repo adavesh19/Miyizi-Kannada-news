@@ -163,6 +163,8 @@ function render_header(string $active = ''): void
 
 function render_footer(): void
 {
+    $state = live_state();
+    $last  = $state['last_refresh_at'] ?? null;
     ?>
     <footer class="site-footer">
         <div class="container footer-grid">
@@ -193,6 +195,15 @@ function render_footer(): void
             </div>
         </div>
     </footer>
+    <script>
+        // Client-side rate-limited background refresh trigger
+        (function() {
+            const last = <?= json_encode($last) ?>;
+            if (!last || (Date.now() - new Date(last).getTime() > 30000)) {
+                fetch('/api/agent-cron.php').catch(function() {});
+            }
+        })();
+    </script>
     <script src="/assets/js/app.js" defer></script>
 </body>
 </html>
