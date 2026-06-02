@@ -82,6 +82,10 @@
       "destination": "/api/privacy.php"
     },
     {
+      "source": "/terms.php",
+      "destination": "/api/terms.php"
+    },
+    {
       "source": "/rss.php",
       "destination": "/api/rss.php"
     },
