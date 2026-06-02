@@ -237,6 +237,8 @@ function render_footer(): void
         window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
     </script>
     <script defer src="/_vercel/speed-insights/script.js"></script>
+    <!-- Adsterra Social Bar -->
+    <script src="https://pl29618721.effectivecpmnetwork.com/fa/71/40/fa7140f8fd70d945a91e09d88365efae.js"></script>
 </body>
 </html>
     <?php
@@ -256,8 +258,18 @@ function render_ad_slot(string $variant = 'wide'): void
                 data-full-width-responsive="true"></ins>
             <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         <?php else: ?>
-            <span>Advertisement</span>
-            <strong>AdSense slot ready</strong>
+            <div style="margin: 20px auto; text-align: center; max-width: 300px; overflow: hidden;" aria-label="Advertisement">
+              <script>
+                atOptions = {
+                  'key' : '9aec88a46e19f5cf7198fdb3621d56de',
+                  'format' : 'iframe',
+                  'height' : 250,
+                  'width' : 300,
+                  'params' : {}
+                };
+              </script>
+              <script src="https://www.highperformanceformat.com/9aec88a46e19f5cf7198fdb3621d56de/invoke.js"></script>
+            </div>
         <?php endif; ?>
     </aside>
     <?php

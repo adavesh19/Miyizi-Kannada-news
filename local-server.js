@@ -709,6 +709,8 @@ function shell(title, description, active, body, article = null, canonicalPath =
     <main id="main">${body}</main>
     ${footer()}
     <script src="/assets/js/app.js" defer></script>
+    <!-- Adsterra Social Bar -->
+    <script src="https://pl29618721.effectivecpmnetwork.com/fa/71/40/fa7140f8fd70d945a91e09d88365efae.js"></script>
 </body>
 </html>`;
 }
@@ -767,7 +769,18 @@ function footer() {
 }
 
 function adSlot(variant = 'wide') {
-    return `<div class="ad-wide" aria-label="Advertisement"><small>Advertisement</small><strong>AdSense slot ready</strong></div>`;
+    return `<div style="margin: 20px auto; text-align: center; max-width: 300px; overflow: hidden;" aria-label="Advertisement">
+      <script>
+        atOptions = {
+          'key' : '9aec88a46e19f5cf7198fdb3621d56de',
+          'format' : 'iframe',
+          'height' : 250,
+          'width' : 300,
+          'params' : {}
+        };
+      </script>
+      <script src="https://www.highperformanceformat.com/9aec88a46e19f5cf7198fdb3621d56de/invoke.js"></script>
+    </div>`;
 }
 
 function thumbCard(article) {
