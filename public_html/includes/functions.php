@@ -754,3 +754,17 @@ function live_state(): array
         'new_articles' => 0,
     ]);
 }
+
+function pick_items(array $items, int $start, int $count): array
+{
+    if (empty($items)) {
+        return [];
+    }
+    $picked = [];
+    $total = count($items);
+    for ($i = 0; $i < $count; $i++) {
+        $picked[] = $items[($start + $i) % $total];
+    }
+    return $picked;
+}
+

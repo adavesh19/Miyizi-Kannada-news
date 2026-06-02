@@ -93,5 +93,11 @@
       "source": "/(.*)",
       "destination": "/api/index.php"
     }
+  ],
+  "crons": [
+    {
+      "path": "/api/agent-cron.php",
+      "schedule": "*/30 * * * *"
+    }
   ]
 }

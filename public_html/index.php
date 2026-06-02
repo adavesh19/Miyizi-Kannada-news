@@ -6,18 +6,6 @@ require_once __DIR__ . '/includes/layout.php';
 maybe_refresh_news();
 $items = load_articles(96);
 
-function pick_items(array $items, int $start, int $count): array
-{
-    if (empty($items)) {
-        return [];
-    }
-    $picked = [];
-    $total = count($items);
-    for ($i = 0; $i < $count; $i++) {
-        $picked[] = $items[($start + $i) % $total];
-    }
-    return $picked;
-}
 
 $lead = $items[0] ?? null;
 $sliderItems = pick_items($items, 0, 5);

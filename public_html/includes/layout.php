@@ -239,7 +239,6 @@ function render_article_card(array $article, string $variant = 'standard'): void
             <?php endif; ?>
             <div class="source-line">
                 <span><?= e((string) ($article['source'] ?? 'Source')) ?></span>
-                <?php if (!empty($article['ai_generated'])): ?><span>AI summary</span><?php elseif (!empty($article['auto_written'])): ?><span>Auto written</span><?php endif; ?>
             </div>
         </div>
     </article>
