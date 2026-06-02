@@ -2066,7 +2066,7 @@ main{
 .hp-sponsor-strip .ad-slot{flex:1;margin:0;min-height:60px}
 
 .hp-sponsor-block{background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:14px;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,.06)}
-.hp-sponsor-block__inner{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:14px;align-items:center}
+.hp-sponsor-block__inner{display:grid;grid-template-columns:1.5fr 1fr;gap:14px;align-items:center}
 .hp-sponsor-block__cta{padding:16px;background:linear-gradient(135deg,#e10600,#b30000);border-radius:12px;color:#fff;text-align:center}
 .hp-sponsor-block__cta h2{font-size:20px;font-weight:900;margin-bottom:6px}
 .hp-sponsor-block__cta p{font-size:13px;opacity:.9;margin-bottom:12px}
