@@ -236,6 +236,135 @@ function feedImageFromItem(item) {
     return attr(description, 'img', 'src');
 }
 
+async function geminiWriteArticle(article) {
+    const apiKey = process.env.MIYIZE_GEMINI_KEY || process.env.GEMINI_API_KEY || '';
+    if (!apiKey) return null;
+
+    const title = article.title || '';
+    const summary = article.summary || '';
+    const source = article.source || '';
+    const cat = article.category_label || '';
+
+    const prompt = `You are a professional Kannada news journalist. Write a complete, detailed, and highly engaging news article in Kannada based on the following information.
+
+Title: ${title}
+Summary: ${summary}
+Source: ${source}
+Category: ${cat}
+
+Requirements:
+- Do NOT restrict the length or paragraph count to a fixed format. Write dynamically and organically to thoroughly cover all aspects of the news story.
+- Include deep context, professional background details, potential societal or political impact, and quotes (inferred in a realistic and professional journalistic manner).
+- Start with the most important news fact.
+- Use rich, formal, and appealing Kannada vocabulary.
+- Do NOT include markdown headers, bold titles, or the title in the body.
+- Separate paragraphs with a blank line.
+- Write only in Kannada (using the Kannada script).
+
+Write the article now:`;
+
+    try {
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                contents: [{ parts: [{ text: prompt }] }],
+                generationConfig: {
+                    temperature: 0.75,
+                    maxOutputTokens: 2048,
+                }
+            })
+        });
+        if (!response.ok) return null;
+        const data = await response.json();
+        const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+        return text ? text.trim() : null;
+    } catch (e) {
+        console.error('Gemini API error in local-server:', e);
+        return null;
+    }
+}
+
+function generateDynamicKannadaBody(title, summary, source, category, catSlug) {
+    title = (title || '').trim();
+    summary = stripHtml(summary || '').trim();
+    if (!summary || summary.length < 10) {
+        summary = title;
+    }
+
+    const summarySentences = summary.split(/(?<=[.!?।])\s+/u).map(s => s.trim()).filter(Boolean);
+
+    const intros = [
+        `${title}. ಈ ಮಹತ್ವದ ಬೆಳವಣಿಗೆಯ ಕುರಿತು ಪ್ರಸ್ತುತ ವ್ಯಾಪಕ ಚರ್ಚೆಗಳು ನಡೆಯುತ್ತಿದ್ದು, ಸಾರ್ವಜನಿಕ ವಲಯದಲ್ಲಿ ತೀವ್ರ ಕುತೂಹಲ ಮೂಡಿಸಿದೆ.`,
+        `ಇಂದಿನ ಪ್ರಮುಖ ವಿದ್ಯಮಾನಗಳಲ್ಲಿ ಒಂದಾದ ${title} ವಿಷಯವು ಸಾರ್ವಜನಿಕರ ಗಮನ ಸೆಳೆದಿದೆ. ಇದಕ್ಕೆ ಸಂಬಂಧಿಸಿದ ಮಹತ್ವದ ವರದಿಗಳು ಹೊರಬಿದ್ದಿವೆ.`,
+        `${title}. ವರದಿಗಳ ಪ್ರಕಾರ, ಈ ಹೊಸ ಬೆಳವಣಿಗೆಯು ಪ್ರಸ್ತುತ ಪರಿಸ್ಥಿತಿಯಲ್ಲಿ ಅತ್ಯಂತ ಪ್ರಭಾವಶಾಲಿ ಪರಿಣಾಮ ಬೀರಲಿದೆ ಎಂದು ಅಂದಾಜಿಸಲಾಗಿದೆ.`
+    ];
+
+    const connectors = [
+        `ಲಭ್ಯವಿರುವ ಪ್ರಾಥಮಿಕ ಮಾಹಿತಿಯ ಪ್ರಕಾರ, `,
+        `ಈ ವಿಷಯಕ್ಕೆ ಸಂಬಂಧಿಸಿದಂತೆ ಪ್ರಕಟವಾಗಿರುವ ಅಧಿಕೃತ ವರದಿಯಲ್ಲಿ, `,
+        `ಪ್ರಸ್ತುತ ಲಭ್ಯವಿರುವ ವಿವರಗಳ ಅನ್ವಯ, `
+    ];
+
+    const details = [
+        `ಮುಂಬರುವ ದಿನಗಳಲ್ಲಿ ಈ ನಿರ್ಧಾರವು ಇಡೀ ಕ್ಷೇತ್ರದ ಮೇಲೆ ದೊಡ್ಡ ಪ್ರಮಾಣದ ಪರಿಣಾಮ ಬೀರಬಹುದು ಎಂದು ತಜ್ಞರು ವಿಶ್ಲೇಷಿಸುತ್ತಿದ್ದಾರೆ.`,
+        `ಸಾರ್ವಜನಿಕರು ಈ ಬದಲಾವಣೆಗೆ ಸಂಬಂಧಿಸಿದಂತೆ ಮಿಶ್ರ ಪ್ರತಿಕ್ರಿಯೆಗಳನ್ನು ವ್ಯಕ್ತಪಡಿಸುತ್ತಿದ್ದು, ಮುಂದಿನ ಹೆಜ್ಜೆಗಳ ಮೇಲೆ ನಿಗา ಇರಿಸಿದ್ದಾರೆ.`,
+        `ಸಂಬಂಧಪಟ್ಟ ಅಧಿಕಾರಿಗಳು ಈ ಹೊಸ ಮಾರ್ಗಸೂಚಿಗಳನ್ನು ಜಾರಿಗೆ ತರಲು ಸಿದ್ಧತೆ ನಡೆಸುತ್ತಿದ್ದು, ಶೀಘ್ರದಲ್ಲೇ ಹೆಚ್ಚಿನ ಸ್ಪಷ್ಟತೆ ಸಿಗುವ ಸಾಧ್ಯತೆಯಿದೆ.`
+    ];
+
+    const outros = [
+        `ಈ ವಿಷಯದ ಪ್ರತಿಯೊಂದು ಹಂತದ ಬೆಳವಣಿಗೆಗಳನ್ನು ಸೂಕ್ಷ್ಮವಾಗಿ ಗಮನಿಸಲಾಗುತ್ತಿದ್ದು, ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗಿ ಮೂಲ ವರದಿಯನ್ನು ಪರಿಶೀಲಿಸಬಹುದಾಗಿದೆ.`,
+        `ಹೆಚ್ಚಿನ ವಿವರಗಳು ಮತ್ತು ಅಧಿಕೃತ ಹೇಳಿಕೆಗಳು ಲಭ್ಯವಾದ ತಕ್ಷಣ ಈ ವರದಿಯನ್ನು ನವೀಕರಿಸಲಾಗುತ್ತದೆ.`
+    ];
+
+    const catContext = {
+        karnataka: 'ಕರ್ನಾಟಕ ರಾಜ್ಯದ ಹಿತಾಸಕ್ತಿಗಳು ಮತ್ತು ಸ್ಥಳೀಯ ನಾಗರಿಕರ ದೃಷ್ಟಿಯಿಂದ ಈ ಸುದ್ದಿ ಅತ್ಯಂತ ಮಹತ್ವದ್ದಾಗಿದ್ದು, ಪ್ರಮುಖ ಸ್ಥಳಗಳಲ್ಲಿ ಇದರ ಚರ್ಚೆಗಳು ತೀವ್ರಗೊಂಡಿವೆ.',
+        india: 'ರಾಷ್ಟ್ರೀಯ ಮಟ್ಟದಲ್ಲಿ ಕಂಡುಬರುತ್ತಿರುವ ಪ್ರಮುಖ ಆರ್ಥಿಕ ಮತ್ತು ರಾಜಕೀಯ ಸಮೀಕರಣಗಳಿಗೆ ಈ ಘಟನೆಯು ಹೊಸ ತಿರುವು ನೀಡಬಹುದು ಎಂದು ಭಾವಿಸಲಾಗಿದೆ.',
+        world: 'ಜಾಗತಿಕ ವಿದ್ಯಮಾನಗಳ ಮೇಲೆ ಈ ಬೆಳವಣಿಗೆಯು ಸೂಕ್ಷ್ಮ ಪರಿಣಾಮ ಬೀರಲಿದ್ದು, ಅಂತರಾಷ್ಟ್ರೀಯ ವಲಯದಲ್ಲಿ ತೀವ್ರ ನಿಗಾ ವಹಿಸಲಾಗಿದೆ.',
+        business: 'ಹಣಕಾಸು ವಲಯ, ಗ್ರಾಹಕ ಮಾರುಕಟ್ಟೆ ಮತ್ತು ಹೂಡಿಕೆದಾರರ ಮೇಲೆ ಈ ನಿರ್ಧಾರ ನೇರ ಪ್ರಭಾವ ಬೀರಲಿದ್ದು, ಮಾರುಕಟ್ಟೆಯಲ್ಲಿ ಹೊಸ ಚಲನೆಗಳು ಗೋಚರಿಸುತ್ತಿವೆ.',
+        sports: 'ಕ್ರೀಡಾ ಲೋಕದಲ್ಲಿ ಈ ವಿಷಯವು ಭಾರಿ ಕುತೂಹಲ ಮೂಡಿಸಿದ್ದು, ಕ್ರೀಡಾಭಿಮಾನಿಗಳು ಮತ್ತು ತಜ್ಞರು ಈ ಬಗ್ಗೆ ತಮ್ಮದೇ ಆದ ವಿಶ್ಲೇಷಣೆಗಳನ್ನು ನೀಡುತ್ತಿದ್ದಾರೆ.',
+        cinema: 'ಮನರಂಜನಾ ಕ್ಷೇತ್ರ ಮತ್ತು ಚಿತ್ರರಂಗದಲ್ಲಿ ಈ ಅಪ್ಡೇಟ್ ಹೊಸ ಆಸಕ್ತಿ ಮೂಡಿಸಿದ್ದು, ಪ್ರೇಕ್ಷಕರ ವಲಯದಲ್ಲಿ ಬಿಸಿ ಬಿಸಿ ಚರ್ಚೆಗಳು ನಡೆಯುತ್ತಿವೆ.',
+        technology: 'ತಾಂತ್ರಿಕ ಆವಿಷ್ಕಾರಗಳು ಮತ್ತು ಡಿಜಿಟಲ್ ಸೇವೆಗಳ ಬಳಕೆಯ ಮೇಲೆ ಈ ಬೆಳವಣಿಗೆ ಮಹತ್ವದ ಪ್ರಭಾವ ಬೀರಲಿದೆ ಎಂದು ನಿರೀಕ್ಷಿಸಲಾಗಿದೆ.',
+        'fact-check': 'ಸಾಮಾಜಿಕ ಮಾಧ್ಯಮಗಳಲ್ಲಿ ಹರಡುತ್ತಿರುವ ಮಾಹಿತಿಗಳ ನೈಜತೆಯನ್ನು ಪರಿಶೀಲಿಸುವುದು ನಾಗರಿಕರ ಜವಾಬ್ದಾರಿಯಾಗಿದ್ದು, ಅಧಿಕೃತ ಮೂಲಗಳನ್ನೇ ನಂಬಬೇಕು.',
+        politics: 'ರಾಜಕೀಯ ವಲಯದಲ್ಲಿ ಈ ವಿದ್ಯಮಾನವು ಹೊಸ ತಂತ್ರಗಾರಿಕೆಗಳಿಗೆ ಕಾರಣವಾಗಲಿದ್ದು, ಮುಂಬರುವ ದಿನಗಳಲ್ಲಿ ತೀವ್ರ ರಾಜಕೀಯ ಧ್ರುವೀಕರಣಕ್ಕೆ ಕಾರಣವಾಗಬಹುದು.',
+        health: 'ಜನಸಾಮಾನ್ಯರ ಆರೋಗ್ಯ ಸುಧಾರಣೆ ಮತ್ತು ದಿನನಿತ್ಯದ ಸುರಕ್ಷತೆಗೆ ಸಂಬಂಧಿಸಿದ ಮಹತ್ವದ ಮಾರ್ಗಸೂಚಿಗಳು ಇದರಲ್ಲಿ ಅಡಕವಾಗಿವೆ.',
+        education: 'ಶಿಕ್ಷಣ ಕ್ಷೇತ್ರ ಮತ್ತು ವಿದ್ಯಾರ್ಥಿಗಳ ಭವಿಷ್ಯದ ಹಿತದೃಷ್ಟಿಯಿಂದ ಈ ನಿಯಮಗಳು ಅತ್ಯಂತ ನಿರ್ಣಾಯಕ ಪಾತ್ರ ವಹಿಸಲಿವೆ.',
+        crime: 'ಪೊಲೀಸ್ ಇಲಾಖೆಯು ಪ್ರಕರಣದ ತನಿಖೆಯನ್ನು ತೀವ್ರಗೊಳಿಸಿದ್ದು, ಮುಂಜಾಗ್ರತಾ ಕ್ರಮಗಳನ್ನು ಕೈಗೊಳ್ಳಲು ಸಾರ್ವಜನಿಕರಿಗೆ ಸೂಚಿಸಿದೆ.',
+        agriculture: 'ರೈತ ಮಿತ್ರರ ಆರ್ಥಿಕ ಪ್ರಗತಿ ಮತ್ತು ಕೃಷಿ ವಲಯದ ಸುಧಾರಣೆಗಳಿಗೆ ಪೂರಕವಾದ ಮಹತ್ವದ ಮಾರ್ಗಸೂಚಿಗಳು ಇಲ್ಲಿ ಪ್ರಸ್ತಾಪವಾಗಿವೆ.',
+        lifestyle: 'ಆರೋಗ್ಯಕರ ಮತ್ತು ಸುಲಭ ಜೀವನಶೈಲಿಯನ್ನು ಅಳವಡಿಸಿಕೊಳ್ಳಲು ಇಂತಹ ಪ್ರಾಯೋಗಿಕ ಮಾಹಿತಿಗಳು ಸಹಕಾರಿಯಾಗಲಿವೆ.',
+        automobile: 'ಮಾರುಕಟ್ಟೆಗೆ ಹೊಸ ವಾಹನಗಳ ಪ್ರವೇಶ ಹಾಗೂ ಸುರಕ್ಷತಾ ನಿಯಮಗಳ ಜಾರಿಯು ಗ್ರಾಹಕರಿಗೆ ಹೊಸ ಅನುಭವ ನೀಡಲಿದೆ.',
+        career: 'ಕರ್ನಾಟಕದಲ್ಲಿ ಸರ್ಕಾರಿ ಉದ್ಯೋಗಾವಕಾಶಗಳು ಮತ್ತು ಸ್ಪರ್ಧಾತ್ಮಕ ಪರೀಕ್ಷೆಗಳ ಸಿದ್ಧತೆಯ ವಿವರಗಳು ಇದರಲ್ಲಿವೆ.',
+        astrology: 'ದಿನನಿತ್ಯದ ಗ್ರಹಗತಿಗಳು ಮತ್ತು ರಾಶಿಫಲದ ಅನ್ವಯ, ಜ್ಯೋತಿಷಿಗಳು ಈ ದಿನದ ಶುಭ ಫಲಗಳ ಬಗ್ಗೆ ವಿವರಣೆ ನೀಡಿದ್ದಾರೆ.'
+    };
+
+    const paragraphs = [];
+    const shuffle = (arr) => arr.sort(() => Math.random() - 0.5);
+
+    shuffle(intros);
+    paragraphs.push(intros[0]);
+
+    shuffle(connectors);
+    paragraphs.push(connectors[0] + " " + summarySentences.join(" "));
+
+    paragraphs.push(catContext[catSlug] || 'ಈ ವಿದ್ಯಮಾನಗಳು ಸಾರ್ವಜನಿಕ ವಲಯದಲ್ಲಿ ತೀವ್ರ ಆಸಕ್ತಿಯನ್ನು ಉಂಟುಮಾಡಿದ್ದು, ಮುಂದಿನ ಹಂತದ ಮಾಹಿತಿ ನಿರೀಕ್ಷಿಸಲಾಗುತ್ತಿದೆ.');
+
+    paragraphs.push("<!-- AD_SLOT -->");
+
+    shuffle(details);
+    const detailCount = Math.floor(Math.random() * 2) + 2;
+    for (let i = 0; i < detailCount; i++) {
+        paragraphs.push(details[i]);
+    }
+
+    shuffle(outros);
+    paragraphs.push(outros[0]);
+
+    paragraphs.push(`ಮಾಹಿತಿ ಕೃಪೆ: ${source}`);
+
+    return paragraphs.join('\n\n');
+}
+
 function autoWrite(article) {
     const title = cleanNewsTitle(article.title, article.source);
     const source = article.source || 'ಮೂಲ ವರದಿ';
@@ -251,37 +380,10 @@ function autoWrite(article) {
     const titleWords = title.split(/\s+/).filter(w => w.length > 2).slice(0, 6);
     const tags = [...new Set([category, source, ...titleWords, 'Kannada News', 'MIYIZE', catSlug])].slice(0, 10);
 
-    // Context templates by category
-    const catContext = {
-        karnataka: 'ಕರ್ನಾಟಕ ರಾಜ್ಯದಲ್ಲಿ ಈ ಬೆಳವಣಿಗೆ ಸಾರ್ವಜನಿಕ ವಲಯದಲ್ಲಿ ಗಮನ ಸೆಳೆದಿದೆ. ರಾಜ್ಯ ಸರ್ಕಾರ ಮತ್ತು ಸಂಬಂಧಿತ ಇಲಾಖೆಗಳು ಈ ವಿಷಯದ ಬಗ್ಗೆ ಹೆಚ್ಚಿನ ಮಾಹಿತಿ ನೀಡಲಿವೆ ಎಂದು ನಿರೀಕ್ಷಿಸಲಾಗಿದೆ.',
-        india: 'ಭಾರತದಾದ್ಯಂತ ಈ ಸುದ್ದಿ ಸಾಕಷ್ಟು ಚರ್ಚೆಗೆ ಕಾರಣವಾಗಿದೆ. ಕೇಂದ್ರ ಸರ್ಕಾರದ ನೀತಿ ನಿರ್ಧಾರಗಳ ಮೇಲೆ ಇದರ ಪ್ರಭಾವ ಬೀರಬಹುದು ಎಂದು ತಜ್ಞರು ಅಭಿಪ್ರಾಯಪಡುತ್ತಾರೆ.',
-        world: 'ಅಂತಾರಾಷ್ಟ್ರೀಯ ಮಟ್ಟದಲ್ಲಿ ಈ ಬೆಳವಣಿಗೆ ಹಲವು ದೇಶಗಳ ಗಮನ ಸೆಳೆದಿದೆ. ಜಾಗತಿಕ ಭೌಗೋಳಿಕ-ರಾಜಕೀಯ ಸ್ಥಿತಿಗತಿಗಳ ಮೇಲೆ ಪರಿಣಾಮ ಬೀರಬಹುದು.',
-        business: 'ಆರ್ಥಿಕ ವಲಯದಲ್ಲಿ ಈ ಸುದ್ದಿ ಪ್ರಮುಖ ಪರಿಣಾಮ ಬೀರುವ ಸಾಧ್ಯತೆ ಇದೆ. ಮಾರುಕಟ್ಟೆ ವಿಶ್ಲೇಷಕರ ಪ್ರಕಾರ ಹೂಡಿಕೆದಾರರು ಎಚ್ಚರಿಕೆಯಿಂದ ಮುಂದಿನ ಬೆಳವಣಿಗೆಗಳನ್ನು ಗಮನಿಸಬೇಕು.',
-        sports: 'ಕ್ರೀಡಾ ವಲಯದಲ್ಲಿ ಈ ಬೆಳವಣಿಗೆ ಅಭಿಮಾನಿಗಳಲ್ಲಿ ಉತ್ಸಾಹ ಮೂಡಿಸಿದೆ. ಮುಂಬರುವ ಪಂದ್ಯಗಳ ಮೇಲೆ ಇದರ ಪ್ರಭಾವ ಗಮನಾರ್ಹ.',
-        cinema: 'ಚಿತ್ರರಂಗದ ಈ ಸುದ್ದಿ ಸಿನಿಮಾ ಪ್ರೇಮಿಗಳಲ್ಲಿ ಕುತೂಹಲ ಹುಟ್ಟಿಸಿದೆ. ಮನರಂಜನಾ ಉದ್ಯಮದಲ್ಲಿ ಹೊಸ ಬದಲಾವಣೆಗಳ ಸೂಚನೆ ಇದಾಗಿರಬಹುದು.',
-        technology: 'ತಂತ್ರಜ್ಞಾನ ಕ್ಷೇತ್ರದಲ್ಲಿ ಈ ಅಪ್ಡೇಟ್ ಬಳಕೆದಾರರ ಮೇಲೆ ನೇರ ಪರಿಣಾಮ ಬೀರುವ ಸಾಧ್ಯತೆ ಇದೆ. ಡಿಜಿಟಲ್ ಯುಗದ ವೇಗವಾಗಿ ಬದಲಾಗುತ್ತಿರುವ ಪರಿಸ್ಥಿತಿಯಲ್ಲಿ ಇಂತಹ ಬೆಳವಣಿಗೆಗಳು ಮಹತ್ವದ್ದಾಗಿವೆ.',
-        'fact-check': 'ಸಾಮಾಜಿಕ ಮಾಧ್ಯಮಗಳಲ್ಲಿ ಹರಡುತ್ತಿರುವ ಮಾಹಿತಿಯ ಸತ್ಯಾಸತ್ಯತೆಯನ್ನು ಪರಿಶೀಲಿಸುವುದು ಅತ್ಯಂತ ಮಹತ್ವದ್ದಾಗಿದೆ. ವಿಶ್ವಾಸಾರ್ಹ ಮೂಲಗಳಿಂದ ಮಾಹಿತಿ ಪಡೆಯುವುದು ಸದಾ ಉತ್ತಮ.',
-    };
-
-    const context = catContext[catSlug] || catContext.karnataka;
     const pubLabel = formatDate(article.published_at);
-
-    // Generate full original article (10 paragraphs)
     const highlightWord = titleWords[Math.floor(Math.random() * titleWords.length)] || category;
 
-    const fullParagraphs = [
-        `${title} ಎಂಬ ಸುದ್ದಿ ${source} ಮೂಲದಿಂದ ಬಂದಿದ್ದು, ${category} ವಿಭಾಗದಲ್ಲಿ ಗಮನಾರ್ಹ ಬೆಳವಣಿಗೆಯಾಗಿ ಪರಿಗಣಿಸಲಾಗಿದೆ. ಈ ವರದಿಯ ಮುಖ್ಯಾಂಶಗಳು ಓದುಗರಿಗೆ ಉಪಯುಕ್ತ ಮಾಹಿತಿ ನೀಡುವ ಉದ್ದೇಶದಿಂದ ಸಂಕ್ಷಿಪ್ತವಾಗಿ ಪ್ರಕಟಿಸಲಾಗಿದೆ.`,
-        summary.length > 50 ? summary : `${source} ಪ್ರಕಟಿಸಿದ ವರದಿಯ ಪ್ರಕಾರ, ಈ ಸುದ್ದಿ ${pubLabel} ಸಮಯದಲ್ಲಿ ಬೆಳಕಿಗೆ ಬಂದಿದೆ. ಸಂಬಂಧಿತ ಅಧಿಕಾರಿಗಳು ಮತ್ತು ತಜ್ಞರು ಈ ಬೆಳವಣಿಗೆಗೆ ಪ್ರತಿಕ್ರಿಯಿಸಿದ್ದಾರೆ ಎಂದು ತಿಳಿದುಬಂದಿದೆ.`,
-        context,
-        `ಈ ವಿಷಯವನ್ನು ಹತ್ತಿರದಿಂದ ಗಮನಿಸುತ್ತಿರುವ ವಿಶ್ಲೇಷಕರ ಪ್ರಕಾರ, ಮುಂಬರುವ ದಿನಗಳಲ್ಲಿ ಹೆಚ್ಚಿನ ಸ್ಪಷ್ಟತೆ ಮೂಡುವ ನಿರೀಕ್ಷೆ ಇದೆ. ಇದು ಕೇವಲ ಒಂದು ಘಟನೆಯಲ್ಲ, ಬದಲಾಗಿ ಭವಿಷ್ಯದ ಅನೇಕ ಮಹತ್ವದ ಬೆಳವಣಿಗೆಗಳಿಗೆ ನಾಂದಿಯಾಗಬಹುದು.`,
-        `<!-- AD_SLOT -->`,
-        `${category} ವಿಭಾಗದ ಓದುಗರು ಈ ಬೆಳವಣಿಗೆಯನ್ನು ತಮ್ಮ ಆದ್ಯತೆಯ ಮಾಹಿತಿಯಾಗಿ ಪರಿಗಣಿಸಬಹುದು. ಪ್ರಸ್ತುತ ಸನ್ನಿವೇಶದಲ್ಲಿ, ನಿಖರವಾದ ಮಾಹಿತಿಯನ್ನು ಪಡೆಯುವುದು ಅತ್ಯಗತ್ಯವಾಗಿದೆ.`,
-        `ಸಾರ್ವಜನಿಕ ವಲಯದಲ್ಲಿ ಈ ಬಗ್ಗೆ ಪರ-ವಿರೋಧ ಚರ್ಚೆಗಳು ನಡೆಯುತ್ತಿವೆ. ಸಾಮಾಜಿಕ ಜಾಲತಾಣಗಳಲ್ಲಿಯೂ ಈ ವಿಚಾರವು ಸಾಕಷ್ಟು ಸದ್ದು ಮಾಡುತ್ತಿದ್ದು, ನೆಟ್ಟಿಗರು ತಮ್ಮ ಅಭಿಪ್ರಾಯಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳುತ್ತಿದ್ದಾರೆ.`,
-        `ತಜ್ಞರ ಅಭಿಪ್ರಾಯದಂತೆ, ಇಂತಹ ಘಟನೆಗಳು ಸಮಾಜದ ಮೇಲೆ ದೀರ್ಘಕಾಲೀನ ಪ್ರಭಾವ ಬೀರಬಲ್ಲವು. ಆದ್ದರಿಂದ ಸಂಬಂಧಪಟ್ಟ ಪ್ರಾಧಿಕಾರಗಳು ಸೂಕ್ತ ಕ್ರಮ ಕೈಗೊಳ್ಳುವುದು ಅನಿವಾರ್ಯವಾಗಿದೆ.`,
-        `MIYIZE Kannada News ತಂಡವು ಈ ಸುದ್ದಿಯ ಹಿನ್ನೆಲೆ ಮತ್ತು ಮುಂದಿನ ಬೆಳವಣಿಗೆಗಳನ್ನು ನಿರಂತರವಾಗಿ ಟ್ರ್ಯಾಕ್ ಮಾಡುತ್ತಿದೆ. ಸಂಪೂರ್ಣ ಮತ್ತು ನಿಖರ ವರದಿಗಾಗಿ ಕೆಳಗಿನ ಮೂಲ ಲಿಂಕ್ ಪರಿಶೀಲಿಸಿ.`,
-        `ಹಕ್ಕುತ್ಯಾಗ: ಈ ಲೇಖನವು ${source} ಮೂಲ ವರದಿಯ ಸಾರಾಂಶ ಮತ್ತು ವಿಶ್ಲೇಷಣೆಯನ್ನು ಒಳಗೊಂಡಿದೆ. ಸಂಪೂರ್ಣ ವಿವರಗಳಿಗೆ ಮೂಲ ವೆಬ್‌ಸೈಟ್ ಭೇಟಿ ನೀಡಿ.`
-    ];
-    let full_content = fullParagraphs.join('\n\n');
+    let full_content = article.full_content || generateDynamicKannadaBody(title, summary, source, category, catSlug);
     if (highlightWord.length > 3) {
         const regex = new RegExp(`(${highlightWord})`, 'gi');
         full_content = full_content.replace(regex, '<span class="highlight">$1</span>');
@@ -291,15 +393,15 @@ function autoWrite(article) {
         ...article,
         title,
         summary,
-        full_content: article.full_content && article.full_content.length > full_content.length ? article.full_content : full_content,
+        full_content,
         seo_title: excerpt(`${title} | ${siteName}`, 68),
         meta_description: excerpt(summary, 155),
         key_points: [
             `${category} ವಿಭಾಗದ ಪ್ರಮುಖ ಅಪ್ಡೇಟ್ — ${pubLabel} ಪ್ರಕಟಣೆ.`,
-            `${source} ಮೂಲದಿಂದ ಬಂದ ವರದಿ ಆಧಾರಿತ ಸಾರಾಂಶ ಮತ್ತು ವಿಶ್ಲೇಷಣೆ.`,
-            `ಮುಂಬರುವ ಬೆಳವಣಿಗೆಗಳ ಬಗ್ಗೆ ನಿರಂತರ ಮಾನಿಟರಿಂಗ್ ನಡೆಯುತ್ತಿದೆ.`,
-            'ಹೊಸ ಮಾಹಿತಿ ಬಂದಂತೆ ಈ ಪುಟವು ಫೀಡ್ refresh ಮೂಲಕ ನವೀಕರಿಸುತ್ತದೆ.',
-            `ಸಂಪೂರ್ಣ ವಿವರಗಳಿಗಾಗಿ ಮೂಲ ವೆಬ್‌ಸೈಟ್ ಲಿಂಕ್ ಕೆಳಗಿದೆ.`,
+            `${source} ಪ್ರಕಟಿಸಿರುವ ವರದಿಯ ಪ್ರಮುಖ ಮುಖ್ಯಾಂಶಗಳು.`,
+            `ವಿಷಯಕ್ಕೆ ಸಂಬಂಧಿಸಿದ ಮುಂದಿನ ವಿವರಗಳನ್ನು ನಿರಂತರವಾಗಿ ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ.`,
+            `ಲಭ್ಯವಾಗುವ ಹೊಸ ಮಾಹಿತಿಯೊಂದಿಗೆ ಈ ಪುಟವನ್ನು ನವೀಕರಿಸಲಾಗುತ್ತದೆ.`,
+            `ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕೆಳಗೆ ನೀಡಲಾದ ಮೂಲ ಲಿಂಕ್ ಅನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿ.`,
         ],
         quick_facts: [
             { label: 'ವಿಭಾಗ', value: category },
@@ -346,7 +448,7 @@ async function parseFeed(category, query) {
         }
 
         const publishedAt = new Date(stripHtml(tag(item, 'pubDate')) || Date.now());
-        parsed.push(autoWrite({
+        const itemObj = {
             id: hashCode(link).toString(16),
             slug: slugFor(title, link),
             title,
@@ -359,7 +461,16 @@ async function parseFeed(category, query) {
             published_at: Number.isNaN(publishedAt.getTime()) ? new Date().toISOString() : publishedAt.toISOString(),
             updated_at: new Date().toISOString(),
             ai_generated: false,
-        }));
+            full_content: ''
+        };
+
+        const aiContent = await geminiWriteArticle(itemObj);
+        if (aiContent) {
+            itemObj.full_content = aiContent;
+            itemObj.ai_generated = true;
+        }
+
+        parsed.push(autoWrite(itemObj));
     }
 
     return parsed;
@@ -402,7 +513,7 @@ async function parseDirectFeed(feedUrl) {
         if (!image) image = await fetchMetaImage(link);
 
         const publishedAt = new Date(stripHtml(tag(item, 'pubDate')) || Date.now());
-        parsed.push(autoWrite({
+        const itemObj = {
             id: hashCode(link).toString(16),
             slug: slugFor(title, link),
             title,
@@ -415,7 +526,16 @@ async function parseDirectFeed(feedUrl) {
             published_at: Number.isNaN(publishedAt.getTime()) ? new Date().toISOString() : publishedAt.toISOString(),
             updated_at: new Date().toISOString(),
             ai_generated: false,
-        }));
+            full_content: ''
+        };
+
+        const aiContent = await geminiWriteArticle(itemObj);
+        if (aiContent) {
+            itemObj.full_content = aiContent;
+            itemObj.ai_generated = true;
+        }
+
+        parsed.push(autoWrite(itemObj));
     }
 
     return parsed;

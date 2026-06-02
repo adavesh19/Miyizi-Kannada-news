@@ -105,15 +105,14 @@ render_header($slug);
         <!-- Smart auto grid with inline ads every 9th -->
         <div class="cp-auto-grid" id="cpAutoGrid">
             <?php foreach ($gridArticles as $idx => $art):
-                $titleLen = mb_strlen((string) ($art['title'] ?? ''));
-                $isWide   = ($idx % 9 === 0) || $titleLen > 58;
+                $isWide   = ($idx % 9 === 0);
             ?>
             <a class="cp-card<?= $isWide ? ' cp-card--wide' : '' ?>"
                href="<?= e(article_url($art)) ?>">
                 <div class="cp-card__img">
                     <img src="<?= e(article_image($art)) ?>" alt="" loading="lazy"
                          onerror="this.onerror=null;this.src='<?= e(MIYIZE_FALLBACK_IMAGE) ?>';">
-                    <span class="cp-card__cat"><?= e((string) ($art['category_label'] ?? $label)) ?></span>
+                    <span class="cp-card__cat"><?= e($label) ?></span>
                     <div class="cp-card__shine"></div>
                 </div>
                 <div class="cp-card__body">
@@ -153,7 +152,7 @@ render_header($slug);
                 <img src="<?= e(article_image($item)) ?>" alt="" loading="lazy"
                      onerror="this.onerror=null;this.src='<?= e(MIYIZE_FALLBACK_IMAGE) ?>';">
                 <div class="cp-more-card__body">
-                    <span class="cp-more-cat"><?= e((string) ($item['category_label'] ?? $label)) ?></span>
+                    <span class="cp-more-cat"><?= e($label) ?></span>
                     <h3><?= e(excerpt_text((string) ($item['title'] ?? ''), 65)) ?></h3>
                     <small><?= e(format_kn_date((string) ($item['published_at'] ?? ''))) ?></small>
                 </div>
