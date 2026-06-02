@@ -17,6 +17,7 @@ define('MIYIZE_RETENTION_DAYS', (int) (getenv('MIYIZE_RETENTION_DAYS') ?: 7));
 define('MIYIZE_AUTO_REFRESH_ON_WEB', false);
 
 define('MIYIZE_ADSENSE_CLIENT', getenv('MIYIZE_ADSENSE_CLIENT') ?: '');
+define('MIYIZE_GOOGLE_ANALYTICS_ID', getenv('MIYIZE_GOOGLE_ANALYTICS_ID') ?: '');
 define('MIYIZE_AD_SLOT_TOP', getenv('MIYIZE_AD_SLOT_TOP') ?: '');
 define('MIYIZE_AD_SLOT_INARTICLE', getenv('MIYIZE_AD_SLOT_INARTICLE') ?: '');
 
@@ -180,6 +181,14 @@ $MIYIZE_CATEGORIES = [
             miyize_google_news_url('ದಿನ ಭವಿಷ್ಯ ಜಾತಕ'),
         ],
         'fallback_query' => 'astrology horoscope rashi bhavishya daily',
+    ],
+    'trends' => [
+        'label' => 'ಟ್ರೆಂಡಿಂಗ್', 'short' => 'ಟ್ರೆಂಡಿಂಗ್',
+        'feeds' => [
+            'https://trends.google.com/trends/trendingsearches/daily/rss?geo=IN',
+            miyize_google_news_url('trending topics India'),
+        ],
+        'fallback_query' => 'trending topics India',
     ],
 ];
 

@@ -24,8 +24,10 @@ Since this is a high-tech dynamic application, it runs on **Node.js**, not stand
    - In your Hostinger panel, search for **Node.js** or **App Server**.
    - Set the Application Startup File to `local-server.js`.
    - Ensure the Node.js version is **18.x or higher**.
-3. **Set Environment Variables** (in Hostinger):
+3. **Set Environment Variables** (in Hostinger or Vercel Settings):
    - `MIYIZE_ADMIN_PASS`: Set this to a strong password for your `/admin` panel (default is `miyize2024`).
+   - `MIYIZE_GEMINI_KEY` or `GEMINI_API_KEY`: Google Gemini API key (from Google AI Studio) to enable the "super intelligent" news writer which expands short RSS summaries into detailed articles.
+   - `MIYIZE_GOOGLE_ANALYTICS_ID`: Google Analytics Measurement ID (e.g. `G-XXXXXXXXXX`) to track site metrics and user flow.
    - `PORT`: Hostinger usually handles this, but the app defaults to 8080 if not set.
 4. **Start the App**: Click **Start App** in Hostinger. The app will immediately begin fetching real-time news and will run continuously!
 

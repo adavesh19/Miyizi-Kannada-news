@@ -32,6 +32,7 @@ const categories = {
     automobile: 'ಆಟೋಮೊಬೈಲ್',
     career: 'ಉದ್ಯೋಗ',
     astrology: 'ಭವಿಷ್ಯ',
+    trends: 'ಟ್ರೆಂಡಿಂಗ್',
 };
 
 const feedQueries = {
@@ -53,6 +54,7 @@ const feedQueries = {
     automobile: 'ಆಟೋಮೊಬೈಲ್ ಕಾರು ಬೈಕು launch',
     career: 'ಉದ್ಯೋಗ ಸುದ್ದಿ',
     astrology: 'ರಾಶಿ ಭವಿಷ್ಯ ದಿನಭವಿಷ್ಯ',
+    trends: 'https://trends.google.com/trends/trendingsearches/daily/rss?geo=IN',
 };
 
 const directFeeds = [
@@ -126,6 +128,7 @@ function slugFor(title, url) {
 }
 
 function rssUrl(query) {
+    if (query.startsWith('http')) return query;
     const params = new URLSearchParams({ q: query, hl: 'kn', gl: 'IN', ceid: 'IN:kn' });
     return `https://news.google.com/rss/search?${params.toString()}`;
 }
@@ -253,6 +256,7 @@ Source: ${source}
 Category: ${cat}
 
 Requirements:
+- IMPORTANT: Even if the provided Summary is extremely short, generic, or only contains 1 or 2 sentences, you must use your general knowledge to fully expand the topic. Write a comprehensive, detailed article of 400 to 800 words containing 5 to 8 paragraphs. Deeply elaborate on the background context, implications, key figures or organizations, and future expectations. Never explain the lack of info; write a full, rich news report based on the Title alone.
 - Do NOT restrict the length or paragraph count to a fixed format. Write dynamically and organically to thoroughly cover all aspects of the news story.
 - Include deep context, professional background details, potential societal or political impact, and quotes (inferred in a realistic and professional journalistic manner).
 - Start with the most important news fact.

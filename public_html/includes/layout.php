@@ -64,6 +64,16 @@ function page_head(string $title, string $description, string $canonicalPath = '
     <?php if (MIYIZE_ADSENSE_CLIENT !== ''): ?>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=<?= e(MIYIZE_ADSENSE_CLIENT) ?>" crossorigin="anonymous"></script>
     <?php endif; ?>
+    <?php if (defined('MIYIZE_GOOGLE_ANALYTICS_ID') && MIYIZE_GOOGLE_ANALYTICS_ID !== ''): ?>
+        <!-- Google Analytics (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=<?= e(MIYIZE_GOOGLE_ANALYTICS_ID) ?>"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '<?= e(MIYIZE_GOOGLE_ANALYTICS_ID) ?>');
+        </script>
+    <?php endif; ?>
     <script type="application/ld+json"><?= json_encode(site_schema($article, $canonical, $imageUrl), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?></script>
 </head>
 <body>
