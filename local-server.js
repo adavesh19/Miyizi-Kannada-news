@@ -690,6 +690,18 @@ function shell(title, description, active, body, article = null, canonicalPath =
         gtag('config', '${esc(process.env.MIYIZE_GOOGLE_ANALYTICS_ID)}');
     </script>
     ` : ''}
+    <!-- Google Reader Revenue Manager -->
+    <script async type="application/javascript" src="https://news.google.com/swg/js/v1/swg-basic.js"></script>
+    <script>
+      (self.SWG_BASIC = self.SWG_BASIC || []).push( basicSubscriptions => {
+        basicSubscriptions.init({
+          type: "NewsArticle",
+          isPartOfType: ["Product"],
+          isPartOfProductId: "CAow4ubGDA:openaccess",
+          clientOptions: { theme: "light", lang: "kn" },
+        });
+      });
+    </script>
 </head>
 <body>
 <a class="skip-link" href="#main">ಮುಖ್ಯ ವಿಷಯಕ್ಕೆ ಹೋಗಿ</a>

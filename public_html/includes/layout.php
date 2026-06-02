@@ -75,6 +75,18 @@ function page_head(string $title, string $description, string $canonicalPath = '
         </script>
     <?php endif; ?>
     <script type="application/ld+json"><?= json_encode(site_schema($article, $canonical, $imageUrl), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?></script>
+    <!-- Google Reader Revenue Manager -->
+    <script async type="application/javascript" src="https://news.google.com/swg/js/v1/swg-basic.js"></script>
+    <script>
+      (self.SWG_BASIC = self.SWG_BASIC || []).push( basicSubscriptions => {
+        basicSubscriptions.init({
+          type: "NewsArticle",
+          isPartOfType: ["Product"],
+          isPartOfProductId: "CAow4ubGDA:openaccess",
+          clientOptions: { theme: "light", lang: "kn" },
+        });
+      });
+    </script>
 </head>
 <body>
     <?php
