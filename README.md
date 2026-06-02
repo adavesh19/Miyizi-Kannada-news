@@ -24,12 +24,13 @@ Since this is a high-tech dynamic application, it runs on **Node.js**, not stand
    - In your Hostinger panel, search for **Node.js** or **App Server**.
    - Set the Application Startup File to `local-server.js`.
    - Ensure the Node.js version is **18.x or higher**.
-3. **Set Environment Variables** (in Hostinger or Vercel Settings):
+3. **Set Environment Variables (Tags)** (in Hostinger or Vercel Settings):
    - `MIYIZE_ADMIN_PASS`: Set this to a strong password for your `/admin` panel (default is `miyize2024`).
-   - `MIYIZE_GEMINI_KEY` or `GEMINI_API_KEY`: Google Gemini API key (from Google AI Studio) to enable the "super intelligent" news writer which expands short RSS summaries into detailed articles.
-   - `MIYIZE_GOOGLE_ANALYTICS_ID`: Google Analytics Measurement ID (e.g. `G-XXXXXXXXXX`) to track site metrics and user flow.
+   - `MIYIZE_GEMINI_KEY` or `GEMINI_API_KEY`: Google Gemini API key (from Google AI Studio). **AI Agent Details**: When this key is provided, our agent intercepts RSS items. Even if an RSS feed only gives a title and a very short 1-4 line summary, the agent will use its general knowledge to write a full, long, and rich news article (400 to 800 words, 5-8 paragraphs) dynamically without adding any meta-explanations.
+   - `MIYIZE_GOOGLE_ANALYTICS_ID`: Google Analytics Measurement ID (e.g. `G-V293C5B3RY`). This will automatically inject the `gtag.js` script to track site metrics, user flow, and trends.
    - `PORT`: Hostinger usually handles this, but the app defaults to 8080 if not set.
-4. **Start the App**: Click **Start App** in Hostinger. The app will immediately begin fetching real-time news and will run continuously!
+4. **Google Trends**: The agent will automatically fetch data from Google Trends India daily feeds and populate the **ಟ್ರೆಂಡಿಂಗ್** (Trends) category.
+5. **Start the App**: Click **Start App** in Hostinger. The app will immediately begin fetching real-time news and will run continuously!
 
 ## 💰 Monetization (AdSense)
 
