@@ -93,9 +93,8 @@ render_header('latest');
                     <p>Get fast alerts on your phone and inbox.</p>
                     <a class="button" href="/contact.php">Subscribe</a>
                 </div>
-                <div class="ref-ad-box">
-                    <small>SPONSOR</small>
-                    <strong>300 x 250</strong>
+                <div class="ref-ad-box" style="padding:0; overflow:hidden;">
+                    <?php render_ad_slot('article'); ?>
                 </div>
             </aside>
         </section>
@@ -262,12 +261,7 @@ render_header('latest');
                         <h3><?= e(excerpt_text((string) ($article['title'] ?? ''), $index % 9 === 0 ? 96 : 68)) ?></h3>
                         <small><?= e(format_kn_date((string) ($article['published_at'] ?? ''))) ?></small>
                     </a>
-                    <?php if (($index + 1) % 9 === 0): ?>
-                        <div class="ref-news-cell ref-news-cell--ad">
-                            <span class="hp-sponsor-block__adlabel">SPONSOR</span>
-                            <?php render_ad_slot('article'); ?>
-                        </div>
-                    <?php endif; ?>
+
                 <?php endforeach; ?>
             </div>
         </section>
@@ -286,12 +280,7 @@ render_header('latest');
                         <h3><?= e(excerpt_text((string) ($article['title'] ?? ''), 74)) ?></h3>
                         <span><?= e(format_kn_date((string) ($article['published_at'] ?? ''))) ?></span>
                     </a>
-                    <?php if (($index + 1) % 9 === 0): ?>
-                        <div class="ref-more-card ref-more-card--ad">
-                            <span class="hp-sponsor-block__adlabel">AD</span>
-                            <?php render_ad_slot('article'); ?>
-                        </div>
-                    <?php endif; ?>
+
                 <?php endforeach; ?>
             </div>
         </section>
