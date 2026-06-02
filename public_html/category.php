@@ -11,6 +11,19 @@ $label    = category_label($slug);
 $catUrl   = category_url($slug);
 $articles = articles_for_category($slug, 80);
 
+// If there are too few articles for this category, fill up with general news to keep layout full and premium
+if (count($articles) < 12) {
+    $general = articles_for_category('latest', 80);
+    $seenSlugs = array_flip(array_column($articles, 'slug'));
+    $fallback = [];
+    foreach ($general as $a) {
+        if (!isset($seenSlugs[$a['slug']])) {
+            $fallback[] = $a;
+        }
+    }
+    $articles = array_slice(array_merge($articles, $fallback), 0, 60);
+}
+
 // Structured data
 $schemaItems = [];
 foreach (array_slice($articles, 0, 10) as $i => $a) {
@@ -26,7 +39,6 @@ $extraSchema = ['@context' => 'https://schema.org', '@graph' => [
      'numberOfItems' => count($schemaItems), 'itemListElement' => $schemaItems],
 ]];
 
-// Article slices — homepage-style layout
 // Article slices — clean layout (no hero banner)
 $trending      = pick_items($articles, 0, 12);
 $gridArticles  = array_slice($articles, 0, 48); // Main bento grid starts from index 0

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;600;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap');
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:radial-gradient(circle at 15% 50%, rgba(216, 31, 42, 0.08), transparent 40%),radial-gradient(circle at 85% 30%, rgba(59, 130, 246, 0.08), transparent 40%),radial-gradient(circle at 50% 80%, rgba(168, 85, 247, 0.08), transparent 40%),#f8fafc;background-attachment:fixed;color:#111;font-family:'Inter','Noto Sans Kannada',sans-serif;font-size:15px;line-height:1.5}
+html{scroll-behavior:smooth;overflow-x:hidden;width:100%}
+body{background:radial-gradient(circle at 15% 50%, rgba(216, 31, 42, 0.08), transparent 40%),radial-gradient(circle at 85% 30%, rgba(59, 130, 246, 0.08), transparent 40%),radial-gradient(circle at 50% 80%, rgba(168, 85, 247, 0.08), transparent 40%),#f8fafc;background-attachment:fixed;color:#111;font-family:'Inter','Noto Sans Kannada',sans-serif;font-size:15px;line-height:1.5;overflow-x:hidden;width:100%}
 a{text-decoration:none;color:inherit}
 main{padding:12px 0 40px}
 img{display:block;max-width:100%;height:auto;object-fit:cover;background:linear-gradient(135deg,#f1f5f9,#e2e8f0);border-radius:inherit;min-height:40px}
@@ -180,6 +180,9 @@ main{padding:12px 0 40px}
   .article-bento{grid-template-columns:1fr}
   .cat-ribbon__grid{grid-template-columns:repeat(2,1fr)}
   .footer-grid{grid-template-columns:1fr}
+  .masthead-ad{display:none}
+}
+@media(max-width:991px){
   .masthead-ad{display:none}
 }
 @media(max-width:520px){
@@ -480,7 +483,7 @@ body{
   box-shadow:0 4px 12px rgba(225,6,0,.45);
 }
 .ticker__items a{
-  color:#f4f8ff;
+  color:#111827;
   animation:mz-pulse-text 2.7s ease-in-out infinite;
 }
 @keyframes mz-pulse-text{
