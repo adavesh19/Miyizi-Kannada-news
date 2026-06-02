@@ -1,4 +1,3 @@
-#!/usr/bin/env php
 <?php
 /**
  * MIYIZE Kannada News — Fully Automated News Agent
