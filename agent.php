@@ -60,7 +60,7 @@ function gemini_write_article(array $article): ?string {
     $cat     = (string) ($article['category_label'] ?? '');
 
     $prompt = <<<PROMPT
-You are a professional Kannada news journalist. Write a complete, detailed, factual news article in Kannada based on the following information.
+You are a professional Kannada news journalist. Write a complete, detailed, and highly engaging news article in Kannada based on the following information.
 
 Title: {$title}
 Summary: {$summary}
@@ -68,15 +68,13 @@ Source: {$source}
 Category: {$cat}
 
 Requirements:
-- Write EXACTLY 8-10 full paragraphs in Kannada
-- Each paragraph must be 3-5 sentences long
-- Start with the most important news fact
-- Include context, background, impact and quotes (inferred professionally)
-- End with what to expect next / what readers should know
-- Do NOT include the title in the body
-- Do NOT add any markdown headers or formatting
-- Separate paragraphs with a blank line
-- Write only in Kannada (Devanagari script used for Kannada)
+- Do NOT restrict the length or paragraph count to a fixed format. Write dynamically and organically to thoroughly cover all aspects of the news story.
+- Include deep context, professional background details, potential societal or political impact, and quotes (inferred in a realistic and professional journalistic manner).
+- Start with the most important news fact.
+- Use rich, formal, and appealing Kannada vocabulary.
+- Do NOT include markdown headers, bold titles, or the title in the body.
+- Separate paragraphs with a blank line.
+- Write only in Kannada (using the Kannada script).
 
 Write the article now:
 PROMPT;
@@ -84,7 +82,7 @@ PROMPT;
     $payload = json_encode([
         'contents' => [['parts' => [['text' => $prompt]]]],
         'generationConfig' => [
-            'temperature' => 0.7,
+            'temperature' => 0.75,
             'maxOutputTokens' => 2048,
         ],
     ]);
@@ -104,34 +102,72 @@ function template_write_article(array $article): string {
     $summary = (string) ($article['summary'] ?? '');
     $source  = (string) ($article['source'] ?? 'ಮೂಲ');
     $cat     = (string) ($article['category_label'] ?? 'ಸುದ್ದಿ');
+    $catSlug = (string) ($article['category'] ?? 'latest');
     $date    = format_kn_date((string) ($article['published_at'] ?? ''));
 
-    // Build Kannada article from templates
-    $intros = [
-        "{$title}. ಈ ಸುದ್ದಿ {$source} ನಿಂದ ಲಭ್ಯವಾಗಿದ್ದು, {$cat} ವಿಭಾಗದಲ್ಲಿ ಪ್ರಮುಖ ಸ್ಥಾನ ಪಡೆದಿದೆ. {$date} ದ ಮಾಹಿತಿ ಪ್ರಕಾರ ಈ ವಿಷಯ ಸಂಪೂರ್ಣ ದೇಶದ ಗಮನ ಸೆಳೆದಿದೆ.",
-        "ಇತ್ತೀಚಿನ ವರದಿಯ ಪ್ರಕಾರ, {$summary}. {$source} ಮೂಲಗಳು ಈ ವಿಷಯವನ್ನು ದೃಢಪಡಿಸಿವೆ. ಸಂಬಂಧಿಸಿದ ಅಧಿಕಾರಿಗಳು ಈ ಬಗ್ಗೆ ಯಾವುದೇ ಅಧಿಕೃತ ಹೇಳಿಕೆ ನೀಡಿಲ್ಲ.",
+    $catContext = [
+        'karnataka' => 'ಕರ್ನಾಟಕ ರಾಜ್ಯದಲ್ಲಿ ಈ ಬೆಳವಣಿಗೆ ಸಾರ್ವಜನಿಕ ವಲಯದಲ್ಲಿ ಗಮನ ಸೆಳೆದಿದೆ. ರಾಜ್ಯ ಸರ್ಕಾರ ಮತ್ತು ಸಂಬಂಧಿತ ಇಲಾಖೆಗಳು ಈ ವಿಷಯದ ಬಗ್ಗೆ ಹೆಚ್ಚಿನ ಮಾಹಿತಿ ನೀಡಲಿವೆ ಎಂದು ನಿರೀಕ್ಷಿಸಲಾಗಿದೆ.',
+        'india' => 'ಭಾರತದಾದ್ಯಂತ ಈ ಸುದ್ದಿ ಸಾಕಷ್ಟು ಚರ್ಚೆಗೆ ಕಾರಣವಾಗಿದೆ. ಕೇಂದ್ರ ಸರ್ಕಾರದ ನೀತಿ ನಿರ್ಧಾರಗಳ ಮೇಲೆ ಇದರ ಪ್ರಭಾವ ಬೀರಬಹುದು ಎಂದು ತಜ್ಞರು ಅಭಿಪ್ರಾಯಪಡುತ್ತಾರೆ.',
+        'world' => 'ಅಂತರಾಷ್ಟ್ರೀಯ ಮಟ್ಟದಲ್ಲಿ ಈ ಬೆಳವಣಿಗೆ ಹಲವು ದೇಶಗಳ ಗಮನ ಸೆಳೆದಿದೆ. ಜಾಗತಿಕ ಭೌಗೋಳಿಕ-ರಾಜಕೀಯ ಸ್ಥಿತಿಗತಿಗಳ ಮೇಲೆ ಪರಿಣಾಮ ಬೀರಬಹುದು.',
+        'business' => 'ಆರ್ಥಿಕ ವಲಯದಲ್ಲಿ ಈ ಸುದ್ದಿ ಪ್ರಮುಖ ಪರಿಣಾಮ ಬೀರುವ ಸಾಧ್ಯತೆ ಇದೆ. ಮಾರುಕಟ್ಟೆ ವಿಶ್ಲೇಷಕರ ಪ್ರಕಾರ ಹೂಡಿಕೆದಾರರು ಎಚ್ಚರಿಕೆಯಿಂದ ಮುಂದಿನ ಬೆಳವಣಿಗೆಗಳನ್ನು ಗಮನಿಸಬೇಕು.',
+        'sports' => 'ಕ್ರೀಡಾ ವಲಯದಲ್ಲಿ ಈ ಬೆಳವಣಿಗೆ ಅಭಿಮಾನಿಗಳಲ್ಲಿ ಉತ್ಸಾಹ ಮೂಡಿಸಿದೆ. ಮುಂಬರುವ ಪಂದ್ಯಗಳ ಮೇಲೆ ಇದರ ಪ್ರಭಾವ ಗಮನಾರ್ಹ.',
+        'cinema' => 'ಚಿತ್ರರಂಗದ ಈ ಸುದ್ದಿ ಸಿನಿಮಾ ಪ್ರೇಮಿಗಳಲ್ಲಿ ಕುತೂಹಲ ಹುಟ್ಟಿಸಿದೆ. ಮನರಂಜನಾ ಉದ್ಯಮದಲ್ಲಿ ಹೊಸ ಬದಲಾವಣೆಗಳ ಸೂಚನೆ ಇದಾಗಿರಬಹುದು.',
+        'technology' => 'ತಂತ್ರಜ್ಞಾನ ಕ್ಷೇತ್ರದಲ್ಲಿ ಈ ಅಪ್ಡೇಟ್ ಬಳಕೆದಾರರ ಮೇಲೆ ನೇರ ಪರಿಣಾಮ ಬೀರುವ ಸಾಧ್ಯತೆ ಇದೆ. ಡಿಜಿಟಲ್ ಯುಗದ ಪರಿಸ್ಥಿತಿಯಲ್ಲಿ ಇಂತಹ ಬೆಳವಣಿಗೆಗಳು ಮಹತ್ವದ್ದಾಗಿವೆ.',
+        'fact-check' => 'ಸಾಮಾಜಿಕ ಮಾಧ್ಯಮಗಳಲ್ಲಿ ಹರಡುತ್ತಿರುವ ಮಾಹಿತಿಯ ಸತ್ಯಾಸತ್ಯತೆಯನ್ನು ಪರಿಶೀಲಿಸುವುದು ಅತ್ಯಂತ ಮಹತ್ವದ್ದಾಗಿದೆ. ವಿಶ್ವಾಸಾರ್ಹ ಮೂಲಗಳಿಂದ ಮಾಹಿತಿ ಪಡೆಯುವುದು ಸದಾ ಉತ್ತಮ.',
+        'agriculture' => 'ಕೃಷಿ ವಲಯದಲ್ಲಿ ಈ ಸುದ್ದಿ ರೈತ ಸಮುದಾಯಕ್ಕೆ ಉಪಯುಕ್ತ ಮಾಹಿತಿಯಾಗಿದೆ. ಕೃಷಿ ಇಲಾಖೆಯ ಮುಂದಿನ ಮಾರ್ಗಸೂಚಿಗಳು ರೈತರಿಗೆ ಸಹಕಾರಿಯಾಗಲಿವೆ.',
+        'lifestyle' => 'ಜೀವನಶೈಲಿಯ ಈ ಬೆಳವಣಿಗೆ ಇಂದಿನ ತಲೆಮಾರಿನ ಜನರಲ್ಲಿ ಹೆಚ್ಚಿನ ಆಸಕ್ತಿ ಹುಟ್ಟಿಸಿದೆ. ಆರೋಗ್ಯ ಮತ್ತು ಜೀವನಶೈಲಿ ಸುಧಾರಣೆಗೆ ಇಂತಹ ಮಾಹಿತಿಗಳು ಉಪಯುಕ್ತ.',
+        'automobile' => 'ಆಟೋಮೊಬೈಲ್ ರಂಗದ ಈ ಹೊಸ ಅಪ್ಡೇಟ್ ಪ್ರಿಯರಲ್ಲಿ ಕುತೂಹಲ ಮೂಡಿಸಿದೆ. ಮಾರುಕಟ್ಟೆಯಲ್ಲಿ ಹೊಸ ವಾಹನಗಳ ಬಿಡುಗಡೆ ತೀವ್ರ ಸ್ಪರ್ಧೆಗೆ ನಾಂದಿ ಹಾಡಲಿದೆ.',
+        'career' => 'ಉದ್ಯೋಗ ಆಕಾಂಕ್ಷಿಗಳಿಗೆ ಈ ಮಾಹಿತಿ ಅತ್ಯಂತ ಪ್ರಮುಖವಾಗಿದೆ. ಉದ್ಯೋಗಾವಕಾಶಗಳು ಮತ್ತು ಪರೀಕ್ಷಾ ತಯಾರಿಗೆ ಸಿದ್ಧತೆ ನಡೆಸುತ್ತಿರುವವರಿಗೆ ಇದು ಸಕಾಲಿಕ ಅಪ್ಡೇಟ್.',
+        'astrology' => 'ಇಂದಿನ ದಿನಭವಿಷ್ಯ ಮತ್ತು ರಾಶಿ ಫಲದ ಪ್ರಕಾರ ಈ ಬೆಳವಣಿಗೆಗಳು ಕೆಲವು ರಾಶಿಗಳ ಮೇಲೆ ಪರಿಣಾಮ ಬೀರಲಿವೆ. ತಜ್ಞರ ಅಭಿಪ್ರಾಯದಂತೆ ಅಗತ್ಯ ಮುಂಜಾಗ್ರತೆ ವಹಿಸುವುದು ಒಳಿತು.',
     ];
-    $bodies = [
-        "ಈ ಬೆಳವಣಿಗೆಯು {$cat} ಕ್ಷೇತ್ರದಲ್ಲಿ ದೊಡ್ಡ ಬದಲಾವಣೆಯನ್ನು ತರುವ ನಿರೀಕ್ಷೆ ಇದೆ. ಸ್ಥಳೀಯ ಜನರು ಮತ್ತು ತಜ್ಞರು ಈ ವಿಷಯದ ಬಗ್ಗೆ ತಮ್ಮ ಆಸಕ್ತಿ ವ್ಯಕ್ತಪಡಿಸಿದ್ದಾರೆ. ಸಂಬಂಧಿಸಿದ ಇಲಾಖೆ ಈ ವಿಷಯದ ಮೇಲೆ ನಿಗಾ ವಹಿಸಿದ್ದು, ಶೀಘ್ರದಲ್ಲೇ ಹೆಚ್ಚಿನ ಮಾಹಿತಿ ಬರಬಹುದು ಎಂದು ನಿರೀಕ್ಷಿಸಲಾಗಿದೆ.",
-        "ಈ ಸಂದರ್ಭದಲ್ಲಿ, ಸಂಬಂಧಿಸಿದ ಪಕ್ಷಗಳು ತಮ್ಮ ನಿಲುವು ಸ್ಪಷ್ಟಪಡಿಸಲು ಮುಂದಾಗಿದ್ದಾರೆ. ಸ್ಥಳೀಯ ಆಡಳಿತ ಸಂಸ್ಥೆಗಳು ಕೂಡ ಈ ವಿಚಾರದಲ್ಲಿ ಸಕ್ರಿಯ ಪಾಲ್ಗೊಳ್ಳುತ್ತಿವೆ. ಜನಸಾಮಾನ್ಯರ ಮೇಲೆ ಈ ನಿರ್ಧಾರದ ಪ್ರಭಾವ ಮುಂದಿನ ದಿನಗಳಲ್ಲಿ ಸ್ಪಷ್ಟವಾಗಲಿದೆ.",
-        "ವಿಶ್ಲೇಷಕರ ಪ್ರಕಾರ, ಈ ಬೆಳವಣಿಗೆ ಈ ಕ್ಷೇತ್ರದ ಭವಿಷ್ಯವನ್ನು ನಿರ್ಧರಿಸುವ ಪ್ರಮುಖ ಘಟ್ಟವಾಗಿ ನಿಲ್ಲಲಿದೆ. ಸಂಬಂಧಿಸಿದ ಸರ್ಕಾರಿ ಇಲಾಖೆಗಳು ಮತ್ತು ಸ್ವಯಂಸೇವಾ ಸಂಸ್ಥೆಗಳು ಒಟ್ಟಾಗಿ ಕಾರ್ಯ ನಿರ್ವಹಿಸಲು ನಿರ್ಧರಿಸಿವೆ. ಸ್ಥಳೀಯ ಪ್ರತಿನಿಧಿಗಳು ಈ ಬಗ್ಗೆ ಶೀಘ್ರ ಸಭೆ ಕರೆಯಲಿದ್ದಾರೆ.",
-        "ಮಾಧ್ಯಮ ವರದಿಗಳ ಪ್ರಕಾರ, ಈ ಘಟನೆ ರಾಜ್ಯ ಮಟ್ಟದಲ್ಲಿ ಚರ್ಚೆಗೆ ಗ್ರಾಸವಾಗಿದ್ದು, ಹಲವಾರು ರಾಜಕಾರಣಿಗಳು ಪ್ರತಿಕ್ರಿಯಿಸಿದ್ದಾರೆ. ನಾಗರಿಕ ಸಮಾಜ ಮತ್ತು ವಿದ್ಯಾರ್ಥಿ ಸಂಘಟನೆಗಳು ಈ ವಿಷಯದ ಬಗ್ಗೆ ಸ್ಪಷ್ಟ ನೀತಿ ರೂಪಿಸಲು ಒತ್ತಾಯಿಸಿವೆ. ಈ ಕ್ಷೇತ್ರದ ಮೇಲೆ ದೀರ್ಘಕಾಲೀನ ಪ್ರಭಾವ ಬೀರಬಹುದಾದ ಈ ನಿರ್ಧಾರಗಳ ಬಗ್ಗೆ ಎಲ್ಲರ ಕಣ್ಣು ನೆಟ್ಟಿದೆ.",
-        "ಭವಿಷ್ಯದ ದೃಷ್ಟಿಯಿಂದ ನೋಡುವಾಗ, ಈ ಬೆಳವಣಿಗೆ ಹೊಸ ಅವಕಾಶಗಳನ್ನು ತೆರೆಯಬಹುದು ಎಂಬ ಭರವಸೆ ಇದೆ. ತಜ್ಞರ ಪ್ರಕಾರ, ಸರಿಯಾದ ನಿರ್ಧಾರಗಳು ಕೈಗೊಂಡರೆ ಇದು ಸಾರ್ವಜನಿಕ ಹಿತ ಕಾಪಾಡಬಹುದು. ಮುಂದಿನ ಕೆಲವು ದಿನಗಳಲ್ಲಿ ಈ ವಿಷಯ ಮತ್ತಷ್ಟು ಸ್ಪಷ್ಟತೆ ಪಡೆಯಲಿದೆ ಎಂದು ನಿರೀಕ್ಷಿಸಲಾಗಿದೆ.",
-        "ಸದ್ಯ {$source} ನಿಂದ ಲಭ್ಯವಾದ ಮಾಹಿತಿ ಆಧರಿಸಿ ಈ ವರದಿ ಸಿದ್ಧಪಡಿಸಲಾಗಿದ್ದು, ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಮೂಲ ಲಿಂಕ್ ಭೇಟಿ ನೀಡಿ. MIYIZE Kannada News ನಿಮಗೆ ನಿರಂತರ ತಾಜಾ ಸುದ್ದಿ ನೀಡಲು ಬದ್ಧವಾಗಿದೆ. ಹೆಚ್ಚಿನ ಮಾಹಿತಿ ಮತ್ತು ಅಪ್ಡೇಟ್‌ಗಳಿಗಾಗಿ ನಮ್ಮ WhatsApp ಗ್ರೂಪ್ ಸೇರಿ.",
+    $context = $catContext[$catSlug] ?? ($catContext['karnataka'] ?? '');
+
+    $introPool = [
+        "{$title} ಎಂಬ ಸುದ್ದಿ {$source} ಮೂಲದಿಂದ ಪ್ರಕಟವಾಗಿದ್ದು, {$cat} ವಲಯದಲ್ಲಿ ಭಾರಿ ಸಂಚಲನ ಮೂಡಿಸಿದೆ.",
+        "ಇತ್ತೀಚಿನ ವರದಿಗಳ ಪ್ರಕಾರ, {$title} ಕುರಿತು ಪ್ರಮುಖ ಬೆಳವಣಿಗೆ ಕಂಡುಬಂದಿದೆ. {$source} ಮೂಲಗಳು ಈ ವಿಷಯವನ್ನು ಖಚಿತಪಡಿಸಿವೆ.",
+        "{$cat} ವಿಭಾಗದಲ್ಲಿ ಹೊಸದಾಗಿ ಕೇಳಿಬರುತ್ತಿರುವ ಈ ಸುದ್ದಿ ಎಲ್ಲೆಡೆ ವ್ಯಾಪಕ ಚರ್ಚೆಗೆ ಕಾರಣವಾಗಿದೆ. {$source} ನೀಡಿದ ವಿವರ ಇಲ್ಲಿದೆ.",
+    ];
+    
+    $summaryPool = [
+        (mb_strlen(normalize_space((string) $summary), 'UTF-8') > 50) 
+            ? $summary 
+            : "{$source} ಪ್ರಕಟಿಸಿದ ವಿವರಗಳ ಪ್ರಕಾರ, ಈ ಸುದ್ದಿ {$date} ಸಮಯದಲ್ಲಿ ಮುಂಚೂಣಿಗೆ ಬಂದಿದೆ. ಹಲವರು ಈ ಬಗ್ಗೆ ಗಂಭೀರ ಕಳಕಳಿ ವ್ಯಕ್ತಪಡಿಸಿದ್ದಾರೆ.",
+        "ವರದಿಯ ಹಿನ್ನೆಲೆಯಲ್ಲಿ ನೋಡಿದರೆ, {$summary} ಕುರಿತಾದ ಮಾಹಿತಿ ಸಾರ್ವಜನಿಕವಾಗಿ ಚರ್ಚೆಯಾಗುತ್ತಿದೆ. ಸಂಬಂಧಿತ ಅಧಿಕಾರಿಗಳು ಹೇಳಿಕೆ ನೀಡಲು ಕಾಯುತ್ತಿದ್ದಾರೆ."
     ];
 
-    shuffle($intros);
-    shuffle($bodies);
-    $paragraphs = [
-        $intros[0],
-        $summary . '. ' . $bodies[0],
-        $bodies[1],
-        $bodies[2],
-        $bodies[3],
-        $bodies[4],
-        $bodies[5],
+    $detailPool = [
+        "ಈ ವಿಷಯವನ್ನು ಹತ್ತಿರದಿಂದ ಗಮನಿಸುತ್ತಿರುವ ತಜ್ಞರ ಪ್ರಕಾರ, ಮುಂಬರುವ ದಿನಗಳಲ್ಲಿ ಇನ್ನಷ್ಟು ಸ್ಪಷ್ಟತೆ ಲಭ್ಯವಾಗಲಿದೆ. ಇದು ಕೇವಲ ಸಣ್ಣ ಘಟನೆಯಲ್ಲ, ದೀರ್ಘಕಾಲೀನ ಪರಿಣಾಮ ಬೀರಬಲ್ಲದು.",
+        "ಸಾಮಾಜಿಕ ಜಾಲತಾಣಗಳಲ್ಲಿಯೂ ಈ ಬಗ್ಗೆ ವ್ಯಾಪಕ ಪ್ರತಿಕ್ರಿಯೆಗಳು ವ್ಯಕ್ತವಾಗುತ್ತಿವೆ. ನೆಟ್ಟಿಗರು ತಮ್ಮ ಅಭಿಪ್ರಾಯಗಳನ್ನು ಮುಕ್ತವಾಗಿ ಹಂಚಿಕೊಳ್ಳುತ್ತಿದ್ದಾರೆ.",
+        "ಸ್ಥಳೀಯ ಆಡಳಿತ ಮತ್ತು ಸಂಬಂಧಿತ ಇಲಾಖೆಗಳು ತನಿಖೆ ಅಥವಾ ಸೂಕ್ತ ಕ್ರಮ ಕೈಗೊಳ್ಳಲು ಸಿದ್ಧತೆ ನಡೆಸಿವೆ ಎಂದು ತಿಳಿದುಬಂದಿದೆ.",
+        "ವಿಷಯದ ತೀವ್ರತೆಯನ್ನು ಪರಿಗಣಿಸಿ, ನಾಗರಿಕ ಸಮಾಜವು ಸತ್ಯಾಸತ್ಯತೆಯ ಮೇಲೆ ನಿಗಾ ಇರಿಸಿದೆ. ನಿಖರ ಮಾಹಿತಿಗಾಗಿ ಮೂಲ ವೆಬ್‌ಸೈಟ್ ಭೇಟಿ ನೀಡುವುದು ಸೂಕ್ತ."
     ];
-    return implode("\n\n", $paragraphs);
+
+    $outros = [
+        "MIYIZE Kannada News ತಂಡವು ಈ ಸುದ್ದಿಯ ಹಿನ್ನೆಲೆಯನ್ನು ನಿರಂತರವಾಗಿ ಗಮನಿಸುತ್ತಿದೆ. ಹೊಸ ಅಪ್ಡೇಟ್‌ಗಳಿಗಾಗಿ ನಮ್ಮ ಪೋರ್ಟಲ್ ಅನ್ನು ಫಾಲೋ ಮಾಡಿ.",
+        "ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕೆಳಗಿನ ಮೂಲ ಲಿಂಕ್ ಕ್ಲಿಕ್ ಮಾಡಿ. ತಾಜಾ ಮತ್ತು ವಿಶ್ವಾಸಾರ್ಹ ಸುದ್ದಿಗಳಿಗಾಗಿ ನಮ್ಮ WhatsApp ಚಾನೆಲ್ ಸೇರಿ.",
+    ];
+
+    shuffle($introPool);
+    shuffle($summaryPool);
+    shuffle($detailPool);
+    shuffle($outros);
+
+    $detailCount = rand(2, 4);
+    $selectedDetails = array_slice($detailPool, 0, $detailCount);
+
+    $fullParagraphs = [];
+    $fullParagraphs[] = $introPool[0];
+    $fullParagraphs[] = $summaryPool[0];
+    $fullParagraphs[] = $context;
+    $fullParagraphs[] = "<!-- AD_SLOT -->";
+
+    foreach ($selectedDetails as $det) {
+        $fullParagraphs[] = $det;
+    }
+    $fullParagraphs[] = $outros[0];
+    $fullParagraphs[] = "ಹಕ್ಕುತ್ಯಾಗ: ಈ ಲೇಖನವು {$source} ಮೂಲ ವರದಿಯ ಸಾರಾಂಶ ಮತ್ತು ವಿಶ್ಲೇಷಣೆಯನ್ನು ಒಳಗೊಂಡಿದೆ. ಸಂಪೂರ್ಣ ವಿವರಗಳಿಗೆ ಮೂಲ ವೆಬ್‌ಸೈಟ್ ಭೇಟಿ ನೀಡಿ.";
+
+    return implode("\n\n", $fullParagraphs);
 }
 
 // ── HTTP POST helper ──────────────────────────────────────────────────────────

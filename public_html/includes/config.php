@@ -141,6 +141,46 @@ $MIYIZE_CATEGORIES = [
         ],
         'fallback_query' => 'fact check misinformation India',
     ],
+    'agriculture' => [
+        'label' => 'ಕೃಷಿ', 'short' => 'ಕೃಷಿ',
+        'feeds' => [
+            miyize_google_news_url('ಕೃಷಿ ಸುದ್ದಿ'),
+            miyize_google_news_url('ರೈತರ ಸಮಸ್ಯೆ ಕೃಷಿ'),
+        ],
+        'fallback_query' => 'agriculture farming India Karnataka',
+    ],
+    'lifestyle' => [
+        'label' => 'ಜೀವನಶೈಲಿ', 'short' => 'ಲೈಫ್‌ಸ್ಟೈಲ್',
+        'feeds' => [
+            miyize_google_news_url('ಜೀವನಶೈಲಿ ಫ್ಯಾಷನ್'),
+            miyize_google_news_url('ಆರೋಗ್ಯ ಸಲಹೆಗಳು ಆಹಾರ'),
+        ],
+        'fallback_query' => 'lifestyle health fashion India',
+    ],
+    'automobile' => [
+        'label' => 'ಆಟೋಮೊಬೈಲ್', 'short' => 'ಆಟೋ',
+        'feeds' => [
+            miyize_google_news_url('ಆಟೋಮೊಬೈಲ್ ಕಾರು ಬೈಕು'),
+            miyize_google_news_url('new car bike launch India'),
+        ],
+        'fallback_query' => 'automobile cars bikes launch',
+    ],
+    'career' => [
+        'label' => 'ಉದ್ಯೋಗ', 'short' => 'ಉದ್ಯೋಗ',
+        'feeds' => [
+            miyize_google_news_url('ಉದ್ಯೋಗ ಸುದ್ದಿ ಉದ್ಯೋಗ ಮಾಹಿತಿ'),
+            miyize_google_news_url('ಕರ್ನಾಟಕ ಸರ್ಕಾರಿ ಕೆಲಸ'),
+        ],
+        'fallback_query' => 'jobs career employment Karnataka government',
+    ],
+    'astrology' => [
+        'label' => 'ಭವಿಷ್ಯ', 'short' => 'ಭವಿಷ್ಯ',
+        'feeds' => [
+            miyize_google_news_url('ರಾಶಿ ಭವಿಷ್ಯ ದಿನಭವಿಷ್ಯ'),
+            miyize_google_news_url('ದಿನ ಭವಿಷ್ಯ ಜಾತಕ'),
+        ],
+        'fallback_query' => 'astrology horoscope rashi bhavishya daily',
+    ],
 ];
 
 $MIYIZE_DIRECT_FEEDS = [

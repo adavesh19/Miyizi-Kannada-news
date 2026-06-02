@@ -2246,3 +2246,61 @@ main{
   .cp-lead__img{height:180px}
   .cp-lead__title{font-size:18px}
 }
+
+/* ── PREMIUM 3D CARD ANIMATIONS & AD PLACERS ── */
+.ref-news-cell {
+  transition: transform 0.28s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.28s ease !important;
+}
+.ref-news-cell:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 16px 36px rgba(15,23,42,0.12) !important;
+}
+
+.ref-topic-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+.ref-topic-card:hover {
+  transform: translateX(4px) scale(1.015);
+  box-shadow: 0 8px 20px rgba(15,23,42,0.08) !important;
+}
+
+.ref-mini-card {
+  transition: transform 0.25s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.25s ease !important;
+}
+.ref-mini-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(15,23,42,0.1) !important;
+}
+
+.ref-more-card {
+  transition: transform 0.25s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.25s ease !important;
+}
+.ref-more-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 14px 28px rgba(15,23,42,0.12) !important;
+}
+
+/* Automated ad placers in grids */
+.ref-news-cell--ad, .ref-more-card--ad {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: linear-gradient(135deg, #fffcf7, #ffffff) !important;
+  border: 1px dashed rgba(225, 6, 0, 0.24) !important;
+  border-radius: 8px !important;
+  padding: 10px !important;
+  min-height: 140px !important;
+  text-align: center !important;
+  grid-column: span 1 !important;
+}
+.ref-news-cell--ad .hp-sponsor-block__adlabel, .ref-more-card--ad .hp-sponsor-block__adlabel {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 900;
+  color: #b35900;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 6px;
+}
+

@@ -27,12 +27,11 @@ $extraSchema = ['@context' => 'https://schema.org', '@graph' => [
 ]];
 
 // Article slices — homepage-style layout
-$lead          = $articles[0] ?? null;
-$sliderItems   = pick_items($articles, 0, 5);
-$liveItems     = pick_items($articles, 0, 10);
+// Article slices — clean layout (no hero banner)
 $trending      = pick_items($articles, 0, 12);
-$gridArticles  = array_slice($articles, 10, 40); // Main bento grid
-$moreArticles  = array_slice($articles, 50, 30); // Dense row
+$gridArticles  = array_slice($articles, 0, 48); // Main bento grid starts from index 0
+$moreArticles  = array_slice($articles, 48, 32); // Dense row
+
 
 
 page_head(
@@ -66,64 +65,6 @@ render_header($slug);
     <!-- Ticker -->
     <?php render_ticker(load_articles(10)); ?>
 
-    <!-- Hero Grid (Homepage Style) -->
-    <section class="ref-hero-grid">
-        <div class="ref-hero-main">
-            <div class="hero-slider" id="heroSlider">
-                <?php if (empty($sliderItems)): ?>
-                    <div class="empty-state">
-                        <h1>ಸುದ್ದಿ ಫೀಡ್ ಸಿದ್ಧವಾಗಿದೆ</h1>
-                        <p>RSS refresh ನಂತರ ಸುದ್ದಿ ಕಾಣಿಸುತ್ತದೆ.</p>
-                    </div>
-                <?php else: ?>
-                    <?php foreach ($sliderItems as $index => $article): ?>
-                        <a class="hero-tile<?= $index === 0 ? ' active' : '' ?>" href="<?= e(article_url($article)) ?>">
-                            <img src="<?= e(article_image($article)) ?>" alt="" loading="<?= $index === 0 ? 'eager' : 'lazy' ?>" onerror="this.onerror=null;this.src='<?= e(MIYIZE_FALLBACK_IMAGE) ?>';">
-                            <div class="hero-tile__overlay"></div>
-                            <div class="hero-tile__content">
-                                <span class="hero-tile__cat"><?= e($article['category_label'] ?? $label) ?></span>
-                                <span class="hero-tile__title"><?= e(excerpt_text((string) ($article['title'] ?? ''), 110)) ?></span>
-                                <div class="hero-tile__meta">
-                                    <span><?= e(format_kn_date((string) ($article['published_at'] ?? ''))) ?></span>
-                                    <span><?= e((string) ($article['source'] ?? 'MIYIZE')) ?></span>
-                                </div>
-                            </div>
-                        </a>
-                    <?php endforeach; ?>
-                    <div class="slider-dots">
-                        <?php foreach ($sliderItems as $index => $_): ?>
-                            <button class="slider-dot<?= $index === 0 ? ' active' : '' ?>" aria-label="Slide <?= $index + 1 ?>"></button>
-                        <?php endforeach; ?>
-                    </div>
-                <?php endif; ?>
-            </div>
-        </div>
-        <aside class="ref-live-panel">
-            <div class="section-title">
-                <h2>Live Updates</h2>
-                <a href="/feed.xml">RSS</a>
-            </div>
-            <div class="ref-live-list">
-                <?php foreach ($liveItems as $article): ?>
-                    <a class="live-item" href="<?= e(article_url($article)) ?>">
-                        <time><?= e(format_kn_date((string) ($article['published_at'] ?? ''))) ?></time>
-                        <span><?= e(excerpt_text((string) ($article['title'] ?? ''), 88)) ?></span>
-                    </a>
-                <?php endforeach; ?>
-            </div>
-        </aside>
-        <aside class="ref-tools-panel">
-            <div class="ref-tool-box">
-                <h2>Newsletter & WhatsApp</h2>
-                <p>Get fast alerts on your phone and inbox.</p>
-                <a class="button" href="/contact.php">Subscribe</a>
-            </div>
-            <div class="ref-ad-box">
-                <small>SPONSOR</small>
-                <strong>300 x 250</strong>
-            </div>
-        </aside>
-    </section>
 
     <!-- Trending strip (scrollable pills) -->
     <div class="cp-trending-strip">
@@ -215,30 +156,5 @@ render_header($slug);
 
 </div>
 </main>
-<script>
-    (function(){
-        const slider = document.getElementById('heroSlider');
-        if(!slider) return;
-        const slides = slider.querySelectorAll('.hero-tile');
-        const dots = slider.querySelectorAll('.slider-dot');
-        if(!slides.length || !dots.length) return;
-        let current = 0;
-        function show(index){
-            slides.forEach((s, i) => s.classList.toggle('active', i === index));
-            dots.forEach((d, i) => d.classList.toggle('active', i === index));
-        }
-        function next(){
-            current = (current + 1) % slides.length;
-            show(current);
-        }
-        let timer = setInterval(next, 5000);
-        dots.forEach((dot, i) => dot.addEventListener('click', () => {
-            clearInterval(timer);
-            current = i;
-            show(current);
-            timer = setInterval(next, 5000);
-        }));
-    })();
-</script>
 
 <?php render_footer(); ?>

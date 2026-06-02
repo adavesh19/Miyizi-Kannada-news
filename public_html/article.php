@@ -146,12 +146,10 @@ render_header($catSlug);
                 $content   = (string) ($article['full_content'] ?? $article['summary'] ?? '');
                 $paras     = array_values(array_filter(array_map('trim', explode("\n\n", $content))));
                 $total     = count($paras);
-                // Find mid-point (after ~40-50% of paragraphs, min 2, max total-1)
-                $midInsert = max(2, (int) round($total * 0.45));
-                $adInserted = false;
+                $adInterval = 3;
 
                 foreach ($paras as $pIdx => $p) {
-                    if ($p === '<!-- AD_SLOT -->') { continue; /* injected manually below */ }
+                    if ($p === '<!-- AD_SLOT -->') { continue; }
 
                     $safeP = e($p);
                     $safeP = str_replace(
@@ -161,11 +159,9 @@ render_header($catSlug);
                     );
                     echo "<p>{$safeP}</p>\n";
 
-                    // Mid-article sponsor after midpoint paragraph
-                    if (!$adInserted && $pIdx + 1 >= $midInsert) {
-                        $adInserted = true;
+                    // Dynamic automated ad placing every 3 paragraphs
+                    if (($pIdx + 1) % $adInterval === 0 && ($pIdx + 1) < $total) {
                         ?>
-                        <!-- MID-ARTICLE SPONSOR -->
                         <div class="art-mid-sponsor">
                             <div class="art-mid-sponsor__label">ADVERTISEMENT</div>
                             <?php render_ad_slot('article'); ?>
@@ -174,7 +170,7 @@ render_header($catSlug);
                     }
                 }
                 // If no paragraphs at all, still show mid ad
-                if (!$adInserted): ?>
+                if ($total === 0): ?>
                     <div class="art-mid-sponsor">
                         <div class="art-mid-sponsor__label">ADVERTISEMENT</div>
                         <?php render_ad_slot('article'); ?>
