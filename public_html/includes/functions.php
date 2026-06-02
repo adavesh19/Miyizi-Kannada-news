@@ -388,6 +388,7 @@ function auto_editor_pack(array $article): array
     $title = article_title_core($article);
     $source = (string) ($article['source'] ?? 'ಮೂಲ ವರದಿ');
     $category = (string) ($article['category_label'] ?? 'ಸುದ್ದಿ');
+    $catSlug = (string) ($article['category'] ?? 'latest');
     $baseSummary = excerpt_text((string) ($article['summary'] ?? ''), 220);
     if ($baseSummary === '') {
         $baseSummary = $title;
@@ -395,39 +396,91 @@ function auto_editor_pack(array $article): array
 
     $summary = $article['summary'] ?? '';
     if (mb_strlen(normalize_space((string) $summary), 'UTF-8') < 150) {
-        $summary = "{$source} ಪ್ರಕಟಿಸಿದ ವರದಿ ಪ್ರಕಾರ, {$title} ವಿಷಯಕ್ಕೆ ಸಂಬಂಧಿಸಿದ ಪ್ರಮುಖ ಅಪ್ಡೇಟ್ ಬಂದಿದೆ. {$category} ವಿಭಾಗದ ಈ ಸುದ್ದಿಯಲ್ಲಿ ಘಟನೆಯ ತಕ್ಷಣದ ಪರಿಣಾಮ, ಸಂಬಂಧಿತ ವ್ಯಕ್ತಿಗಳ ಪ್ರತಿಕ್ರಿಯೆ ಮತ್ತು ಓದುಗರಿಗೆ ಅಗತ್ಯವಾದ ತ್ವರಿತ ಮಾಹಿತಿ ಸೇರಿಸಲಾಗಿದೆ. ಈಗಿನ ಪರಿಸ್ಥಿತಿಯಲ್ಲಿ ಈ ವಿಷಯದ ಮುಂದಿನ ಬೆಳವಣಿಗೆಗಳ ಮೇಲೂ ಗಮನ ಇರಬೇಕು, ಏಕೆಂದರೆ ಒಂದೇ ಘಟನೆ ಮುಂದಿನ ಗಂಟೆಗಳಲ್ಲಿ ಹೊಸ ತಿರುವು ಪಡೆಯುವ ಸಾಧ್ಯತೆ ಇದೆ. ನಮ್ಮ ಸ್ವಯಂಚಾಲಿತ ನ್ಯೂಸ್ ಸಿಸ್ಟಮ್ ಮೂಲ ವರದಿಯನ್ನು ಆಧರಿಸಿ ಸಂಕ್ಷಿಪ್ತ ಮತ್ತು ಓದಲು ಸುಲಭವಾದ ಕನ್ನಡ ಸಾರಾಂಶ ನೀಡುತ್ತದೆ, ಮತ್ತು ಹೊಸ ಮಾಹಿತಿ ಬಂದ ತಕ್ಷಣ ಈ ಪುಟವನ್ನು ನವೀಕರಿಸುತ್ತದೆ. ಸಂಪೂರ್ಣ ವಿವರ, ಅಧಿಕೃತ ಹೇಳಿಕೆಗಳು ಮತ್ತು ಮೂಲ ವರದಿಗಾಗಿ ಕೆಳಗಿನ ಮೂಲ ಲಿಂಕ್ ಪರಿಶೀಲಿಸಿ.";
+        $summary = "{$source} ಪ್ರಕಟಿಸಿದ ವರದಿ ಪ್ರಕಾರ, {$title} ವಿಷಯಕ್ಕೆ ಸಂಬಂಧಿಸಿದ ಪ್ರಮುಖ ಅಪ್ಡೇಟ್ ಬಂದಿದೆ. {$category} ವಿಭಾಗದ ಈ ಸುದ್ದಿಯಲ್ಲಿ ಮೂಲ ವರದಿಯ ಮುಖ್ಯಾಂಶ, ಸಮಯ ಮತ್ತು ಸಂಬಂಧಿತ ಹಿನ್ನೆಲೆಯನ್ನು ಓದುಗರಿಗೆ ವೇಗವಾಗಿ ತಲುಪಿಸಲಾಗುತ್ತಿದೆ.";
     }
-
-    $keyPoints = [
-        "{$category} ವಿಭಾಗದ ಪ್ರಮುಖ ಅಪ್ಡೇಟ್.",
-        "{$source} ಮೂಲದಿಂದ ಬಂದ ವರದಿ ಆಧಾರಿತ ಸಾರಾಂಶ.",
-        "ಹೊಸ ಮಾಹಿತಿ ಬಂದಂತೆ ಈ ಪುಟವು ಫೀಡ್ refresh ಮೂಲಕ ನವೀಕರಿಸುತ್ತದೆ.",
-    ];
-
-    $tags = array_values(array_filter(array_unique([
-        $category,
-        $source,
-        'Kannada News',
-        'MIYIZE',
-    ])));
 
     $published = (string) ($article['published_at'] ?? gmdate(DATE_ATOM));
     $scoreSeed = abs(crc32($title . $source));
     $trendScore = 42 + ($scoreSeed % 57);
+    $pubLabel = format_kn_date($published);
+
+    // Title words for tags & highlight
+    $titleWords = array_values(array_filter(preg_split('/\s+/u', $title), static function(string $w): bool {
+        return mb_strlen($w, 'UTF-8') > 2;
+    }));
+    $titleWords = array_slice($titleWords, 0, 6);
+
+    $tags = array_values(array_filter(array_unique(array_merge(
+        [$category, $source],
+        $titleWords,
+        ['Kannada News', 'MIYIZE', $catSlug]
+    ))));
+    $tags = array_slice($tags, 0, 10);
+
+    // Context templates by category
+    $catContext = [
+        'karnataka' => 'ಕರ್ನಾಟಕ ರಾಜ್ಯದಲ್ಲಿ ಈ ಬೆಳವಣಿಗೆ ಸಾರ್ವಜನಿಕ ವಲಯದಲ್ಲಿ ಗಮನ ಸೆಳೆದಿದೆ. ರಾಜ್ಯ ಸರ್ಕಾರ ಮತ್ತು ಸಂಬಂಧಿತ ಇಲಾಖೆಗಳು ಈ ವಿಷಯದ ಬಗ್ಗೆ ಹೆಚ್ಚಿನ ಮಾಹಿತಿ ನೀಡಲಿವೆ ಎಂದು ನಿರೀಕ್ಷಿಸಲಾಗಿದೆ.',
+        'india' => 'ಭಾರತದಾದ್ಯಂತ ಈ ಸುದ್ದಿ ಸಾಕಷ್ಟು ಚರ್ಚೆಗೆ ಕಾರಣವಾಗಿದೆ. ಕೇಂದ್ರ ಸರ್ಕಾರದ ನೀತಿ ನಿರ್ಧಾರಗಳ ಮೇಲೆ ಇದರ ಪ್ರಭಾವ ಬೀರಬಹುದು ಎಂದು ತಜ್ಞರು ಅಭಿಪ್ರಾಯಪಡುತ್ತಾರೆ.',
+        'world' => 'ಅಂತารಾಷ್ಟ್ರೀಯ ಮಟ್ಟದಲ್ಲಿ ಈ ಬೆಳವಣಿಗೆ ಹಲವು ದೇಶಗಳ ಗಮನ ಸೆಳೆದಿದೆ. ಜಾಗತಿಕ ಭೌಗೋಳಿಕ-ರಾಜಕೀಯ ಸ್ಥಿತಿಗತಿಗಳ ಮೇಲೆ ಪರಿಣಾಮ ಬೀರಬಹುದು.',
+        'business' => 'ಆರ್ಥಿಕ ವಲಯದಲ್ಲಿ ಈ ಸುದ್ದಿ ಪ್ರಮುಖ ಪರಿಣಾಮ ಬೀರುವ ಸಾಧ್ಯತೆ ಇದೆ. ಮಾರುಕಟ್ಟೆ ವಿಶ್ಲೇಷಕರ ಪ್ರಕಾರ ಹೂಡಿಕೆದಾರರು ಎಚ್ಚರಿಕೆಯಿಂದ ಮುಂದಿನ ಬೆಳವಣಿಗೆಗಳನ್ನು ಗಮನಿಸಬೇಕು.',
+        'sports' => 'ಕ್ರೀಡಾ ವಲಯದಲ್ಲಿ ಈ ಬೆಳವಣಿಗೆ ಅಭಿಮಾನಿಗಳಲ್ಲಿ ಉತ್ಸಾಹ ಮೂಡಿಸಿದೆ. ಮುಂಬರುವ ಪಂದ್ಯಗಳ ಮೇಲೆ ಇದರ ಪ್ರಭಾವ ಗಮನಾರ್ಹ.',
+        'cinema' => 'ಚಿತ್ರರಂಗದ ಈ ಸುದ್ದಿ ಸಿನಿಮಾ ಪ್ರೇಮಿಗಳಲ್ಲಿ ಕುತೂಹಲ ಹುಟ್ಟಿಸಿದೆ. ಮನರಂಜನಾ ಉದ್ಯಮದಲ್ಲಿ ಹೊಸ ಬದಲಾವಣೆಗಳ ಸೂಚನೆ ಇದಾಗಿರಬಹುದು.',
+        'technology' => 'ತಂತ್ರಜ್ಞಾನ ಕ್ಷೇತ್ರದಲ್ಲಿ ಈ ಅಪ್ಡೇಟ್ ಬಳಕೆದಾರರ ಮೇಲೆ ನೇರ ಪರಿಣಾಮ ಬೀರುವ ಸಾಧ್ಯತೆ ಇದೆ. ಡಿಜಿಟಲ್ ಯುಗದ ವೇಗವಾಗಿ ಬದಲಾಗುತ್ತಿರುವ ಪರಿಸ್ಥಿತಿಯಲ್ಲಿ ಇಂತಹ ಬೆಳವಣಿಗೆಗಳು ಮಹತ್ವದ್ದಾಗಿವೆ.',
+        'fact-check' => 'ಸಾಮಾಜಿಕ ಮಾಧ್ಯಮಗಳಲ್ಲಿ ಹರಡುತ್ತಿರುವ ಮಾಹಿತಿಯ ಸತ್ಯಾಸತ್ಯತೆಯನ್ನು ಪರಿಶೀಲಿಸುವುದು ಅತ್ಯಂತ ಮಹತ್ವದ್ದಾಗಿದೆ. ವಿಶ್ವಾಸಾರ್ಹ ಮೂಲಗಳಿಂದ ಮಾಹಿತಿ ಪಡೆಯುವುದು ಸದಾ ಉತ್ತಮ.',
+    ];
+    $context = $catContext[$catSlug] ?? ($catContext['karnataka'] ?? '');
+
+    $highlightWord = '';
+    if (!empty($titleWords)) {
+        $randIndex = $scoreSeed % count($titleWords);
+        $highlightWord = $titleWords[$randIndex];
+    }
+    if ($highlightWord === '') {
+        $highlightWord = $category;
+    }
+
+    // Generate full original article (10 paragraphs)
+    $fullParagraphs = [
+        "{$title} ಎಂಬ ಸುದ್ದಿ {$source} ಮೂಲದಿಂದ ಬಂದಿದ್ದು, {$category} ವಿಭಾಗದಲ್ಲಿ ಗಮನಾರ್ಹ ಬೆಳವಣಿಗೆಯಾಗಿ ಪರಿಗಣಿಸಲಾಗಿದೆ. ಈ ವರದಿಯ ಮುಖ್ಯಾಂಶಗಳು ಓದುಗರಿಗೆ ಉಪಯುಕ್ತ ಮಾಹಿತಿ ನೀಡುವ ಉದ್ದೇಶದಿಂದ ಸಂಕ್ಷಿಪ್ತವಾಗಿ ಪ್ರಕಟಿಸಲಾಗಿದೆ.",
+        (mb_strlen(normalize_space((string) $summary), 'UTF-8') > 50) ? $summary : "{$source} ಪ್ರಕಟಿಸಿದ ವರದಿಯ ಪ್ರಕಾರ, ಈ ಸುದ್ದಿ {$pubLabel} ಸಮಯದಲ್ಲಿ ಬೆಳಕಿಗೆ ಬಂದಿದೆ. ಸಂಬಂಧಿತ ಅಧಿಕಾರಿಗಳು ಮತ್ತು ತಜ್ಞರು ಈ ಬೆಳವಣಿಗೆಗೆ ಪ್ರತಿಕ್ರಿಯಿಸಿದ್ದಾರೆ ಎಂದು ತಿಳಿದುಬಂದಿದೆ.",
+        $context,
+        "ಈ ವಿಷಯವನ್ನು ಹತ್ತಿರದಿಂದ ಗಮನಿಸುತ್ತಿರುವ ವಿಶ್ಲೇಷಕರ ಪ್ರಕಾರ, ಮುಂಬರುವ ದಿನಗಳಲ್ಲಿ ಹೆಚ್ಚಿನ ಸ್ಪಷ್ಟತೆ ಮೂಡುವ ನಿರೀಕ್ಷೆ ಇದೆ. ಇದು ಕೇವಲ ಒಂದು ಘಟನೆಯಲ್ಲ, ಬದಲಾಗಿ ಭವಿಷ್ಯದ ಅನೇಕ ಮಹತ್ವದ ಬೆಳವಣಿಗೆಗಳಿಗೆ ನಾಂದಿಯಾಗಬಹುದು.",
+        "<!-- AD_SLOT -->",
+        "{$category} ವಿಭಾಗದ ಓದುಗರು ಈ ಬೆಳವಣಿಗೆಯನ್ನು ತಮ್ಮ ಆದ್ಯತೆಯ ಮಾಹಿತಿಯಾಗಿ ಪರಿಗಣಿಸಬಹುದು. ಪ್ರಸ್ತುತ ಸನ್ನಿವೇಶದಲ್ಲಿ, ನಿಖರವಾದ ಮಾಹಿತಿಯನ್ನು ಪಡೆಯುವುದು ಅತ್ಯಗತ್ಯವಾಗಿದೆ.",
+        "ಸಾರ್ವಜನಿಕ ವಲಯದಲ್ಲಿ ಈ ಬಗ್ಗೆ ಪರ-ವಿರೋಧ ಚರ್ಚೆಗಳು ನಡೆಯುತ್ತಿವೆ. ಸಾಮಾಜಿಕ ಜಾಲತಾಣಗಳಲ್ಲಿಯೂ ಈ ವಿಚಾರವು ಸಾಕಷ್ಟು ಸದ್ದು ಮಾಡುತ್ತಿದ್ದು, ನೆಟ್ಟಿಗರು ತಮ್ಮ ಅಭಿಪ್ರಾಯಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳುತ್ತಿದ್ದಾರೆ.",
+        "ತಜ್ಞರ ಅಭಿಪ್ರಾಯದಂತೆ, ಇಂತಹ ಘಟನೆಗಳು ಸಮಾಜದ ಮೇಲೆ ದೀರ್ಘಕಾಲೀನ ಪ್ರಭಾವ ಬೀರಬಲ್ಲವು. ಆದ್ದರಿಂದ ಸಂಬಂಧಪಟ್ಟ ಪ್ರಾಧಿಕಾರಗಳು ಸೂಕ್ತ ಕ್ರಮ ಕೈಗೊಳ್ಳುವುದು ಅನಿವಾರ್ಯವಾಗಿದೆ.",
+        "MIYIZE Kannada News ತಂಡವು ಈ ಸುದ್ದಿಯ ಹಿನ್ನೆಲೆ ಮತ್ತು ಮುಂದಿನ ಬೆಳವಣಿಗೆಗಳನ್ನು ನಿರಂತರವಾಗಿ ಟ್ರ್ಯಾಕ್ ಮಾಡುತ್ತಿದೆ. ಸಂಪೂರ್ಣ ಮತ್ತು ನಿಖರ ವರದಿಗಾಗಿ ಕೆಳಗಿನ ಮೂಲ ಲಿಂಕ್ ಪರಿಶೀಲಿಸಿ.",
+        "ಹಕ್ಕುತ್ಯಾಗ: ಈ ಲೇಖನವು {$source} ಮೂಲ ವರದಿಯ ಸಾರಾಂಶ ಮತ್ತು ವಿಶ್ಲೇಷಣೆಯನ್ನು ಒಳಗೊಂಡಿದೆ. ಸಂಪೂರ್ಣ ವಿವರಗಳಿಗೆ ಮೂಲ ವೆಬ್‌ಸೈಟ್ ಭೇಟಿ ನೀಡಿ."
+    ];
+
+    $fullContent = implode("\n\n", $fullParagraphs);
+    if (mb_strlen($highlightWord, 'UTF-8') > 3) {
+        $regex = '/(' . preg_quote($highlightWord, '/') . ')/iu';
+        $fullContent = preg_replace($regex, '<span class="highlight">$1</span>', $fullContent) ?? $fullContent;
+    }
 
     $article['summary'] = normalize_space((string) $summary);
+    $article['full_content'] = isset($article['full_content']) && mb_strlen($article['full_content'], 'UTF-8') > mb_strlen($fullContent, 'UTF-8') ? $article['full_content'] : $fullContent;
     $article['seo_title'] = excerpt_text($title . ' | ' . MIYIZE_SITE_NAME, 68);
     $article['meta_description'] = excerpt_text((string) $article['summary'], 155);
-    $article['key_points'] = $article['key_points'] ?? $keyPoints;
-    $article['tags'] = $article['tags'] ?? $tags;
+    $article['key_points'] = [
+        "{$category} ವಿಭಾಗದ ಪ್ರಮುಖ ಅಪ್ಡೇಟ್ — {$pubLabel} ಪ್ರಕಟಣೆ.",
+        "{$source} ಮೂಲದಿಂದ ಬಂದ ವರದಿ ಆಧಾರಿತ ಸಾರಾಂಶ ಮತ್ತು ವಿಶ್ಲೇಷಣೆ.",
+        "ಮುಂಬರುವ ಬೆಳವಣಿಗೆಗಳ ಬಗ್ಗೆ ನಿರಂತರ ಮಾನಿಟರಿಂಗ್ ನಡೆಯುತ್ತಿದೆ.",
+        "ಹೊಸ ಮಾಹಿತಿ ಬಂದಂತೆ ಈ ಪುಟವು ಫೀಡ್ refresh ಮೂಲಕ ನವೀಕರಿಸುತ್ತದೆ.",
+        "ಸಂಪೂರ್ಣ ವಿವರಗಳಿಗಾಗಿ ಮೂಲ ವೆಬ್‌ಸೈಟ್ ಲಿಂಕ್ ಕೆಳಗಿದೆ."
+    ];
+    $article['tags'] = $tags;
     $article['trend_score'] = $article['trend_score'] ?? $trendScore;
-    $article['reading_minutes'] = max(1, (int) ceil(mb_strlen((string) $article['summary'], 'UTF-8') / 650));
+    $article['reading_minutes'] = max(1, (int) ceil(mb_strlen((string) $article['full_content'], 'UTF-8') / 650));
     $article['auto_written'] = true;
-    $article['quick_facts'] = $article['quick_facts'] ?? [
+    $article['quick_facts'] = [
         ['label' => 'ವಿಭಾಗ', 'value' => $category],
         ['label' => 'ಮೂಲ', 'value' => $source],
-        ['label' => 'ಪ್ರಕಟಣೆ', 'value' => format_kn_date($published)],
-        ['label' => 'ಟ್ರೆಂಡ್', 'value' => $trendScore . '/100'],
+        ['label' => 'ಪ್ರಕಟಣೆ', 'value' => $pubLabel],
+        ['label' => 'ಸ್ಥಿತಿ', 'value' => 'ಪ್ರಕಟಿತ'],
+        ['label' => 'ಟ್ರೆಂಡ್ ಸ್ಕೋರ್', 'value' => "{$trendScore}/100"],
+        ['label' => 'ಓದುವ ಸಮಯ', 'value' => $article['reading_minutes'] . ' ನಿಮಿಷ']
     ];
 
     return $article;

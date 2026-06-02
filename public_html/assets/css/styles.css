@@ -723,9 +723,9 @@ body{
 }
 
 .reveal-up{
-  opacity:0;
-  transform:translateY(24px) scale(.99);
-  filter:blur(2px);
+  opacity:1;
+  transform:translateY(0) scale(1);
+  filter:blur(0);
 }
 .reveal-up.is-visible{
   opacity:1;

@@ -49,10 +49,28 @@ $youtubeEmbed = 'https://www.youtube.com/embed?listType=search&list=' . $youtube
             <figure>
                 <img src="<?= e(article_image($article)) ?>" alt="" loading="eager" onerror="this.onerror=null;this.src='<?= e(MIYIZE_FALLBACK_IMAGE) ?>';">
             </figure>
-            <p class="article-summary"><?= e((string) ($article['summary'] ?? '')) ?></p>
+            <div class="article-content">
+                <?php
+                $content = (string) ($article['full_content'] ?? $article['summary'] ?? '');
+                $paras = array_filter(array_map('trim', explode("\n\n", $content)));
+                foreach ($paras as $p) {
+                    if ($p === '<!-- AD_SLOT -->') {
+                        render_ad_slot('article');
+                        continue;
+                    }
+                    $safeP = e($p);
+                    $safeP = str_replace(
+                        ['&lt;span class=&quot;highlight&quot;&gt;', '&lt;/span&gt;'],
+                        ['<span class="highlight">', '</span>'],
+                        $safeP
+                    );
+                    echo "<p>{$safeP}</p>\n";
+                }
+                ?>
+            </div>
             <section class="article-insight" aria-label="ಮುಖ್ಯಾಂಶಗಳು">
                 <div>
-                    <h2>ವೇಗದ ಮುಖ್ಯಾಂಶಗಳು</h2>
+                    <h2>ಪ್ರಮುಖ ಮುಖ್ಯಾಂಶಗಳು (Main Highlights)</h2>
                     <ul>
                         <?php foreach (($article['key_points'] ?? []) as $point): ?>
                             <li><?= e((string) $point) ?></li>

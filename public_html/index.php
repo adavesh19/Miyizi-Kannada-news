@@ -4,140 +4,294 @@ declare(strict_types=1);
 require_once __DIR__ . '/includes/layout.php';
 
 maybe_refresh_news();
-$articles = load_articles(48);
-$lead = $articles[0] ?? null;
-$side = array_slice($articles, 1, 4);
-$live = array_slice($articles, 0, 8);
+$items = load_articles(96);
+
+function pick_items(array $items, int $start, int $count): array
+{
+    if (empty($items)) {
+        return [];
+    }
+    $picked = [];
+    $total = count($items);
+    for ($i = 0; $i < $count; $i++) {
+        $picked[] = $items[($start + $i) % $total];
+    }
+    return $picked;
+}
+
+$lead = $items[0] ?? null;
+$sliderItems = pick_items($items, 0, 5);
+$liveItems = pick_items($items, 0, 10);
+$trendingItems = pick_items($items, 0, 12);
+$tazaItems = pick_items($items, 1, 12);
+$moreGridItems = pick_items($items, 12, 48);
+$denseGridItems = pick_items($items, 24, 54);
+
+$karnatakaBaseItems = articles_for_category('karnataka', 16);
+if (count($karnatakaBaseItems) >= 10) {
+    $karnatakaItems = array_slice($karnatakaBaseItems, 0, 16);
+} else {
+    $karnatakaItems = array_slice(array_merge($karnatakaBaseItems, pick_items($items, 4, 16)), 0, 16);
+}
+
+$sectionSlugs = ['india', 'world', 'business', 'sports', 'cinema', 'technology', 'fact-check'];
 
 page_head(MIYIZE_SITE_NAME, MIYIZE_SITE_TAGLINE, '/');
 render_header('latest');
 ?>
 <main id="main">
-    <div class="container">
-        <?php render_ticker($articles); ?>
-        <?php render_ad_slot('wide'); ?>
-
-        <section class="hero-news" aria-label="ಮುಖ್ಯ ಸುದ್ದಿ">
-            <div class="hero-news__main">
-                <?php if ($lead): ?>
-                    <?php render_article_card($lead, 'lead'); ?>
-                <?php else: ?>
-                    <article class="empty-state">
-                        <h1>ಸುದ್ದಿ ಫೀಡ್ ಸಿದ್ಧವಾಗಿದೆ</h1>
-                        <p>Hostinger cron job ಓಡಿದ ನಂತರ ಇಲ್ಲಿ ತಾಜಾ ಕನ್ನಡ ಸುದ್ದಿ ಕಾಣಿಸುತ್ತದೆ.</p>
-                    </article>
-                <?php endif; ?>
+    <div class="container ref-home">
+        <!-- Hero Grid -->
+        <section class="ref-hero-grid">
+            <div class="ref-hero-main">
+                <div class="hero-slider" id="heroSlider">
+                    <?php if (empty($sliderItems)): ?>
+                        <div class="empty-state">
+                            <h1>ಸುದ್ದಿ ಫೀಡ್ ಸಿದ್ಧವಾಗಿದೆ</h1>
+                            <p>RSS refresh ನಂತರ ಸುದ್ದಿ ಕಾಣಿಸುತ್ತದೆ.</p>
+                        </div>
+                    <?php else: ?>
+                        <?php foreach ($sliderItems as $index => $article): ?>
+                            <a class="hero-tile<?= $index === 0 ? ' active' : '' ?>" href="<?= e(article_url($article)) ?>">
+                                <img src="<?= e(article_image($article)) ?>" alt="" loading="<?= $index === 0 ? 'eager' : 'lazy' ?>" onerror="this.onerror=null;this.src='<?= e(MIYIZE_FALLBACK_IMAGE) ?>';">
+                                <div class="hero-tile__overlay"></div>
+                                <div class="hero-tile__content">
+                                    <span class="hero-tile__cat"><?= e($article['category_label'] ?? 'ತಾಜา ಸುದ್ದಿ') ?></span>
+                                    <span class="hero-tile__title"><?= e(excerpt_text((string) ($article['title'] ?? ''), 110)) ?></span>
+                                    <div class="hero-tile__meta">
+                                        <span><?= e(format_kn_date((string) ($article['published_at'] ?? ''))) ?></span>
+                                        <span><?= e((string) ($article['source'] ?? 'MIYIZE')) ?></span>
+                                    </div>
+                                </div>
+                            </a>
+                        <?php endforeach; ?>
+                        <div class="slider-dots">
+                            <?php foreach ($sliderItems as $index => $_): ?>
+                                <button class="slider-dot<?= $index === 0 ? ' active' : '' ?>" aria-label="Slide <?= $index + 1 ?>"></button>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
             </div>
-            <div class="hero-news__side">
-                <?php foreach ($side as $article): ?>
-                    <?php render_article_card($article, 'compact'); ?>
-                <?php endforeach; ?>
-            </div>
-            <aside class="live-rail" aria-label="ಲೈವ್ ಅಪ್ಡೇಟ್">
+            <aside class="ref-live-panel">
                 <div class="section-title">
-                    <h2>ಲೈವ್</h2>
+                    <h2>Live Updates</h2>
                     <a href="/feed.xml">RSS</a>
                 </div>
-                <?php foreach ($live as $article): ?>
-                    <a class="live-item" href="<?= e(article_url($article)) ?>">
-                        <time><?= e(format_kn_date((string) ($article['published_at'] ?? ''))) ?></time>
-                        <span><?= e((string) ($article['title'] ?? '')) ?></span>
-                    </a>
-                <?php endforeach; ?>
+                <div class="ref-live-list">
+                    <?php foreach ($liveItems as $article): ?>
+                        <a class="live-item" href="<?= e(article_url($article)) ?>">
+                            <time><?= e(format_kn_date((string) ($article['published_at'] ?? ''))) ?></time>
+                            <span><?= e(excerpt_text((string) ($article['title'] ?? ''), 88)) ?></span>
+                        </a>
+                    <?php endforeach; ?>
+                </div>
+            </aside>
+            <aside class="ref-tools-panel">
+                <div class="ref-tool-box">
+                    <h2>Newsletter & WhatsApp</h2>
+                    <p>Get fast alerts on your phone and inbox.</p>
+                    <a class="button" href="/contact.php">Subscribe</a>
+                </div>
+                <div class="ref-ad-box">
+                    <small>SPONSOR</small>
+                    <strong>300 x 250</strong>
+                </div>
             </aside>
         </section>
 
-        <section class="follow-strip" aria-label="ಫಾಲೋ">
-            <div>
-                <h2>WhatsApp ಮತ್ತು Newsletter ಅಪ್ಡೇಟ್</h2>
-                <p>ಪ್ರಮುಖ ಸುದ್ದಿ, ಫ್ಯಾಕ್ಟ್ ಚೆಕ್, ಟೆಕ್ ಮತ್ತು ಉದ್ಯೋಗ ಅಪ್ಡೇಟ್‌ಗಳನ್ನು ಒಂದೇ ಜಾಗದಲ್ಲಿ ಪಡೆಯಿರಿ.</p>
-            </div>
-            <form class="subscribe" action="/contact.php" method="get">
-                <input type="email" name="email" placeholder="email@example.com" aria-label="Email">
-                <button type="submit">Subscribe</button>
-            </form>
-        </section>
-
-        <section class="signal-board" aria-label="ಸುದ್ದಿ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್">
-            <div class="signal-board__panel">
+        <!-- Second Grid -->
+        <section class="ref-second-grid">
+            <!-- Taza News -->
+            <div class="ref-block">
                 <div class="section-title">
-                    <h2>ಟ್ರೆಂಡ್ ಸ್ಕ್ಯಾನರ್</h2>
-                    <a href="/api/latest.php">Live API</a>
+                    <h2>ತಾಜಾ ಸುದ್ದಿ</h2>
+                    <a href="/">All News</a>
                 </div>
-                <div class="trend-bars">
-                    <?php foreach (array_slice($articles, 0, 5) as $article): ?>
-                        <?php $score = (int) ($article['trend_score'] ?? 55); ?>
-                        <a class="trend-bar" href="<?= e(article_url($article)) ?>">
-                            <span><?= e(excerpt_text((string) ($article['title'] ?? ''), 54)) ?></span>
-                            <strong><?= e((string) $score) ?></strong>
-                            <i style="--score: <?= e((string) min(100, max(8, $score))) ?>%"></i>
+                <div class="ref-mini-grid">
+                    <?php foreach ($tazaItems as $article): ?>
+                        <a class="ref-mini-card" href="<?= e(article_url($article)) ?>">
+                            <img src="<?= e(article_image($article)) ?>" alt="" loading="lazy" onerror="this.onerror=null;this.src='<?= e(MIYIZE_FALLBACK_IMAGE) ?>';">
+                            <h3><?= e(excerpt_text((string) ($article['title'] ?? ''), 74)) ?></h3>
+                            <span><?= e(format_kn_date((string) ($article['published_at'] ?? ''))) ?></span>
                         </a>
                     <?php endforeach; ?>
                 </div>
             </div>
-            <div class="signal-board__panel">
+
+            <!-- Karnataka News -->
+            <div class="ref-block">
                 <div class="section-title">
-                    <h2>ವಿಭಾಗ ಟೇಬಲ್</h2>
-                    <a href="/sitemap.xml">SEO</a>
+                    <h2>ಕರ್ನಾಟಕ</h2>
+                    <a href="<?= e(category_url('karnataka')) ?>">All</a>
                 </div>
-                <table class="news-table">
-                    <thead>
-                        <tr>
-                            <th>ವಿಭಾಗ</th>
-                            <th>ಸುದ್ದಿ</th>
-                            <th>ಸ್ಥಿತಿ</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach (categories() as $slug => $category): ?>
-                            <?php if ($slug === 'latest') { continue; } ?>
-                            <?php $count = count(articles_for_category($slug, 0)); ?>
-                            <tr>
-                                <td><a href="<?= e(category_url($slug)) ?>"><?= e((string) $category['label']) ?></a></td>
-                                <td><?= e((string) $count) ?></td>
-                                <td><span class="status-pill">Auto</span></td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+                <div class="ref-karnataka-wrap">
+                    <?php
+                    $kLead = $karnatakaItems[0] ?? null;
+                    $kList = array_slice($karnatakaItems, 1, 12);
+                    ?>
+                    <?php if ($kLead): ?>
+                        <a class="ref-karnataka-image" href="<?= e(article_url($kLead)) ?>">
+                            <img src="<?= e(article_image($kLead)) ?>" alt="" loading="lazy" onerror="this.onerror=null;this.src='<?= e(MIYIZE_FALLBACK_IMAGE) ?>';">
+                        </a>
+                        <h3><a href="<?= e(article_url($kLead)) ?>"><?= e(excerpt_text((string) ($kLead['title'] ?? ''), 90)) ?></a></h3>
+                        <span><?= e(format_kn_date((string) ($kLead['published_at'] ?? ''))) ?></span>
+                        <div class="ref-k-list">
+                            <?php foreach ($kList as $article): ?>
+                                <a class="ref-k-mini" href="<?= e(article_url($article)) ?>">
+                                    <img src="<?= e(article_image($article)) ?>" alt="" loading="lazy" onerror="this.onerror=null;this.src='<?= e(MIYIZE_FALLBACK_IMAGE) ?>';">
+                                    <span><?= e(excerpt_text((string) ($article['title'] ?? ''), 66)) ?></span>
+                                </a>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php else: ?>
+                        <p>No Karnataka stories yet.</p>
+                    <?php endif; ?>
+                </div>
+            </div>
+
+            <!-- Trending -->
+            <div class="ref-block">
+                <div class="section-title">
+                    <h2>Trending</h2>
+                </div>
+                <div class="ref-trending-list">
+                    <?php foreach ($trendingItems as $index => $article): ?>
+                        <a class="compact-item" href="<?= e(article_url($article)) ?>">
+                            <span class="trend-num"><?= $index + 1 ?></span>
+                            <span class="compact-text"><?= e(excerpt_text((string) ($article['title'] ?? ''), 72)) ?></span>
+                        </a>
+                    <?php endforeach; ?>
+                </div>
             </div>
         </section>
 
-        <section class="category-wall">
+        <!-- Category Columns Row -->
+        <section class="ref-category-row">
+            <?php foreach ($sectionSlugs as $slug): ?>
+                <?php
+                $label = categories()[$slug]['label'] ?? $slug;
+                $list = articles_for_category($slug, 4);
+                if (empty($list)) { continue; }
+                $first = $list[0];
+                $rest = array_slice($list, 1);
+                ?>
+                <section class="ref-category-col">
+                    <div class="ref-col-head">
+                        <h2><?= e($label) ?></h2>
+                        <a href="<?= e(category_url($slug)) ?>">More</a>
+                    </div>
+                    <a class="ref-col-image" href="<?= e(article_url($first)) ?>">
+                        <img src="<?= e(article_image($first)) ?>" alt="" loading="lazy" onerror="this.onerror=null;this.src='<?= e(MIYIZE_FALLBACK_IMAGE) ?>';">
+                    </a>
+                    <h3><a href="<?= e(article_url($first)) ?>"><?= e(excerpt_text((string) ($first['title'] ?? ''), 72)) ?></a></h3>
+                    <ul>
+                        <?php foreach ($rest as $article): ?>
+                            <li><a href="<?= e(article_url($article)) ?>"><?= e(excerpt_text((string) ($article['title'] ?? ''), 66)) ?></a></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </section>
+            <?php endforeach; ?>
+        </section>
+
+        <!-- Topic Sections Wall -->
+        <section class="ref-topic-wall">
             <div class="section-title">
-                <h2>ಎಲ್ಲಾ ವಿಭಾಗಗಳು</h2>
+                <h2>Category Grids</h2>
+                <a href="/sitemap.xml">All Sections</a>
+            </div>
+            <div class="ref-topic-wall-grid">
+                <?php foreach ($sectionSlugs as $sectionIndex => $slug): ?>
+                    <?php
+                    $label = categories()[$slug]['label'] ?? $slug;
+                    $list = articles_for_category($slug, 8);
+                    if (count($list) >= 5) {
+                        $sectionItems = array_slice($list, 0, 8);
+                    } else {
+                        $sectionItems = array_slice(array_merge($list, pick_items($items, $sectionIndex * 6, 8)), 0, 8);
+                    }
+                    ?>
+                    <section class="ref-topic-section">
+                        <div class="ref-col-head">
+                            <h2><?= e($label) ?></h2>
+                            <a href="<?= e(category_url($slug)) ?>">More</a>
+                        </div>
+                        <div class="ref-topic-grid">
+                            <?php foreach ($sectionItems as $article): ?>
+                                <a class="ref-topic-card" href="<?= e(article_url($article)) ?>">
+                                    <img src="<?= e(article_image($article)) ?>" alt="" loading="lazy" onerror="this.onerror=null;this.src='<?= e(MIYIZE_FALLBACK_IMAGE) ?>';">
+                                    <h3><?= e(excerpt_text((string) ($article['title'] ?? ''), 64)) ?></h3>
+                                    <span><?= e(format_kn_date((string) ($article['published_at'] ?? ''))) ?></span>
+                                </a>
+                            <?php endforeach; ?>
+                        </div>
+                    </section>
+                <?php endforeach; ?>
+            </div>
+        </section>
+
+        <!-- All News Dense Grid -->
+        <section class="ref-dense-section">
+            <div class="section-title">
+                <h2>All News Grid</h2>
+                <a href="/feed.xml">Live Feed</a>
+            </div>
+            <div class="ref-news-grid">
+                <?php foreach ($denseGridItems as $index => $article): ?>
+                    <a class="ref-news-cell<?= $index % 9 === 0 ? ' is-wide' : '' ?>" href="<?= e(article_url($article)) ?>">
+                        <img src="<?= e(article_image($article)) ?>" alt="" loading="lazy" onerror="this.onerror=null;this.src='<?= e(MIYIZE_FALLBACK_IMAGE) ?>';">
+                        <span><?= e($article['category_label'] ?? 'News') ?></span>
+                        <h3><?= e(excerpt_text((string) ($article['title'] ?? ''), $index % 9 === 0 ? 96 : 68)) ?></h3>
+                        <small><?= e(format_kn_date((string) ($article['published_at'] ?? ''))) ?></small>
+                    </a>
+                <?php endforeach; ?>
+            </div>
+        </section>
+
+        <!-- More Stories Grid -->
+        <section class="ref-more-section">
+            <div class="section-title">
+                <h2>More Stories</h2>
                 <a href="/sitemap.xml">Sitemap</a>
             </div>
-            <div class="category-wall__grid">
-                <?php foreach (categories() as $slug => $category): ?>
-                    <?php if ($slug === 'latest') { continue; } ?>
-                    <?php $categoryArticles = articles_for_category($slug, 4); ?>
-                    <?php if (!$categoryArticles) { continue; } ?>
-                    <?php $first = $categoryArticles[0]; ?>
-                    <section class="category-column">
-                        <div class="category-column__head">
-                            <h2><?= e((string) $category['label']) ?></h2>
-                            <a href="<?= e(category_url($slug)) ?>">ಎಲ್ಲಾ</a>
-                        </div>
-                        <a class="category-column__image" href="<?= e(article_url($first)) ?>">
-                            <img src="<?= e(article_image($first)) ?>" alt="" loading="lazy" onerror="this.onerror=null;this.src='<?= e(MIYIZE_FALLBACK_IMAGE) ?>';">
-                        </a>
-                        <h3><a href="<?= e(article_url($first)) ?>"><?= e((string) ($first['title'] ?? '')) ?></a></h3>
-                        <div class="meta-row">
-                            <span><?= e(format_kn_date((string) ($first['published_at'] ?? ''))) ?></span>
-                            <span><?= e((string) ($first['source'] ?? 'Source')) ?></span>
-                        </div>
-                        <?php if (count($categoryArticles) > 1): ?>
-                            <ul>
-                                <?php foreach (array_slice($categoryArticles, 1) as $item): ?>
-                                    <li><a href="<?= e(article_url($item)) ?>"><?= e((string) ($item['title'] ?? '')) ?></a></li>
-                                <?php endforeach; ?>
-                            </ul>
-                        <?php endif; ?>
-                    </section>
+            <div class="ref-more-grid">
+                <?php foreach ($moreGridItems as $article): ?>
+                    <a class="ref-more-card" href="<?= e(article_url($article)) ?>">
+                        <img src="<?= e(article_image($article)) ?>" alt="" loading="lazy" onerror="this.onerror=null;this.src='<?= e(MIYIZE_FALLBACK_IMAGE) ?>';">
+                        <strong><?= e($article['category_label'] ?? 'News') ?></strong>
+                        <h3><?= e(excerpt_text((string) ($article['title'] ?? ''), 74)) ?></h3>
+                        <span><?= e(format_kn_date((string) ($article['published_at'] ?? ''))) ?></span>
+                    </a>
                 <?php endforeach; ?>
             </div>
         </section>
     </div>
 </main>
+
+<script>
+    (function(){
+        const slider = document.getElementById('heroSlider');
+        if(!slider) return;
+        const slides = slider.querySelectorAll('.hero-tile');
+        const dots = slider.querySelectorAll('.slider-dot');
+        if(!slides.length || !dots.length) return;
+        let current = 0;
+        function show(index){
+            slides.forEach((s, i) => s.classList.toggle('active', i === index));
+            dots.forEach((d, i) => d.classList.toggle('active', i === index));
+        }
+        function next(){
+            current = (current + 1) % slides.length;
+            show(current);
+        }
+        let timer = setInterval(next, 5000);
+        dots.forEach((dot, i) => dot.addEventListener('click', () => {
+            clearInterval(timer);
+            current = i;
+            show(current);
+            timer = setInterval(next, 5000);
+        }));
+    })();
+</script>
+
 <?php render_footer(); ?>
