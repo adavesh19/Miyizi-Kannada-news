@@ -309,16 +309,26 @@ foreach ($categories as $catSlug => $catData) {
             if ($webhookUrl !== '' && filter_var($webhookUrl, FILTER_VALIDATE_URL)) {
                 $webhookData = json_encode([
                     'title'          => $article['title'],
-                    'social_caption' => $article['social_caption'],
-                    'article_url'    => MIYIZE_SITE_URL . article_url($article),
-                    'image_url'      => MIYIZE_SITE_URL . '/api/social-image.php?slug=' . urlencode($article['slug'])
-                ]);
-                http_post($webhookUrl, $webhookData, ['Content-Type: application/json']);
-                agent_log('info', "Sent webhook to Make.com for {$rawTitle}");
+                    'social_caption' => $article['social_caption'] ?? $article['summary'],
+                    'article_url'    => MIYIZE_SITE_URL . '/article/' . $article['slug'],
+                    'image_url'      => article_image($article)
+                ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+
+                $ch = curl_init($webhookUrl);
+                curl_setopt($ch, CURLOPT_POST, 1);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $webhookData);
+                curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+                @curl_exec($ch);
+                @curl_close($ch);
+                
+                agent_log('info', "Triggered Make.com webhook for: {$article['slug']}");
             }
 
             // Small delay between articles to avoid rate limits
             if (!$dryRun) { usleep(200_000); }
+            $totalFetched++;
         }
     }
 }
