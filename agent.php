@@ -55,7 +55,7 @@ function agent_log(string $level, string $msg): void {
 }
 
 // ── Gemini AI Writer (free tier) ──────────────────────────────────────────────
-function gemini_write_article(array $article): ?string {
+function gemini_write_article(array $article): ?array {
     $apiKey = getenv('MIYIZE_GEMINI_KEY') ?: getenv('GEMINI_API_KEY') ?: '';
     if ($apiKey === '') { return null; }
 
@@ -65,26 +65,23 @@ function gemini_write_article(array $article): ?string {
     $cat     = (string) ($article['category_label'] ?? '');
 
     $prompt = <<<PROMPT
-You are a professional Kannada news journalist. Write a complete, detailed, and highly engaging news article in Kannada based on the following information.
-
+You are a professional Kannada news journalist and social media manager.
 Title: {$title}
 Summary: {$summary}
 Source: {$source}
 Category: {$cat}
 
-Requirements:
-- IMPORTANT: Even if the provided Summary is extremely short, generic, or only contains 1 or 2 sentences, you must use your general knowledge to fully expand the topic. Write a comprehensive, detailed article of 400 to 800 words containing 5 to 8 paragraphs. Deeply elaborate on the background context, implications, key figures or organizations, and future expectations. Never explain the lack of info; write a full, rich news report based on the Title alone.
-- SEO Optimization: Naturally weave highly-searched Kannada news keywords throughout the article to ensure it ranks #1 on Google. For example, seamlessly include terms like "ಕನ್ನಡ ಸುದ್ದಿ" (Kannada news), "ತಾಜಾ ವಾರ್ತೆ" (Breaking news), "ಕರ್ನಾಟಕ" (Karnataka), and trending keywords related to the topic.
-- Do NOT output any introductory or concluding meta-text, explanations, or notes (e.g. do not say things like 'Here is the expanded news...', 'Based on the short summary...', 'I have used my general knowledge...', or 'Here are some additional explanations...'). The output must start directly with the news content and contain only the article itself.
-- Do NOT restrict the length or paragraph count to a fixed format. Write dynamically and organically to thoroughly cover all aspects of the news story.
-- Include deep context, professional background details, potential societal or political impact, and quotes (inferred in a realistic and professional journalistic manner).
-- Start with the most important news fact.
-- Use rich, formal, and appealing Kannada vocabulary.
-- Do NOT include markdown headers, bold titles, or the title in the body.
-- Separate paragraphs with a blank line.
-- Write only in Kannada (using the Kannada script).
+Output MUST be a valid JSON object with EXACTLY two string keys: "article" and "social_caption". Do not output any markdown formatting like ```json.
 
-Write the article now:
+"article" rules:
+- Expand the topic into a detailed 400-800 word Kannada news article with 5-8 paragraphs.
+- Weave highly-searched Kannada keywords for SEO ("ಕನ್ನಡ ಸುದ್ದಿ", etc).
+- Use rich, formal Kannada. Separate paragraphs with a blank line (\n\n).
+
+"social_caption" rules:
+- Write a highly viral, engaging social media caption in Kannada (max 280 characters).
+- Include 1-2 emojis and 3-5 trending hashtags (e.g., #KannadaNews #{$cat}).
+- Do NOT include the link (we will append the link automatically).
 PROMPT;
 
     $payload = json_encode([
@@ -92,6 +89,7 @@ PROMPT;
         'generationConfig' => [
             'temperature' => 0.75,
             'maxOutputTokens' => 2048,
+            'responseMimeType' => 'application/json',
         ],
     ]);
 
@@ -100,8 +98,16 @@ PROMPT;
     if (!$response) { return null; }
 
     $data = json_decode($response, true);
-    $text = $data['candidates'][0]['content']['parts'][0]['text'] ?? '';
-    return trim($text) ?: null;
+    $text = $data['candidates'][0]['content']['parts'][0]['text'] ?? '{}';
+    $json = json_decode($text, true);
+
+    if (is_array($json) && !empty($json['article'])) {
+        return [
+            'content' => trim($json['article']),
+            'social'  => trim($json['social_caption'] ?? ''),
+        ];
+    }
+    return null;
 }
 
 // ── Template-based article writer (fallback, no AI key needed) ────────────────
@@ -254,12 +260,15 @@ foreach ($categories as $catSlug => $catData) {
 
             // Write full article content (AI or template)
             agent_log('info', "Writing article: {$rawTitle}");
-            $fullContent = gemini_write_article($article);
-            if ($fullContent) {
+            $aiResult = gemini_write_article($article);
+            if ($aiResult) {
+                $fullContent = $aiResult['content'];
+                $article['social_caption'] = $aiResult['social'];
                 $article['ai_generated'] = true;
                 agent_log('info', "AI-written article ({$catSlug}): " . mb_strlen($fullContent) . " chars");
             } else {
                 $fullContent = template_write_article($article);
+                $article['social_caption'] = "{$rawTitle} - ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗಿ ಲಿಂಕ್ ಕ್ಲಿಕ್ ಮಾಡಿ. #KannadaNews";
                 agent_log('info', "Template-written article ({$catSlug})");
             }
             $article['full_content'] = $fullContent;
@@ -294,6 +303,19 @@ foreach ($categories as $catSlug => $catData) {
             $existingUrls[$rawUrl] = true;
             $catCount++;
             $totalFetched++;
+
+            // Trigger Make.com webhook for social media auto-posting
+            $webhookUrl = getenv('MIYIZE_MAKE_WEBHOOK') ?: '';
+            if ($webhookUrl !== '' && filter_var($webhookUrl, FILTER_VALIDATE_URL)) {
+                $webhookData = json_encode([
+                    'title'          => $article['title'],
+                    'social_caption' => $article['social_caption'],
+                    'article_url'    => MIYIZE_SITE_URL . article_url($article),
+                    'image_url'      => MIYIZE_SITE_URL . '/api/social-image.php?slug=' . urlencode($article['slug'])
+                ]);
+                http_post($webhookUrl, $webhookData, ['Content-Type: application/json']);
+                agent_log('info', "Sent webhook to Make.com for {$rawTitle}");
+            }
 
             // Small delay between articles to avoid rate limits
             if (!$dryRun) { usleep(200_000); }
