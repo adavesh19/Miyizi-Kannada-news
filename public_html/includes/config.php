@@ -5,7 +5,7 @@ date_default_timezone_set('Asia/Kolkata');
 
 define('MIYIZE_SITE_NAME', 'MIYIZE Kannada News');
 define('MIYIZE_SITE_TAGLINE', 'ವೇಗದ, ವಿಶ್ವಾಸಾರ್ಹ ಕನ್ನಡ ಸುದ್ದಿ');
-define('MIYIZE_SITE_URL', rtrim((string) (getenv('MIYIZE_SITE_URL') ?: 'https://example.com'), '/'));
+define('MIYIZE_SITE_URL', rtrim((string) (getenv('MIYIZE_SITE_URL') ?: 'https://miyizi-kannada-news.vercel.app'), '/'));
 define('MIYIZE_SITE_LANGUAGE', 'kn-IN');
 define('MIYIZE_CONTACT_EMAIL', getenv('MIYIZE_CONTACT_EMAIL') ?: 'editor@example.com');
 define('MIYIZE_DATA_DIR', dirname(__DIR__) . '/data');
