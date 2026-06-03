@@ -8,6 +8,9 @@ function page_head(string $title, string $description, string $canonicalPath = '
     $canonical = site_path($canonicalPath);
     $image = $article ? article_image($article) : MIYIZE_FALLBACK_IMAGE;
     $imageUrl = str_starts_with($image, 'http') ? $image : site_path($image);
+    if ($article && !empty($article['slug'])) {
+        $imageUrl = site_path('/api/social-image.php?slug=' . urlencode($article['slug']));
+    }
     $pageTitle = $title === MIYIZE_SITE_NAME ? $title : $title . ' | ' . MIYIZE_SITE_NAME;
     $activeSlug = 'latest';
     if (preg_match('~^/category/([^/]+)~', $canonicalPath, $matches) === 1 && isset(categories()[$matches[1]])) {
