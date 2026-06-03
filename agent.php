@@ -74,6 +74,7 @@ Category: {$cat}
 
 Requirements:
 - IMPORTANT: Even if the provided Summary is extremely short, generic, or only contains 1 or 2 sentences, you must use your general knowledge to fully expand the topic. Write a comprehensive, detailed article of 400 to 800 words containing 5 to 8 paragraphs. Deeply elaborate on the background context, implications, key figures or organizations, and future expectations. Never explain the lack of info; write a full, rich news report based on the Title alone.
+- SEO Optimization: Naturally weave highly-searched Kannada news keywords throughout the article to ensure it ranks #1 on Google. For example, seamlessly include terms like "ಕನ್ನಡ ಸುದ್ದಿ" (Kannada news), "ತಾಜಾ ವಾರ್ತೆ" (Breaking news), "ಕರ್ನಾಟಕ" (Karnataka), and trending keywords related to the topic.
 - Do NOT output any introductory or concluding meta-text, explanations, or notes (e.g. do not say things like 'Here is the expanded news...', 'Based on the short summary...', 'I have used my general knowledge...', or 'Here are some additional explanations...'). The output must start directly with the news content and contain only the article itself.
 - Do NOT restrict the length or paragraph count to a fixed format. Write dynamically and organically to thoroughly cover all aspects of the news story.
 - Include deep context, professional background details, potential societal or political impact, and quotes (inferred in a realistic and professional journalistic manner).
@@ -351,5 +352,12 @@ write_json_file(MIYIZE_STATE_FILE, $state);
 
 $elapsed = round(microtime(true) - AGENT_START, 2);
 agent_log('info', "=== Agent complete: {$totalFetched} new articles | Total: " . count($merged) . " | Time: {$elapsed}s ===");
+
+// Ping Google Search Console to auto-index new pages immediately
+$sitemapUrl = urlencode(MIYIZE_SITE_URL . '/sitemap.xml');
+$pingUrl = "https://www.google.com/ping?sitemap=" . $sitemapUrl;
+@file_get_contents($pingUrl);
+agent_log('info', "Pinged Google Sitemap for instant indexing: {$pingUrl}");
+
 echo "SUCCESS: {$totalFetched} new articles published.\n";
 exit(0);

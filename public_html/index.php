@@ -261,12 +261,7 @@ render_header('latest');
                         <h3><?= e(excerpt_text((string) ($article['title'] ?? ''), $index % 9 === 0 ? 96 : 68)) ?></h3>
                         <small><?= e(format_kn_date((string) ($article['published_at'] ?? ''))) ?></small>
                     </a>
-                    <?php if (($index + 1) % 9 === 0): ?>
-                        <div class="cp-grid-ad">
-                            <span class="cp-ad-tag">SPONSORED</span>
-                            <?php render_ad_slot('article'); ?>
-                        </div>
-                    <?php endif; ?>
+
                 <?php endforeach; ?>
             </div>
         </section>
@@ -285,12 +280,7 @@ render_header('latest');
                         <h3><?= e(excerpt_text((string) ($article['title'] ?? ''), 74)) ?></h3>
                         <span><?= e(format_kn_date((string) ($article['published_at'] ?? ''))) ?></span>
                     </a>
-                    <?php if (($index + 1) % 8 === 0): ?>
-                        <div class="cp-grid-ad">
-                            <span class="cp-ad-tag">ADVERTISEMENT</span>
-                            <?php render_ad_slot('article'); ?>
-                        </div>
-                    <?php endif; ?>
+
                 <?php endforeach; ?>
             </div>
         </section>
