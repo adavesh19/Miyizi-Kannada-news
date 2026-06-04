@@ -71,7 +71,11 @@ Summary: {$summary}
 Source: {$source}
 Category: {$cat}
 
-Output MUST be a valid JSON object with EXACTLY two string keys: "article" and "social_caption". Do not output any markdown formatting like ```json.
+Output MUST be a valid JSON object with EXACTLY three string keys: "title", "article" and "social_caption". Do not output any markdown formatting like ```json.
+
+"title" rules:
+- Translate and rewrite the original title into a compelling, accurate Kannada headline.
+- Max 100 characters. Pure Kannada script only.
 
 "article" rules:
 - Expand the topic into a detailed 400-800 word Kannada news article with 5-8 paragraphs.
@@ -105,6 +109,7 @@ PROMPT;
         return [
             'content' => trim($json['article']),
             'social'  => trim($json['social_caption'] ?? ''),
+            'title'   => trim($json['title'] ?? ''),
         ];
     }
     return null;
@@ -264,6 +269,10 @@ foreach ($categories as $catSlug => $catData) {
             if ($aiResult) {
                 $fullContent = $aiResult['content'];
                 $article['social_caption'] = $aiResult['social'];
+                // Use Kannada title from AI if available
+                if (!empty($aiResult['title'])) {
+                    $article['title'] = $aiResult['title'];
+                }
                 $article['ai_generated'] = true;
                 agent_log('info', "AI-written article ({$catSlug}): " . mb_strlen($fullContent) . " chars");
             } else {
