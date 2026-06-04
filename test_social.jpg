@@ -1,0 +1,1840 @@
+<!doctype html>
+<html lang="kn-IN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MIYIZE Kannada News</title>
+    <meta name="description" content="ವೇಗದ, ವಿಶ್ವಾಸಾರ್ಹ ಕನ್ನಡ ಸುದ್ದಿ">
+    <meta name="keywords" content="Kannada News, Karnataka News, India News, MIYIZE Kannada News">
+        <link rel="canonical" href="https://miyizi-kannada-news.vercel.app/">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta property="og:site_name" content="MIYIZE Kannada News">
+    <meta property="og:title" content="MIYIZE Kannada News">
+    <meta property="og:description" content="ವೇಗದ, ವಿಶ್ವಾಸಾರ್ಹ ಕನ್ನಡ ಸುದ್ದಿ">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://miyizi-kannada-news.vercel.app/">
+    <meta property="og:image" content="https://miyizi-kannada-news.vercel.app/assets/images/newsroom-fallback.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="kn_IN">
+        <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MIYIZE Kannada News">
+    <meta name="twitter:description" content="ವೇಗದ, ವಿಶ್ವಾಸಾರ್ಹ ಕನ್ನಡ ಸುದ್ದಿ">
+    <meta name="twitter:image" content="https://miyizi-kannada-news.vercel.app/assets/images/newsroom-fallback.png">
+    <link rel="alternate" type="application/rss+xml" title="MIYIZE Kannada News" href="https://miyizi-kannada-news.vercel.app/feed.xml">
+    <link rel="alternate" type="application/rss+xml" title="MIYIZE Kannada News RSS" href="https://miyizi-kannada-news.vercel.app/feed.xml">
+    <link rel="alternate" type="application/json" title="MIYIZE Kannada News API" href="https://miyizi-kannada-news.vercel.app/api/latest.php">
+    <link rel="alternate" type="application/json" title="MIYIZE Kannada News Categories API" href="https://miyizi-kannada-news.vercel.app/api/categories.php">
+    <link rel="preload" href="/assets/css/styles.css" as="style">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+                <!-- Google Analytics (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-V293C5B3RY"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-V293C5B3RY');
+        </script>
+        <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsMediaOrganization","name":"MIYIZE Kannada News","url":"https://miyizi-kannada-news.vercel.app","publishingPrinciples":"https://miyizi-kannada-news.vercel.app/about.php","sameAs":[]}</script>
+    <!-- Google Reader Revenue Manager -->
+    <script async type="application/javascript" src="https://news.google.com/swg/js/v1/swg-basic.js"></script>
+    <script>
+      (self.SWG_BASIC = self.SWG_BASIC || []).push( basicSubscriptions => {
+        basicSubscriptions.init({
+          type: "NewsArticle",
+          isPartOfType: ["Product"],
+          isPartOfProductId: "CAow4ubGDA:openaccess",
+          clientOptions: { theme: "light", lang: "kn" },
+        });
+      });
+    </script>
+</head>
+<body>
+    <div class="gutter-ad gutter-ad--left">
+            <aside class="ad-slot ad-slot--gutter" aria-label="Advertisement">
+                    <div style="margin: 20px auto; text-align: center; max-width: 300px; overflow: hidden;" aria-label="Advertisement">
+              <script>
+                atOptions = {
+                  'key' : '9aec88a46e19f5cf7198fdb3621d56de',
+                  'format' : 'iframe',
+                  'height' : 250,
+                  'width' : 300,
+                  'params' : {}
+                };
+              </script>
+              <script src="https://www.highperformanceformat.com/9aec88a46e19f5cf7198fdb3621d56de/invoke.js"></script>
+            </div>
+            </aside>
+        </div>
+    <div class="gutter-ad gutter-ad--right">
+            <aside class="ad-slot ad-slot--gutter" aria-label="Advertisement">
+                    <div style="margin: 20px auto; text-align: center; max-width: 300px; overflow: hidden;" aria-label="Advertisement">
+              <script>
+                atOptions = {
+                  'key' : '9aec88a46e19f5cf7198fdb3621d56de',
+                  'format' : 'iframe',
+                  'height' : 250,
+                  'width' : 300,
+                  'params' : {}
+                };
+              </script>
+              <script src="https://www.highperformanceformat.com/9aec88a46e19f5cf7198fdb3621d56de/invoke.js"></script>
+            </div>
+            </aside>
+        </div>
+        <a class="skip-link" href="#main">ಮುಖ್ಯ ವಿಷಯಕ್ಕೆ ಹೋಗಿ</a>
+    <header class="site-header" data-live-header>
+        <div class="topline">
+            <div class="container topline__inner">
+                <span class="live-dot" aria-hidden="true"></span>
+                <span>ಲೈವ್ ಅಪ್ಡೇಟ್</span>
+                <span class="topline__time" data-last-refresh="2026-06-03T12:59:32.349Z">ಕೊನೆಯ ನವೀಕರಣ: 22 ಗಂಟೆ ಹಿಂದೆ</span>
+                <a class="topline__action" href="/contact.php">WhatsApp ನಲ್ಲಿ ಅನುಸರಿಸಿ</a>
+                <a class="topline__action" href="/feed.xml">RSS</a>
+                <span class="topline__date">04 Jun 2026</span>
+            </div>
+        </div>
+        <div class="container masthead">
+            <a class="brand" href="/" aria-label="MIYIZE Kannada News">
+                <span class="brand__mark">M</span>
+                <span>
+                    <strong>MIYIZE</strong>
+                    <em>Kannada News</em>
+                </span>
+            </a>
+            <form class="search" method="get" action="/search.php" role="search">
+                <label class="sr-only" for="q">ಸುದ್ದಿ ಹುಡುಕಿ</label>
+                <input id="q" name="q" type="search" placeholder="ಸುದ್ದಿ ಹುಡುಕಿ..." autocomplete="off">
+                <button type="submit" aria-label="ಹುಡುಕಿ">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m1.1-5.15a7.25 7.25 0 1 1-14.5 0 7.25 7.25 0 0 1 14.5 0Z"/></svg>
+                </button>
+            </form>
+            <aside class="masthead-ad" aria-label="Sponsor">
+                <span>SPONSOR</span>
+                <strong>ವಿಜ್ಞಾಪನೆ ಜಾಗ</strong>
+                <em>728 x 90</em>
+            </aside>
+        </div>
+        <nav class="category-nav" aria-label="ಮುಖ್ಯ ವಿಭಾಗಗಳು">
+            <div class="container category-nav__scroll">
+                                    <a class="is-active" href="/">
+                        ತಾಜಾ ಸುದ್ದಿ                    </a>
+                                    <a class="" href="/category/karnataka">
+                        ಕರ್ನಾಟಕ                    </a>
+                                    <a class="" href="/category/india">
+                        ಭಾರತ                    </a>
+                                    <a class="" href="/category/world">
+                        ವಿಶ್ವ                    </a>
+                                    <a class="" href="/category/politics">
+                        ರಾಜಕೀಯ                    </a>
+                                    <a class="" href="/category/business">
+                        ವ್ಯಾಪಾರ                    </a>
+                                    <a class="" href="/category/sports">
+                        ಕ್ರೀಡೆ                    </a>
+                                    <a class="" href="/category/cinema">
+                        ಸಿನಿಮಾ                    </a>
+                                    <a class="" href="/category/technology">
+                        ತಂತ್ರಜ್ಞಾನ                    </a>
+                                    <a class="" href="/category/health">
+                        ಆರೋಗ್ಯ                    </a>
+                                    <a class="" href="/category/education">
+                        ಶಿಕ್ಷಣ                    </a>
+                                    <a class="" href="/category/crime">
+                        ಅಪರಾಧ                    </a>
+                                    <a class="" href="/category/fact-check">
+                        ಫ್ಯಾಕ್ಟ್ ಚೆಕ್                    </a>
+                                    <a class="" href="/category/agriculture">
+                        ಕೃಷಿ                    </a>
+                                    <a class="" href="/category/lifestyle">
+                        ಜೀವನಶೈಲಿ                    </a>
+                                    <a class="" href="/category/automobile">
+                        ಆಟೋಮೊಬೈಲ್                    </a>
+                                    <a class="" href="/category/career">
+                        ಉದ್ಯೋಗ                    </a>
+                                    <a class="" href="/category/astrology">
+                        ಭವಿಷ್ಯ                    </a>
+                                    <a class="" href="/category/trends">
+                        ಟ್ರೆಂಡಿಂಗ್                    </a>
+                            </div>
+        </nav>
+    </header>
+    <!-- WebSite / Sitelinks searchbox schema -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"MIYIZE Kannada News","url":"https://miyizi-kannada-news.vercel.app","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://miyizi-kannada-news.vercel.app/search.php?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script>
+<main id="main">
+    <div class="container ref-home">
+        <!-- Hero Grid -->
+        <section class="ref-hero-grid">
+            <div class="ref-hero-main">
+                <div class="hero-slider" id="heroSlider">
+                                                                        <a class="hero-tile active" href="/article/kannada-news-f32874ff51">
+                                <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01g9s959vq2haqyfy4z6grswnh,imgname-kota-srinivasa-pujari.jpg" alt="" loading="eager" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                <div class="hero-tile__overlay"></div>
+                                <div class="hero-tile__content">
+                                    <span class="hero-tile__cat">ಭಾರತ</span>
+                                    <span class="hero-tile__title">ಕಾಂಗ್ರೆಸ್ ಅಧಿಕಾರ ಹಸ್ತಾಂತರ ಪ್ರಹಸನದಿಂದ ಆಡಳಿತವೇ ಸ್ತಬ್ದ: ಸಂಸದ ಕೋಟ ಶ್ರೀನಿವಾಸ ಪೂಜಾರಿ</span>
+                                    <div class="hero-tile__meta">
+                                        <span>03 Jun 2026, 12:27 AM</span>
+                                        <span>kannada.asianetnews.com</span>
+                                    </div>
+                                </div>
+                            </a>
+                                                    <a class="hero-tile" href="/article/5-f69bf10f76">
+                                <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4660sfnd7473q42kqam91v,imgname-designer-jadau-bangles-1780404650799.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                <div class="hero-tile__overlay"></div>
+                                <div class="hero-tile__content">
+                                    <span class="hero-tile__cat">ತಾಜಾ ಸುದ್ದಿ</span>
+                                    <span class="hero-tile__title">ಕೈಗಳಿಗೆ ರಾಯಲ್ ಟಚ್ ನೀಡುತ್ತೆ ಈ 5 ಸುಂದರ ಪರ್ಲ್-ಕುಂದನ್ ಜಡಾವು ಬಳೆ ಡಿಸೈನ್ಸ್!</span>
+                                    <div class="hero-tile__meta">
+                                        <span>02 Jun 2026, 11:44 PM</span>
+                                        <span>kannada.asianetnews.com</span>
+                                    </div>
+                                </div>
+                            </a>
+                                                    <a class="hero-tile" href="/article/kannada-news-541149d739">
+                                <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01knxg5z1xaw0rbzwrp95g3tw6,imgname-money-plant-vastu-02-1775885286461.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                <div class="hero-tile__overlay"></div>
+                                <div class="hero-tile__content">
+                                    <span class="hero-tile__cat">ತಾಜಾ ಸುದ್ದಿ</span>
+                                    <span class="hero-tile__title">ಮನಿ ಪ್ಲಾಂಟ್‌ನಲ್ಲಿ ಹೊಳೆಯುವ ಈ ಒಂದು ವಸ್ತುವಿಟ್ಟರೆ ಸಾಕು.. ನಿಮ್ಮ ಹಣೆಬರಹ ಬದಲಾಗುವುದು ಖಂಡಿತ!</span>
+                                    <div class="hero-tile__meta">
+                                        <span>02 Jun 2026, 11:37 PM</span>
+                                        <span>kannada.asianetnews.com</span>
+                                    </div>
+                                </div>
+                            </a>
+                                                    <a class="hero-tile" href="/article/kannada-news-d1d468037a">
+                                <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01ks29m187c2r1qbkqcck42mpq,imgname-peddi-advance-booking-1779267405063.jfif" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                <div class="hero-tile__overlay"></div>
+                                <div class="hero-tile__content">
+                                    <span class="hero-tile__cat">ತಂತ್ರಜ್ಞಾನ</span>
+                                    <span class="hero-tile__title">ರಾಮ್ ಚರಣ್ &#039;ಪೆದ್ದಿ&#039; ಸಿನಿಮಾ ಹಿಟ್ ಆಗಲು ಎಷ್ಟು ಕೋಟಿ ಕಲೆಕ್ಷನ್ ಬೇಕು? ಇಲ್ಲಿದೆ ಸಂಪೂರ್ಣ ಲೆಕ್ಕಾಚಾರ</span>
+                                    <div class="hero-tile__meta">
+                                        <span>02 Jun 2026, 11:28 PM</span>
+                                        <span>kannada.asianetnews.com</span>
+                                    </div>
+                                </div>
+                            </a>
+                                                    <a class="hero-tile" href="/article/kannada-news-8adcbf5294">
+                                <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4pv1vmxbwcnak36q6ny8qe,imgname-thumbnail---2026-06-02t231125.330-1780422117236.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                <div class="hero-tile__overlay"></div>
+                                <div class="hero-tile__content">
+                                    <span class="hero-tile__cat">ತಾಜಾ ಸುದ್ದಿ</span>
+                                    <span class="hero-tile__title">ಹೋಟೆಲ್ ಶೈಲಿಯ ಆಲೂ ಬೋಂಡಾ.. ಎಣ್ಣೆ ಹೀರದೆ ಸೂಪರ್ ಸಾಫ್ಟಾಗಿ ಬರಲು ಹೀಗೆ ಮಾಡಿ</span>
+                                    <div class="hero-tile__meta">
+                                        <span>02 Jun 2026, 11:12 PM</span>
+                                        <span>kannada.asianetnews.com</span>
+                                    </div>
+                                </div>
+                            </a>
+                                                <div class="slider-dots">
+                                                            <button class="slider-dot active" aria-label="Slide 1"></button>
+                                                            <button class="slider-dot" aria-label="Slide 2"></button>
+                                                            <button class="slider-dot" aria-label="Slide 3"></button>
+                                                            <button class="slider-dot" aria-label="Slide 4"></button>
+                                                            <button class="slider-dot" aria-label="Slide 5"></button>
+                                                    </div>
+                                    </div>
+            </div>
+            <aside class="ref-live-panel">
+                <div class="section-title">
+                    <h2>Live Updates</h2>
+                    <a href="/feed.xml">RSS</a>
+                </div>
+                <div class="ref-live-list">
+                                            <a class="live-item" href="/article/kannada-news-f32874ff51">
+                            <time>03 Jun 2026, 12:27 AM</time>
+                            <span>ಕಾಂಗ್ರೆಸ್ ಅಧಿಕಾರ ಹಸ್ತಾಂತರ ಪ್ರಹಸನದಿಂದ ಆಡಳಿತವೇ ಸ್ತಬ್ದ: ಸಂಸದ ಕೋಟ ಶ್ರೀನಿವಾಸ ಪೂಜಾರಿ</span>
+                        </a>
+                                            <a class="live-item" href="/article/5-f69bf10f76">
+                            <time>02 Jun 2026, 11:44 PM</time>
+                            <span>ಕೈಗಳಿಗೆ ರಾಯಲ್ ಟಚ್ ನೀಡುತ್ತೆ ಈ 5 ಸುಂದರ ಪರ್ಲ್-ಕುಂದನ್ ಜಡಾವು ಬಳೆ ಡಿಸೈನ್ಸ್!</span>
+                        </a>
+                                            <a class="live-item" href="/article/kannada-news-541149d739">
+                            <time>02 Jun 2026, 11:37 PM</time>
+                            <span>ಮನಿ ಪ್ಲಾಂಟ್‌ನಲ್ಲಿ ಹೊಳೆಯುವ ಈ ಒಂದು ವಸ್ತುವಿಟ್ಟರೆ ಸಾಕು.. ನಿಮ್ಮ ಹಣೆಬರಹ ಬದಲಾಗುವುದು ಖಂಡಿತ!</span>
+                        </a>
+                                            <a class="live-item" href="/article/kannada-news-d1d468037a">
+                            <time>02 Jun 2026, 11:28 PM</time>
+                            <span>ರಾಮ್ ಚರಣ್ &#039;ಪೆದ್ದಿ&#039; ಸಿನಿಮಾ ಹಿಟ್ ಆಗಲು ಎಷ್ಟು ಕೋಟಿ ಕಲೆಕ್ಷನ್ ಬೇಕು? ಇಲ್ಲಿದೆ ಸಂಪೂರ್ಣ ಲೆಕ್ಕಾಚಾರ</span>
+                        </a>
+                                            <a class="live-item" href="/article/kannada-news-8adcbf5294">
+                            <time>02 Jun 2026, 11:12 PM</time>
+                            <span>ಹೋಟೆಲ್ ಶೈಲಿಯ ಆಲೂ ಬೋಂಡಾ.. ಎಣ್ಣೆ ಹೀರದೆ ಸೂಪರ್ ಸಾಫ್ಟಾಗಿ ಬರಲು ಹೀಗೆ ಮಾಡಿ</span>
+                        </a>
+                                            <a class="live-item" href="/article/kannada-news-24e3cbc8d1">
+                            <time>02 Jun 2026, 10:55 PM</time>
+                            <span>ಸಿದ್ದರಾಮಯ್ಯಕ್ಕೆ ಮಹತ್ವದ ಜವಾಬ್ದಾರಿ ಕೊಟ್ಟ ಹೈಕಮಾಂಡ್, ಕಾಂಗ್ರೆಸ್ ಕಾರ್ಯಕಾರಿ ಸಮತಿ ಸದಸ್ಯರಾಗಿ ನೇಮಕ</span>
+                        </a>
+                                            <a class="live-item" href="/article/kannada-news-17ee28b485">
+                            <time>02 Jun 2026, 10:53 PM</time>
+                            <span>ಒಂದೇ ವಾರದಲ್ಲಿ ಸುರಿಯಬಹುದು ನಾಲ್ಕು ತಿಂಗಳ ಮಳೆ: ಕೊಡಗಿನಲ್ಲಿ ಹೈ ಅಲರ್ಟ್!</span>
+                        </a>
+                                            <a class="live-item" href="/article/7-c65a248a07">
+                            <time>02 Jun 2026, 10:33 PM</time>
+                            <span>ಬೆಂಗಳೂರು ಮೆಟ್ರೋ ಪ್ರಯಾಣಿಕರಿಗೆ ಸಿಹಿ ಸುದ್ದಿ, ಪೀಕ್ ಹವರ್‌ನಲ್ಲಿ 7 ನಿಮಿಷಕ್ಕೊಂದು ಯೆಲ್ಲೋ ಟ್ರೈನ್</span>
+                        </a>
+                                            <a class="live-item" href="/article/kannada-news-bc245769bd">
+                            <time>02 Jun 2026, 10:28 PM</time>
+                            <span>ನೂರಕ್ಕೂ ಹೆಚ್ಚು ಬಾರಿ ರೇ*ಪ್ ಯತ್ನ, ಅಪ್ಪನೇ ಥಳಿಸಿದ್ರು: ನರಕ ದರ್ಶನ ಮಾಡಿದ ನಟಿ ಗಾಯತ್ರಿ</span>
+                        </a>
+                                            <a class="live-item" href="/article/7-305f416389">
+                            <time>02 Jun 2026, 10:12 PM</time>
+                            <span>ಈ ಮಾಂಸ ತಿಂದ್ರೆ 7 ತಲೆಮಾರಿಗೆ ತಟ್ಟುತ್ತೆ ಶಾಪ.. ಬೀದಿಗೆ ಬರುತ್ತೆ ಮಕ್ಕಳ ಬದುಕು, ಸಂತಾನ ಭಾಗ್ಯಕ್ಕೂ ಕ...</span>
+                        </a>
+                                    </div>
+            </aside>
+            <aside class="ref-tools-panel">
+                <div class="ref-tool-box">
+                    <h2>Newsletter & WhatsApp</h2>
+                    <p>Get fast alerts on your phone and inbox.</p>
+                    <a class="button" href="/contact.php">Subscribe</a>
+                </div>
+                <div class="ref-ad-box" style="padding:0; overflow:hidden;">
+                        <aside class="ad-slot ad-slot--article" aria-label="Advertisement">
+                    <div style="margin: 20px auto; text-align: center; max-width: 300px; overflow: hidden;" aria-label="Advertisement">
+              <script>
+                atOptions = {
+                  'key' : '9aec88a46e19f5cf7198fdb3621d56de',
+                  'format' : 'iframe',
+                  'height' : 250,
+                  'width' : 300,
+                  'params' : {}
+                };
+              </script>
+              <script src="https://www.highperformanceformat.com/9aec88a46e19f5cf7198fdb3621d56de/invoke.js"></script>
+            </div>
+            </aside>
+                    </div>
+            </aside>
+        </section>
+
+
+        <!-- Second Grid -->
+        <section class="ref-second-grid">
+            <!-- Taza News -->
+            <div class="ref-block">
+                <div class="section-title">
+                    <h2>ತಾಜಾ ಸುದ್ದಿ</h2>
+                    <a href="/">All News</a>
+                </div>
+                <div class="ref-mini-grid">
+                                            <a class="ref-mini-card" href="/article/5-f69bf10f76">
+                            <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4660sfnd7473q42kqam91v,imgname-designer-jadau-bangles-1780404650799.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                            <h3>ಕೈಗಳಿಗೆ ರಾಯಲ್ ಟಚ್ ನೀಡುತ್ತೆ ಈ 5 ಸುಂದರ ಪರ್ಲ್-ಕುಂದನ್ ಜಡಾವು ಬಳೆ ಡಿಸೈನ್ಸ್!</h3>
+                            <span>02 Jun 2026, 11:44 PM</span>
+                        </a>
+                                            <a class="ref-mini-card" href="/article/kannada-news-541149d739">
+                            <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01knxg5z1xaw0rbzwrp95g3tw6,imgname-money-plant-vastu-02-1775885286461.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                            <h3>ಮನಿ ಪ್ಲಾಂಟ್‌ನಲ್ಲಿ ಹೊಳೆಯುವ ಈ ಒಂದು ವಸ್ತುವಿಟ್ಟರೆ ಸಾಕು.. ನಿಮ್ಮ ಹಣೆಬರಹ ಬದಲಾಗುವು...</h3>
+                            <span>02 Jun 2026, 11:37 PM</span>
+                        </a>
+                                            <a class="ref-mini-card" href="/article/kannada-news-d1d468037a">
+                            <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01ks29m187c2r1qbkqcck42mpq,imgname-peddi-advance-booking-1779267405063.jfif" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                            <h3>ರಾಮ್ ಚರಣ್ &#039;ಪೆದ್ದಿ&#039; ಸಿನಿಮಾ ಹಿಟ್ ಆಗಲು ಎಷ್ಟು ಕೋಟಿ ಕಲೆಕ್ಷನ್ ಬೇಕು? ಇಲ್ಲಿದೆ ಸಂಪೂ...</h3>
+                            <span>02 Jun 2026, 11:28 PM</span>
+                        </a>
+                                            <a class="ref-mini-card" href="/article/kannada-news-8adcbf5294">
+                            <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4pv1vmxbwcnak36q6ny8qe,imgname-thumbnail---2026-06-02t231125.330-1780422117236.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                            <h3>ಹೋಟೆಲ್ ಶೈಲಿಯ ಆಲೂ ಬೋಂಡಾ.. ಎಣ್ಣೆ ಹೀರದೆ ಸೂಪರ್ ಸಾಫ್ಟಾಗಿ ಬರಲು ಹೀಗೆ ಮಾಡಿ</h3>
+                            <span>02 Jun 2026, 11:12 PM</span>
+                        </a>
+                                            <a class="ref-mini-card" href="/article/kannada-news-24e3cbc8d1">
+                            <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kswk26g0ejhmm5811fz3659c,imgname-siddaramaiah-kc-venugopal-1780149721600.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                            <h3>ಸಿದ್ದರಾಮಯ್ಯಕ್ಕೆ ಮಹತ್ವದ ಜವಾಬ್ದಾರಿ ಕೊಟ್ಟ ಹೈಕಮಾಂಡ್, ಕಾಂಗ್ರೆಸ್ ಕಾರ್ಯಕಾರಿ ಸಮತಿ...</h3>
+                            <span>02 Jun 2026, 10:55 PM</span>
+                        </a>
+                                            <a class="ref-mini-card" href="/article/kannada-news-17ee28b485">
+                            <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kscs9xajw4ge8ssfe3kcnx4j,imgname-screenshot-2026-05-23-180203-1779619394898.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                            <h3>ಒಂದೇ ವಾರದಲ್ಲಿ ಸುರಿಯಬಹುದು ನಾಲ್ಕು ತಿಂಗಳ ಮಳೆ: ಕೊಡಗಿನಲ್ಲಿ ಹೈ ಅಲರ್ಟ್!</h3>
+                            <span>02 Jun 2026, 10:53 PM</span>
+                        </a>
+                                            <a class="ref-mini-card" href="/article/7-c65a248a07">
+                            <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01k41h4f8tbxazjwhym0n7zvd6,imgname-bmrcl-yellow-line-1756693151002.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                            <h3>ಬೆಂಗಳೂರು ಮೆಟ್ರೋ ಪ್ರಯಾಣಿಕರಿಗೆ ಸಿಹಿ ಸುದ್ದಿ, ಪೀಕ್ ಹವರ್‌ನಲ್ಲಿ 7 ನಿಮಿಷಕ್ಕೊಂದು ಯ...</h3>
+                            <span>02 Jun 2026, 10:33 PM</span>
+                        </a>
+                                            <a class="ref-mini-card" href="/article/kannada-news-bc245769bd">
+                            <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01h8c8h842rnrb4tgh5tzk8acn,imgname-gayathri-gupta.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                            <h3>ನೂರಕ್ಕೂ ಹೆಚ್ಚು ಬಾರಿ ರೇ*ಪ್ ಯತ್ನ, ಅಪ್ಪನೇ ಥಳಿಸಿದ್ರು: ನರಕ ದರ್ಶನ ಮಾಡಿದ ನಟಿ ಗಾಯತ...</h3>
+                            <span>02 Jun 2026, 10:28 PM</span>
+                        </a>
+                                            <a class="ref-mini-card" href="/article/7-305f416389">
+                            <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4jzd56bpd94mkxq1h55kqt,imgname-thumbnail---2026-06-02t215758.266-1780418065574.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                            <h3>ಈ ಮಾಂಸ ತಿಂದ್ರೆ 7 ತಲೆಮಾರಿಗೆ ತಟ್ಟುತ್ತೆ ಶಾಪ.. ಬೀದಿಗೆ ಬರುತ್ತೆ ಮಕ್ಕಳ ಬದುಕು, ಸಂತ...</h3>
+                            <span>02 Jun 2026, 10:12 PM</span>
+                        </a>
+                                            <a class="ref-mini-card" href="/article/kannada-news-9b4d59e089">
+                            <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4jpsdnyz7ygpsknr7tr37k,imgname-waste-management-1780417783220.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                            <h3>ಬೆಂಗಳೂರಲ್ಲಿ ಪ್ರತಿ ದಿನದ ಕಸ ವಿಲೇವಾರಿ ಸಮಸ್ಯೆಗೆ ಮುಕ್ತಿ, ಸ್ಥಳದಲ್ಲೇ ಸೇಫ್‌ ಡಿಸ್ಪೋ...</h3>
+                            <span>02 Jun 2026, 09:59 PM</span>
+                        </a>
+                                            <a class="ref-mini-card" href="/article/ok-af9b3d5e44">
+                            <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01ksz1tz7f4fe5vd707wk7mkpt,imgname-thumbnail---2026-05-31t182537.400-1780232322286.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                            <h3>ಮಹಿಳೆಯರು ಮಾಡೋ ಈ ತಪ್ಪೇ ಸಂಸಾರದಲ್ಲಿ ಬೆಂಕಿ ಹಚ್ಚುತ್ತದೆ; ಹಾಗೆ ಹೇಳಬೇಡಿ, ಹೀಗೆ ಮಾಡಬ...</h3>
+                            <span>02 Jun 2026, 09:54 PM</span>
+                        </a>
+                                            <a class="ref-mini-card" href="/article/14-fd3288ff60">
+                            <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kswed6j5e4c3sbkmpr1saqt7,imgname-whatsapp-image-2026-05-30-at-5.58.08-pm-1780144839237.jpeg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                            <h3>14 ಸಚಿವರ ಸೇರ್ಪಡೆ ಕುರಿತು ದೆಹಲಿಯಲ್ಲಿ ಮತ್ತೊಂದು ಸುತ್ತಿನ ಮೀಟಿಂಗ್, ಯಾರು ಹೆಸರು ಫೈ...</h3>
+                            <span>02 Jun 2026, 09:49 PM</span>
+                        </a>
+                                    </div>
+            </div>
+
+            <!-- Karnataka News -->
+            <div class="ref-block">
+                <div class="section-title">
+                    <h2>ಕರ್ನಾಟಕ</h2>
+                    <a href="/category/karnataka">All</a>
+                </div>
+                <div class="ref-karnataka-wrap">
+                                                                <a class="ref-karnataka-image" href="/article/kannada-news-17ee28b485">
+                            <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kscs9xajw4ge8ssfe3kcnx4j,imgname-screenshot-2026-05-23-180203-1779619394898.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        </a>
+                        <h3><a href="/article/kannada-news-17ee28b485">ಒಂದೇ ವಾರದಲ್ಲಿ ಸುರಿಯಬಹುದು ನಾಲ್ಕು ತಿಂಗಳ ಮಳೆ: ಕೊಡಗಿನಲ್ಲಿ ಹೈ ಅಲರ್ಟ್!</a></h3>
+                        <span>02 Jun 2026, 10:53 PM</span>
+                        <div class="ref-k-list">
+                                                            <a class="ref-k-mini" href="/article/kannada-news-9b4d59e089">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4jpsdnyz7ygpsknr7tr37k,imgname-waste-management-1780417783220.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <span>ಬೆಂಗಳೂರಲ್ಲಿ ಪ್ರತಿ ದಿನದ ಕಸ ವಿಲೇವಾರಿ ಸಮಸ್ಯೆಗೆ ಮುಕ್ತಿ, ಸ್ಥಳದಲ್ಲೇ ಸೇಫ್...</span>
+                                </a>
+                                                            <a class="ref-k-mini" href="/article/kannada-news-7585bd5fd5">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4fx7s6ms92fcqvcbg4pprg,imgname-bhatkal-murinakatte-reconstruction-1780414848806.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <span>ಜಿಲ್ಲಾಡಳಿತದಿಂದ ಭಟ್ಕಳದ &#039;ಮುರಿನಕಟ್ಟೆ&#039; ಮರು ನಿರ್ಮಾಣ; ಹಿಂದು-ಮುಸ್ಲಿಂ ಮುಖಂ...</span>
+                                </a>
+                                                            <a class="ref-k-mini" href="/article/kannada-news-57cffdd5ff">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01k4wp2b5v03z6v8krfh3yrqaf,imgname-gnghmn-1757604293819.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <span>ಹಿಂದುಗಳ ಮೇಲೆ ದೌರ್ಜನ್ಯ ನಡೆದರೆ ಠಾಣೆಗೂ ಮುತ್ತಿಗೆ: ಬಿ.ವೈ.ವಿಜಯೇಂದ್ರ ಎಚ್ಚ...</span>
+                                </a>
+                                                            <a class="ref-k-mini" href="/article/dk-shivakumar-5e6fffe07c">
+                                    <img src="https://geo.dailymotion.com/player/x1tbu.html?video=xacqbqu" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <span>Dk Shivakumar ತುಂಟಾಟದ ಕಥೆ ತೆರೆದಿಟ್ಟ ಗೆಳೆಯ! &#039;ಕ್ರೇಜಿಸ್ಟಾರ್&#039; ಕಷ್ಟದಲ್ಲ...</span>
+                                </a>
+                                                            <a class="ref-k-mini" href="/article/kannada-news-d68bb7be27">
+                                    <img src="https://geo.dailymotion.com/player/x1tbu.html?video=xacqe6e" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <span>ಕರ್ನಾಟಕದಲ್ಲಿ ಹೊಸ ಚರಿತ್ರೆ ಬರೆದ ‘ಗೌರಿ’ಪುತ್ರ..ಡಿಕೆ ಬ್ರದರ್ಸ್ ಸಕ್ಸಸ್ ಸೀ...</span>
+                                </a>
+                                                            <a class="ref-k-mini" href="/article/dk-shivakumar-148d23c344">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt33yfgyzprdrwczy62rq5rc,imgname-----------------------2026-06-02t082206.456-1780368752158.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <span>DK Shivakumar: ತಣ್ಣಗಾಯ್ತು ಮೈಲಾರ ಲಿಂಗೇಶ್ವರನ ಮುನಿಸು, ನನಸಾಯ್ತು ಡಿಕೆಶಿ...</span>
+                                </a>
+                                                            <a class="ref-k-mini" href="/article/kannada-news-e86b25714a">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt338n0exf5h3cdgm6q7gwnk,imgname-death-1780368036878.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <span>ತಮ್ಮನ ಸಾವಿನ ಸುದ್ದಿ ಕೇಳಿ ಅಕ್ಕನಿಗೂ ಹೃದಯಾಘಾತ; ಜೊತೆಯಾಗಿಯೇ ಇಬ್ಬರ ಅಂತ್ಯಕ...</span>
+                                </a>
+                                                            <a class="ref-k-mini" href="/article/bengaluru-7-9cca22c547">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt30aggv617wx3qkb7yqz29r,imgname-bengaluru-police-station-1780364952091.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <span>Bengaluru: 7 ತಿಂಗಳಿಂದ ಏಳು ಕೋಟಿ ರೂಪಾಯಿಗೆ ಸಿದ್ದಾಪುರ ಪೊಲೀಸ್ ಠಾಣೆಯಲ್ಲೇ...</span>
+                                </a>
+                                                            <a class="ref-k-mini" href="/article/rcb-3ac5ac044e">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt2zevcsk65h1vqxcv8ddtms,imgname-----------------------2026-06-02t070320.057-1780364045721.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <span>RCB ಫ್ಯಾನ್ಸ್‌ಗೆ ಬಿಗ್ ಶಾಕ್: ಬೆಂಗಳೂರಲ್ಲಿಲ್ಲ ಸಂಭ್ರಮಾಚರಣೆ, ಪ್ರಾಂಚೈಸಿ ಹ...</span>
+                                </a>
+                                                            <a class="ref-k-mini" href="/article/kannada-news-b8520a76ab">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt2pfnt25gtqxff2qkwr7n4j,imgname-----------------------2026-06-02t042526.856-1780354635586.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <span>ಪುತ್ರನ ಸನಾತನ ಧರ್ಮ ನಾಶ ಹೇಳಿಕೆ ಬೆನ್ನಲ್ಲೇ ಚಾಮುಂಡಿಬೆಟ್ಟಕ್ಕೆ ಸ್ಟಾಲಿನ್‌...</span>
+                                </a>
+                                                            <a class="ref-k-mini" href="/article/kannada-news-1846ace742">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt1z0kk15az5gyw922nb4bwq,imgname-fjf-1780330024545.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <span>ಕಡೆಚೂರು ಕೈಗಾರಿಕಾ ಪ್ರದೇಶದಲ್ಲಿ ಮತ್ತೆ ಕೆಮಿಕಲ್ ತ್ಯಾಜ್ಯ ಕಳ್ಳಾಟ? ಗ್ರಾಮಸ್...</span>
+                                </a>
+                                                            <a class="ref-k-mini" href="/article/kannada-news-35f4b01386">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt1wz602dh99ygtwwyezm4at,imgname-pakistan-fans-celebrate-rcb-victory-1780327880705.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <span>ಆರ್‌ಸಿಬಿ ಗೆಲುವಿಗೆ ಪಾಕಿಸ್ತಾನದಲ್ಲಿ ಅಭಿಮಾನಿಗಳಿಂದ ಸಂಭ್ರಮಾಚರಣೆ, ಕೇಕ್ ಕತ...</span>
+                                </a>
+                                                    </div>
+                                    </div>
+            </div>
+
+            <!-- Trending -->
+            <div class="ref-block">
+                <div class="section-title">
+                    <h2>Trending</h2>
+                </div>
+                <div class="ref-trending-list">
+                                            <a class="compact-item" href="/article/kannada-news-f32874ff51">
+                            <span class="trend-num">1</span>
+                            <span class="compact-text">ಕಾಂಗ್ರೆಸ್ ಅಧಿಕಾರ ಹಸ್ತಾಂತರ ಪ್ರಹಸನದಿಂದ ಆಡಳಿತವೇ ಸ್ತಬ್ದ: ಸಂಸದ ಕೋಟ ಶ್ರೀನಿವಾಸ...</span>
+                        </a>
+                                            <a class="compact-item" href="/article/5-f69bf10f76">
+                            <span class="trend-num">2</span>
+                            <span class="compact-text">ಕೈಗಳಿಗೆ ರಾಯಲ್ ಟಚ್ ನೀಡುತ್ತೆ ಈ 5 ಸುಂದರ ಪರ್ಲ್-ಕುಂದನ್ ಜಡಾವು ಬಳೆ ಡಿಸೈನ್ಸ್!</span>
+                        </a>
+                                            <a class="compact-item" href="/article/kannada-news-541149d739">
+                            <span class="trend-num">3</span>
+                            <span class="compact-text">ಮನಿ ಪ್ಲಾಂಟ್‌ನಲ್ಲಿ ಹೊಳೆಯುವ ಈ ಒಂದು ವಸ್ತುವಿಟ್ಟರೆ ಸಾಕು.. ನಿಮ್ಮ ಹಣೆಬರಹ ಬದಲಾಗು...</span>
+                        </a>
+                                            <a class="compact-item" href="/article/kannada-news-d1d468037a">
+                            <span class="trend-num">4</span>
+                            <span class="compact-text">ರಾಮ್ ಚರಣ್ &#039;ಪೆದ್ದಿ&#039; ಸಿನಿಮಾ ಹಿಟ್ ಆಗಲು ಎಷ್ಟು ಕೋಟಿ ಕಲೆಕ್ಷನ್ ಬೇಕು? ಇಲ್ಲಿದೆ ಸಂ...</span>
+                        </a>
+                                            <a class="compact-item" href="/article/kannada-news-8adcbf5294">
+                            <span class="trend-num">5</span>
+                            <span class="compact-text">ಹೋಟೆಲ್ ಶೈಲಿಯ ಆಲೂ ಬೋಂಡಾ.. ಎಣ್ಣೆ ಹೀರದೆ ಸೂಪರ್ ಸಾಫ್ಟಾಗಿ ಬರಲು ಹೀಗೆ ಮಾಡಿ</span>
+                        </a>
+                                            <a class="compact-item" href="/article/kannada-news-24e3cbc8d1">
+                            <span class="trend-num">6</span>
+                            <span class="compact-text">ಸಿದ್ದರಾಮಯ್ಯಕ್ಕೆ ಮಹತ್ವದ ಜವಾಬ್ದಾರಿ ಕೊಟ್ಟ ಹೈಕಮಾಂಡ್, ಕಾಂಗ್ರೆಸ್ ಕಾರ್ಯಕಾರಿ ಸಮತ...</span>
+                        </a>
+                                            <a class="compact-item" href="/article/kannada-news-17ee28b485">
+                            <span class="trend-num">7</span>
+                            <span class="compact-text">ಒಂದೇ ವಾರದಲ್ಲಿ ಸುರಿಯಬಹುದು ನಾಲ್ಕು ತಿಂಗಳ ಮಳೆ: ಕೊಡಗಿನಲ್ಲಿ ಹೈ ಅಲರ್ಟ್!</span>
+                        </a>
+                                            <a class="compact-item" href="/article/7-c65a248a07">
+                            <span class="trend-num">8</span>
+                            <span class="compact-text">ಬೆಂಗಳೂರು ಮೆಟ್ರೋ ಪ್ರಯಾಣಿಕರಿಗೆ ಸಿಹಿ ಸುದ್ದಿ, ಪೀಕ್ ಹವರ್‌ನಲ್ಲಿ 7 ನಿಮಿಷಕ್ಕೊಂದು...</span>
+                        </a>
+                                            <a class="compact-item" href="/article/kannada-news-bc245769bd">
+                            <span class="trend-num">9</span>
+                            <span class="compact-text">ನೂರಕ್ಕೂ ಹೆಚ್ಚು ಬಾರಿ ರೇ*ಪ್ ಯತ್ನ, ಅಪ್ಪನೇ ಥಳಿಸಿದ್ರು: ನರಕ ದರ್ಶನ ಮಾಡಿದ ನಟಿ ಗಾ...</span>
+                        </a>
+                                            <a class="compact-item" href="/article/7-305f416389">
+                            <span class="trend-num">10</span>
+                            <span class="compact-text">ಈ ಮಾಂಸ ತಿಂದ್ರೆ 7 ತಲೆಮಾರಿಗೆ ತಟ್ಟುತ್ತೆ ಶಾಪ.. ಬೀದಿಗೆ ಬರುತ್ತೆ ಮಕ್ಕಳ ಬದುಕು, ಸ...</span>
+                        </a>
+                                            <a class="compact-item" href="/article/kannada-news-9b4d59e089">
+                            <span class="trend-num">11</span>
+                            <span class="compact-text">ಬೆಂಗಳೂರಲ್ಲಿ ಪ್ರತಿ ದಿನದ ಕಸ ವಿಲೇವಾರಿ ಸಮಸ್ಯೆಗೆ ಮುಕ್ತಿ, ಸ್ಥಳದಲ್ಲೇ ಸೇಫ್‌ ಡಿಸ್...</span>
+                        </a>
+                                            <a class="compact-item" href="/article/ok-af9b3d5e44">
+                            <span class="trend-num">12</span>
+                            <span class="compact-text">ಮಹಿಳೆಯರು ಮಾಡೋ ಈ ತಪ್ಪೇ ಸಂಸಾರದಲ್ಲಿ ಬೆಂಕಿ ಹಚ್ಚುತ್ತದೆ; ಹಾಗೆ ಹೇಳಬೇಡಿ, ಹೀಗೆ ಮಾ...</span>
+                        </a>
+                                    </div>
+            </div>
+        </section>
+
+
+        <!-- Category Columns Row -->
+        <section class="ref-category-row">
+                                            <section class="ref-category-col">
+                    <div class="ref-col-head">
+                        <h2>ಭಾರತ</h2>
+                        <a href="/category/india">More</a>
+                    </div>
+                    <a class="ref-col-image" href="/article/kannada-news-f32874ff51">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01g9s959vq2haqyfy4z6grswnh,imgname-kota-srinivasa-pujari.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                    </a>
+                    <h3><a href="/article/kannada-news-f32874ff51">ಕಾಂಗ್ರೆಸ್ ಅಧಿಕಾರ ಹಸ್ತಾಂತರ ಪ್ರಹಸನದಿಂದ ಆಡಳಿತವೇ ಸ್ತಬ್ದ: ಸಂಸದ ಕೋಟ ಶ್ರೀನಿವಾಸ...</a></h3>
+                    <ul>
+                                                    <li><a href="/article/14-fd3288ff60">14 ಸಚಿವರ ಸೇರ್ಪಡೆ ಕುರಿತು ದೆಹಲಿಯಲ್ಲಿ ಮತ್ತೊಂದು ಸುತ್ತಿನ ಮೀಟಿಂಗ್, ಯಾರು...</a></li>
+                                                    <li><a href="/article/viral-video-0e2e436569">Viral Video: ಐಫೆಲ್ ಟವರ್ ಮುಂದೆ ಭಾರತೀಯ ಮಹಿಳೆಯರ ಸೀರೆ ಕ್ಯಾಟ್‌ವಾಕ್: ಡ್ಯ...</a></li>
+                                                    <li><a href="/article/72-717508da27">ಕಾಂಗ್ರೆಸ್​ನ​ 72 ವರ್ಷಗಳ ದಾಖಲೆ ಮುರಿದು ಬೀಗಿದ ಪ್ರಧಾನಿ ನರೇಂದ್ರ ಮೋದಿ: ಏನ...</a></li>
+                                            </ul>
+                </section>
+                                            <section class="ref-category-col">
+                    <div class="ref-col-head">
+                        <h2>ವಿಶ್ವ</h2>
+                        <a href="/category/world">More</a>
+                    </div>
+                    <a class="ref-col-image" href="/article/thalapathy-vijay-714a7f7c00">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kr88x7k0q1g7de1g8kt4kjw2,imgname-tamil-nadu-cm-vijay-first-speech-secular-social-justice-tvk-govt-transparency-10-lakh-crore-debt-news-3-1778394242656.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                    </a>
+                    <h3><a href="/article/thalapathy-vijay-714a7f7c00">Thalapathy Vijay: ಫಸ್ಟ್ ಭಾಷಣದಲ್ಲೇ ತಮಿಳುನಾಡು ರಾಜಕೀಯದಲ್ಲಿ ಬಿರುಗಾಳಿ‌ ಎಬ್ಬಿಸ...</a></h3>
+                    <ul>
+                                                    <li><a href="/article/kannada-news-1d475c1794">ವಿದೇಶದಲ್ಲಿ ಭಾರತದ ಮಾನ ಕಳೆದ ಮಹಿಳೆ: ಜಪಾನ್ ಜೈಲು ಪಾಲಾಗುವುದರಿಂದ ಬಚಾವ್ ಮಾ...</a></li>
+                                                    <li><a href="/article/kannada-news-40e0af232a">ಕಿಚ್ಚ ಸುದೀಪ್ ಗೆ ಪತ್ನಿ ಕಂಡ್ರೆ ಭಯಾನಾ? ದಾಂಪತ್ಯದ ಗುಟ್ಟು ಬಿಚ್ಚಿಟ್ಟ ಪ್ರಿ...</a></li>
+                                                    <li><a href="/article/donald-trump-0062645d12">ಅಯ್ಯೋ..ಪ್ರಧಾನಿಗೆ ಅವಾಚ್ಯ ಶಬ್ದ ಬಳಸಿದ ಅಮೆರಿಕ ಅಧ್ಯಕ್ಷ Donald Trump; ಸು...</a></li>
+                                            </ul>
+                </section>
+                                            <section class="ref-category-col">
+                    <div class="ref-col-head">
+                        <h2>ವ್ಯಾಪಾರ</h2>
+                        <a href="/category/business">More</a>
+                    </div>
+                    <a class="ref-col-image" href="/article/45-eb60895bad">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01hp0ssherer68hy9hpajdfy5p,imgname-BharatPe-1707276551639.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                    </a>
+                    <h3><a href="/article/45-eb60895bad">ಬ್ಯಾಂಕ್‌ ಖಾತೆಯಲ್ಲಿ ದುಡ್ಡಿಲ್ಲದಿದ್ರೂ ಹಣ ಪಾವತಿಸಿ! ಯುಪಿಐನಲ್ಲೇ ಸಿಗಲಿದೆ 45 ದಿನ...</a></h3>
+                    <ul>
+                                                    <li><a href="/article/epfo-epf-b6785a64a8">EPFO: ಎರಡು ತಿಂಗಳಾದ್ರೂ ಬರದ ಹಣ, ನಿಮ್ಮ ಖಾತೆಗೆ EPF ಬಡ್ಡಿ ಜಮೆ ಆಗುವುದು ಯ...</a></li>
+                                                    <li><a href="/article/1-14-rbi-14f193ccff">1.14 ಲಕ್ಷ ಕೋಟಿ ರೂಪಾಯಿ ಮೌಲ್ಯದ ಚಿನ್ನ ಮಾರಾಟ ಮಾಡಿದ್ದೇಕೆ RBI</a></li>
+                                                    <li><a href="/article/kannada-news-d450bc1a66">ಸ್ಕಾರ್ಪಿಯೋ, ಥಾರ್ ಅಬ್ಬರಕ್ಕೆ ನಡುಗಿದ ಆಟೋ ಮಾರುಕಟ್ಟೆ: ಖುಷಿಯಿಂದ ಹಿಗ್ಗಿದ...</a></li>
+                                            </ul>
+                </section>
+                                            <section class="ref-category-col">
+                    <div class="ref-col-head">
+                        <h2>ಕ್ರೀಡೆ</h2>
+                        <a href="/category/sports">More</a>
+                    </div>
+                    <a class="ref-col-image" href="/article/swiggy-c2ac2cf3c4">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4bj6vs7pd58hjcc2s9ygez,imgname-swiggy-food-order-on-ipl-2026-1780410293113.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                    </a>
+                    <h3><a href="/article/swiggy-c2ac2cf3c4">Swiggy: ಐಪಿಎಲ್‌ ಸೀಸನ್‌ನಲ್ಲಿ ಕೋಟ್ಯಂತರ ಮೊತ್ತದ ಫುಡ್‌ ತಿಂದು ತೇಗಿದ ಕ್ರಿಕೆಟ್‌...</a></h3>
+                    <ul>
+                                                    <li><a href="/article/ipl-2026-86-66-59706a2cce">IPL 2026: ಈ ಆಟಗಾರನ ಒಂದು ರನ್‌ಗೆ ಫ್ರಾಂಚೈಸಿ ಖರ್ಚು ಮಾಡಿದ್ದು ₹86.66 ಲಕ್...</a></li>
+                                                    <li><a href="/article/20-1e371b6a4b">ವಿರಾಟ್ ಕೊಹ್ಲಿಗೆ ಸವಾಲು ಹಾಕಿದ ಟಿ20 ದಿಗ್ಗಜರು; ಅತಿ ಹೆಚ್ಚು ರನ್ ಬಾರಿಸಿದವ...</a></li>
+                                                    <li><a href="/article/ipl-2026-flop-xi-a95cc0fb2e">IPL 2026 Flop XI: ಈ ಸೀಸನ್‌ ಐಪಿಎಲ್‌ನ ಅತ್ಯಂತ ಪ್ಲಾಫ್ ತಂಡಕ್ಕೆ ರಿಷಭ್ ಪಂ...</a></li>
+                                            </ul>
+                </section>
+                                            <section class="ref-category-col">
+                    <div class="ref-col-head">
+                        <h2>ಸಿನಿಮಾ</h2>
+                        <a href="/category/cinema">More</a>
+                    </div>
+                    <a class="ref-col-image" href="/article/kannada-news-1f35f40bec">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4cznvfbazht1pnz3f48cv1,imgname-cm-vijay-dhanush-1780411783023.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                    </a>
+                    <h3><a href="/article/kannada-news-1f35f40bec">ತಮಿಳುನಾಡಿನಲ್ಲಿ ಮತ್ತೆ ಬಿರುಗಾಳಿ? ವಿಜಯ್ ಸಿಎಂ ಆಗಿರೋ ಬೆನ್ನಲ್ಲೇ ಮತ್ತೊಬ್ಬ ಸ್ಟಾರ...</a></h3>
+                    <ul>
+                                                    <li><a href="/article/kannada-news-e91b433876">ಕ್ಯಾನ್ಸರ್‌ನಿಂದ ಪೀಡಿತ ಅಭಿಮಾನಿಗೆ ವಿಡಿಯೋ ಕಾಲ್ ಮಾಡಿ ಧೈರ್ಯ ತುಂಬಿದ ನಟ ಯಶ...</a></li>
+                                                    <li><a href="/article/karna-serial-9c52603059">Karna Serial: ಫಸ್ಟ್​ ನೈಟ್​ ಹೇಗಾಯ್ತು ಕೇಳಿದ ಅಜ್ಜಿ! ಕರ್ಣ-ನಿಧಿ ಏನಂದ್ರು...</a></li>
+                                                    <li><a href="/article/100-ott-7-a133790ae0">₹100 ಕೋಟಿ ಸಿನಿಮಾ... ಆದರೆ OTT ಹಕ್ಕು ಕೇವಲ ₹7 ಕೋಟಿ: ಕನ್ನಡ ಚಿತ್ರರಂಗದಲ್...</a></li>
+                                            </ul>
+                </section>
+                                            <section class="ref-category-col">
+                    <div class="ref-col-head">
+                        <h2>ತಂತ್ರಜ್ಞಾನ</h2>
+                        <a href="/category/technology">More</a>
+                    </div>
+                    <a class="ref-col-image" href="/article/kannada-news-d1d468037a">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01ks29m187c2r1qbkqcck42mpq,imgname-peddi-advance-booking-1779267405063.jfif" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                    </a>
+                    <h3><a href="/article/kannada-news-d1d468037a">ರಾಮ್ ಚರಣ್ &#039;ಪೆದ್ದಿ&#039; ಸಿನಿಮಾ ಹಿಟ್ ಆಗಲು ಎಷ್ಟು ಕೋಟಿ ಕಲೆಕ್ಷನ್ ಬೇಕು? ಇಲ್ಲಿದೆ ಸಂ...</a></h3>
+                    <ul>
+                                                    <li><a href="/article/kannada-news-24e3cbc8d1">ಸಿದ್ದರಾಮಯ್ಯಕ್ಕೆ ಮಹತ್ವದ ಜವಾಬ್ದಾರಿ ಕೊಟ್ಟ ಹೈಕಮಾಂಡ್, ಕಾಂಗ್ರೆಸ್ ಕಾರ್ಯಕಾ...</a></li>
+                                                    <li><a href="/article/7-c65a248a07">ಬೆಂಗಳೂರು ಮೆಟ್ರೋ ಪ್ರಯಾಣಿಕರಿಗೆ ಸಿಹಿ ಸುದ್ದಿ, ಪೀಕ್ ಹವರ್‌ನಲ್ಲಿ 7 ನಿಮಿಷಕ...</a></li>
+                                                    <li><a href="/article/kannada-news-bc245769bd">ನೂರಕ್ಕೂ ಹೆಚ್ಚು ಬಾರಿ ರೇ*ಪ್ ಯತ್ನ, ಅಪ್ಪನೇ ಥಳಿಸಿದ್ರು: ನರಕ ದರ್ಶನ ಮಾಡಿದ...</a></li>
+                                            </ul>
+                </section>
+                                            <section class="ref-category-col">
+                    <div class="ref-col-head">
+                        <h2>ಫ್ಯಾಕ್ಟ್ ಚೆಕ್</h2>
+                        <a href="/category/fact-check">More</a>
+                    </div>
+                    <a class="ref-col-image" href="/article/kannada-news-e1dd192f24">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4g9q4w0y0kdnb0xm7bsrj9,imgname-south-indian-food-chiblu-idli-1780415257755.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                    </a>
+                    <h3><a href="/article/kannada-news-e1dd192f24">ಹಳ್ಳಿ ಶೈಲಿಯ ಮೃದುವಾದ &#039;ಚಿಬ್ಲು ಇಡ್ಲಿ&#039; ಮೇಕಿಂಗ್ ವಿಡಿಯೋ ವೈರಲ್; ಬಾಯಲ್ಲಿಟ್ಟರೆ ಕರ...</a></h3>
+                    <ul>
+                                                    <li><a href="/article/88-75abc16930">ಒಂದು ಸಿಗರೇಟ್‌ಗಿಂತಲೂ ಕಡಿಮೆ ಬೆಲೆಗೆ ಬ್ರ್ಯಾಂಡೆಡ್ ಸೈಕಲ್; 88 ವರ್ಷಗಳ ಹಿಂದ...</a></li>
+                                                    <li><a href="/article/kannada-news-e700886241">ಭದ್ರಾ ಹುಲಿ ಸಂರಕ್ಷಿತ ಪ್ರದೇಶದಲ್ಲಿ ಪುಂಡಾಟ: ಖಾಸಗಿ ಜೀಪಿನಲ್ಲಿ ಅಕ್ರಮ ಪ್ರವ...</a></li>
+                                                    <li><a href="/article/kannada-news-9dde75ab06">ಜಮೀರ್-ಸಿರಾಜ್ ಆಡಿಯೋದಲ್ಲಿ ಬಿಜೆಪಿ ಅಭ್ಯರ್ಥಿ ಹೆಸರು: ಸ್ಫೋಟಕ ಟ್ವಿಸ್ಟ್ ಕೊಟ...</a></li>
+                                            </ul>
+                </section>
+                    </section>
+
+        <!-- Topic Sections Wall -->
+        <section class="ref-topic-wall">
+            <div class="section-title">
+                <h2>Category Grids</h2>
+                <a href="/sitemap.xml">All Sections</a>
+            </div>
+            <div class="ref-topic-wall-grid">
+                                                        <section class="ref-topic-section">
+                        <div class="ref-col-head">
+                            <h2>ಭಾರತ</h2>
+                            <a href="/category/india">More</a>
+                        </div>
+                        <div class="ref-topic-grid">
+                                                            <a class="ref-topic-card" href="/article/kannada-news-f32874ff51">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01g9s959vq2haqyfy4z6grswnh,imgname-kota-srinivasa-pujari.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ಕಾಂಗ್ರೆಸ್ ಅಧಿಕಾರ ಹಸ್ತಾಂತರ ಪ್ರಹಸನದಿಂದ ಆಡಳಿತವೇ ಸ್ತಬ್ದ: ಸಂಸದ ಕೋಟ ಶ್...</h3>
+                                    <span>03 Jun 2026, 12:27 AM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/14-fd3288ff60">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kswed6j5e4c3sbkmpr1saqt7,imgname-whatsapp-image-2026-05-30-at-5.58.08-pm-1780144839237.jpeg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>14 ಸಚಿವರ ಸೇರ್ಪಡೆ ಕುರಿತು ದೆಹಲಿಯಲ್ಲಿ ಮತ್ತೊಂದು ಸುತ್ತಿನ ಮೀಟಿಂಗ್, ಯಾರ...</h3>
+                                    <span>02 Jun 2026, 09:49 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/viral-video-0e2e436569">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4gjfn7w9gargywd4xk0cw3,imgname-xgg-1780415544999.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>Viral Video: ಐಫೆಲ್ ಟವರ್ ಮುಂದೆ ಭಾರತೀಯ ಮಹಿಳೆಯರ ಸೀರೆ ಕ್ಯಾಟ್‌ವಾಕ್: ಡ...</h3>
+                                    <span>02 Jun 2026, 09:26 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/72-717508da27">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4eb1z7gqe78hjk1695rzda,imgname-nehru-and-pm-modi-1780413204455.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ಕಾಂಗ್ರೆಸ್​ನ​ 72 ವರ್ಷಗಳ ದಾಖಲೆ ಮುರಿದು ಬೀಗಿದ ಪ್ರಧಾನಿ ನರೇಂದ್ರ ಮೋದಿ:...</h3>
+                                    <span>02 Jun 2026, 08:43 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/0-29-12-8dfae27d37">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt48gmnzyx3c7149vfjwpsqj,imgname-spiritual-guru-abhishek-mishra-arrest-1780407095998.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ಹಾಲು ಕುಡಿಸಿ ಮಹಿಳೆಯರ ಮೇಲೆ ಲೈ0ಗಿಕ ದೌರ್ಜನ್ಯ ಎಸಗಿದ 29ರ ಧಾರ್ಮಿಕ ಗುರು,...</h3>
+                                    <span>02 Jun 2026, 07:01 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/kannada-news-957d0f318e">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01ke9gvn831sm04q06yrjpv529,imgname-----------------------2026-01-06t165158.634-1767698715907.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ಮೋದಿ ಸರ್ಕಾರದ ಸಾಧನೆಗಳನ್ನು ಜನರಿಗೆ ತಲುಪಿಸಿ; ಬಿಜೆಪಿ ಕಾರ್ಯಕರ್ತರಿಗೆ ರೇ...</h3>
+                                    <span>02 Jun 2026, 05:47 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/kannada-news-f8e1ddf3d5">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01g975x17kzyppr01r9h4rdkry,imgname-ks-eshwarappa.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ಶರಾವತಿ ಪಂಪ್ಡ್ ಸ್ಟೋರೇಜ್ ಬಗ್ಗೆ ಸಮೀಕ್ಷೆ ಸರಿಯಲ್ಲ: ಗುಡುಗಿದ ಕೆ.ಎಸ್.ಈಶ್...</h3>
+                                    <span>02 Jun 2026, 05:22 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/15-e78cb62be4">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt40yxd6d061nshbbr1jrbfj,imgname-mangaluru-1780399175078.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ಮಂಗಳೂರು ಪಾಲಿಕೆ ಚುನಾವಣೆ ವಿಳಂಬ, 15 ತಿಂಗಳಾದರೂ ಚುನಾವಣೆ ನಡೆಸದ ಸರ್ಕಾರಕ...</h3>
+                                    <span>02 Jun 2026, 04:50 PM</span>
+                                </a>
+                                                    </div>
+                    </section>
+                                                        <section class="ref-topic-section">
+                        <div class="ref-col-head">
+                            <h2>ವಿಶ್ವ</h2>
+                            <a href="/category/world">More</a>
+                        </div>
+                        <div class="ref-topic-grid">
+                                                            <a class="ref-topic-card" href="/article/thalapathy-vijay-714a7f7c00">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kr88x7k0q1g7de1g8kt4kjw2,imgname-tamil-nadu-cm-vijay-first-speech-secular-social-justice-tvk-govt-transparency-10-lakh-crore-debt-news-3-1778394242656.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>Thalapathy Vijay: ಫಸ್ಟ್ ಭಾಷಣದಲ್ಲೇ ತಮಿಳುನಾಡು ರಾಜಕೀಯದಲ್ಲಿ ಬಿರುಗಾಳಿ...</h3>
+                                    <span>02 Jun 2026, 05:19 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/kannada-news-1d475c1794">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt426dhsj48rvza6c0cjkdq1,imgname-thumbnail---2026-06-02t170752.601-1780400469560.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ವಿದೇಶದಲ್ಲಿ ಭಾರತದ ಮಾನ ಕಳೆದ ಮಹಿಳೆ: ಜಪಾನ್ ಜೈಲು ಪಾಲಾಗುವುದರಿಂದ ಬಚಾವ್...</h3>
+                                    <span>02 Jun 2026, 05:12 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/kannada-news-40e0af232a">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt3ybnd6xm18mt3y5qp1xg93,imgname-kiccha-sudeep-1780396447141.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ಕಿಚ್ಚ ಸುದೀಪ್ ಗೆ ಪತ್ನಿ ಕಂಡ್ರೆ ಭಯಾನಾ? ದಾಂಪತ್ಯದ ಗುಟ್ಟು ಬಿಚ್ಚಿಟ್ಟ ಪ್...</h3>
+                                    <span>02 Jun 2026, 04:11 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/donald-trump-0062645d12">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01ksf5w37xfmjcrqy5xy5jf1s1,imgname-gettyimages-2277690732-1779699682557.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ಅಯ್ಯೋ..ಪ್ರಧಾನಿಗೆ ಅವಾಚ್ಯ ಶಬ್ದ ಬಳಸಿದ ಅಮೆರಿಕ ಅಧ್ಯಕ್ಷ Donald Trump;...</h3>
+                                    <span>02 Jun 2026, 09:10 AM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/pakistan-energy-crisis-8-529e04ce63">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt2w8h7t5r79tj8m5g048end,imgname-----------------------2026-06-02t060748.738-1780360692986.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>Pakistan energy crisis: ಮಧ್ಯಪ್ರಾಚ್ಯ ಬಿಕ್ಕಟ್ಟಿನಿಂದ ರಾತ್ರಿ 8ಕ್ಕೆಲ್...</h3>
+                                    <span>02 Jun 2026, 06:11 AM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/world-milk-day-8422415167">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01ks5ggkafdaj826dwr6tch33w,imgname-milk-1779375295822.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>World Milk Day: ನಿದ್ರಾಹೀನತೆಗೆ ರಾಮಬಾಣ, ಕೆಮ್ಮು, ನೆಗಡಿಗೂ ಪರಿಹಾರ ಹಾಲ...</h3>
+                                    <span>01 Jun 2026, 10:46 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/shocking-7e30fb455e">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt1y165v3wqbv9qdqv1e7xmk,imgname-indians-bad-behaviour-1780328995002.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>Shocking: ಭಾರತೀಯ ಪ್ರವಾಸಿಗರ ಅಸಭ್ಯ ವರ್ತನೆ; ಚೀನಾದ ಮಹಾಗೋಡೆಯ ಮೇಲೆ ನಿಂ...</h3>
+                                    <span>01 Jun 2026, 09:20 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/1-86d55df3ff">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kd4vkbztdmp8e0nb8frg3zed,imgname-condom-sale-1766468464634.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ಚೀನಾಕ್ಕೆ ಬೇಕಿರೋದು ಮಕ್ಕಳೇ ಹೊರತು ಕಾಂಡೋಮ್‌ಗಳಲ್ಲ! ವಿಶ್ವದ ನಂ.1 ಬ್ರ್ಯಾ...</h3>
+                                    <span>01 Jun 2026, 04:23 PM</span>
+                                </a>
+                                                    </div>
+                    </section>
+                                                        <section class="ref-topic-section">
+                        <div class="ref-col-head">
+                            <h2>ವ್ಯಾಪಾರ</h2>
+                            <a href="/category/business">More</a>
+                        </div>
+                        <div class="ref-topic-grid">
+                                                            <a class="ref-topic-card" href="/article/45-eb60895bad">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01hp0ssherer68hy9hpajdfy5p,imgname-BharatPe-1707276551639.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ಬ್ಯಾಂಕ್‌ ಖಾತೆಯಲ್ಲಿ ದುಡ್ಡಿಲ್ಲದಿದ್ರೂ ಹಣ ಪಾವತಿಸಿ! ಯುಪಿಐನಲ್ಲೇ ಸಿಗಲಿದ...</h3>
+                                    <span>02 Jun 2026, 07:13 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/epfo-epf-b6785a64a8">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt48c0cwv5mnt4p8afn2tj40,imgname-epf-interest-credit-1780406944155.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>EPFO: ಎರಡು ತಿಂಗಳಾದ್ರೂ ಬರದ ಹಣ, ನಿಮ್ಮ ಖಾತೆಗೆ EPF ಬಡ್ಡಿ ಜಮೆ ಆಗುವುದು...</h3>
+                                    <span>02 Jun 2026, 07:04 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/1-14-rbi-14f193ccff">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt196mq0dsms2bfe5s0y1rtv,imgname-1-gram-gold-locket-designs-1780307153632.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>1.14 ಲಕ್ಷ ಕೋಟಿ ರೂಪಾಯಿ ಮೌಲ್ಯದ ಚಿನ್ನ ಮಾರಾಟ ಮಾಡಿದ್ದೇಕೆ RBI</h3>
+                                    <span>02 Jun 2026, 05:48 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/kannada-news-d450bc1a66">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kq1w5sne9yj5zwx1qf0myzwj,imgname-mahindra-scorpio-classic-1-1777105823406.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ಸ್ಕಾರ್ಪಿಯೋ, ಥಾರ್ ಅಬ್ಬರಕ್ಕೆ ನಡುಗಿದ ಆಟೋ ಮಾರುಕಟ್ಟೆ: ಖುಷಿಯಿಂದ ಹಿಗ್ಗಿ...</h3>
+                                    <span>02 Jun 2026, 05:26 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/650-1b666c63d9">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt3xyy273xm206b5yv1rk4g0,imgname-royal-enfield-bullet-650-1780396030023.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ರಾಯಲ್ ಆಗಿ ರೈಡ್ ಮಾಡಿ ರಾಯಲ್ ಎನ್‌ಫೀಲ್ಡ್ 650, ಕೈಗೆಟುಕುವ ದರಲ್ಲಿ ಬೈಕ್...</h3>
+                                    <span>02 Jun 2026, 04:02 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/cylinder-delivery-new-rules-3b2348acf2">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt3gzayxjhq3h1151e5mhv4y,imgname-cylinder-delivery-new-rules-1780382411741.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>Cylinder Delivery New Rules : ಕಮರ್ಷಿಯಲ್ ಸಿಲಿಂಡರ್ ನಿಯಮದಲ್ಲಿ ಬದಲಾವ...</h3>
+                                    <span>02 Jun 2026, 12:16 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/viral-phd-ca1403b918">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt36r1xjxt6r6eqk3f07zb3b,imgname-new-project---2026-06-02t091104.436-1780371687346.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>Viral: ಹಗಲು ಆಫೀಸ್, ರಾತ್ರಿ ಬೈಕ್ ಟ್ಯಾಕ್ಸಿ! ಜೊತೆಗೆ PhD, ಅಡುಗೆ! ‘ಟೈಮ...</h3>
+                                    <span>02 Jun 2026, 11:42 AM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/kannada-news-4f1783faac">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt30teg9bbpz2x4tyc94hsaf,imgname-beer-stock-shortages-1780365474313.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ಬಿಯರ್ ಬೆಲೆ ಕಡಿಮೆಯಾದ್ರೂ ಗ್ರಾಹಕರಿಗೆ ಯಾಕಿಷ್ಟು ಸಂಕಟ? ಮಾರುಕಟ್ಟೆ ಸಮಸ್ಯ...</h3>
+                                    <span>02 Jun 2026, 07:30 AM</span>
+                                </a>
+                                                    </div>
+                    </section>
+                                                        <section class="ref-topic-section">
+                        <div class="ref-col-head">
+                            <h2>ಕ್ರೀಡೆ</h2>
+                            <a href="/category/sports">More</a>
+                        </div>
+                        <div class="ref-topic-grid">
+                                                            <a class="ref-topic-card" href="/article/swiggy-c2ac2cf3c4">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4bj6vs7pd58hjcc2s9ygez,imgname-swiggy-food-order-on-ipl-2026-1780410293113.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>Swiggy: ಐಪಿಎಲ್‌ ಸೀಸನ್‌ನಲ್ಲಿ ಕೋಟ್ಯಂತರ ಮೊತ್ತದ ಫುಡ್‌ ತಿಂದು ತೇಗಿದ ಕ್...</h3>
+                                    <span>02 Jun 2026, 07:58 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/ipl-2026-86-66-59706a2cce">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01ks7c6dtxfrh9kcajyk62psad,imgname-20260328417l-1779437877085.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>IPL 2026: ಈ ಆಟಗಾರನ ಒಂದು ರನ್‌ಗೆ ಫ್ರಾಂಚೈಸಿ ಖರ್ಚು ಮಾಡಿದ್ದು ₹86.66 ಲ...</h3>
+                                    <span>02 Jun 2026, 01:08 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/20-1e371b6a4b">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt3k0tbrz4tzj3svcxfexw8j,imgname-top-runs-scorers-in-t20-format-1780384557432.jpeg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ವಿರಾಟ್ ಕೊಹ್ಲಿಗೆ ಸವಾಲು ಹಾಕಿದ ಟಿ20 ದಿಗ್ಗಜರು; ಅತಿ ಹೆಚ್ಚು ರನ್ ಬಾರಿಸಿ...</h3>
+                                    <span>02 Jun 2026, 12:46 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/ipl-2026-flop-xi-a95cc0fb2e">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kqvs4bam7jwyz5tkbj2h3peb,imgname-rishabh-pant-1777975045460.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>IPL 2026 Flop XI: ಈ ಸೀಸನ್‌ ಐಪಿಎಲ್‌ನ ಅತ್ಯಂತ ಪ್ಲಾಫ್ ತಂಡಕ್ಕೆ ರಿಷಭ್...</h3>
+                                    <span>02 Jun 2026, 09:39 AM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/kannada-news-520a304dd2">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01ksvwy5xz46tjm2kzhyp2y421,imgname-rajat-patidar-1780126521279.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ಐಪಿಎಲ್ ಟ್ರೋಫಿ ಗೆಲ್ಲುತ್ತಿದ್ದಂತೆಯೇ ಭಾವುಕರಾದ ರಜತ್ ಪಾಟೀದಾರ್! ಆ ನೋವು...</h3>
+                                    <span>02 Jun 2026, 09:26 AM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/kannada-news-75f2fbc186">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt0jtvvadmp8jf3g9qnmj9w4,imgname-rcb-1780283699050.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ಆರ್‌ಸಿಬಿ ಚಾಂಪಿಯನ್: ಕೊಹ್ಲಿ ಡ್ಯಾನ್ಸ್‌ಗೆ ದಂಗಾದ ಅನುಷ್ಕಾ!</h3>
+                                    <span>02 Jun 2026, 07:48 AM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/kannada-news-1534dc6ee3">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt20wrrkxdsfxcrvkz5v13j0,imgname-vj-1780331995923.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ಉತ್ತರ ಕನ್ನಡ ಜಿಲ್ಲಾದ್ಯಂತ ವಾಟರ್ ಸ್ಪೋರ್ಟ್ಸ್, ಬೋಟಿಂಗ್ ನಿಷೇಧ: ಕಾರಣವೇನ...</h3>
+                                    <span>01 Jun 2026, 10:56 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/kannada-news-07de34579c">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt22frf2zgvap5rj69f822a6,imgname-tim-david-suspended-from-ipl-match-1780333666785.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ಟ್ರೋಫಿ ಗೆದ್ದು ಸಂಭ್ರಮಿಸಿದ ಆರ್‌ಸಿಬಿ ಕ್ರಿಕೆಟಿಗ ಟಿಮ್ ಡೇವಿಡ್ ಐಪಿಎಲ್ ಪ...</h3>
+                                    <span>01 Jun 2026, 10:42 PM</span>
+                                </a>
+                                                    </div>
+                    </section>
+                                                        <section class="ref-topic-section">
+                        <div class="ref-col-head">
+                            <h2>ಸಿನಿಮಾ</h2>
+                            <a href="/category/cinema">More</a>
+                        </div>
+                        <div class="ref-topic-grid">
+                                                            <a class="ref-topic-card" href="/article/kannada-news-1f35f40bec">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4cznvfbazht1pnz3f48cv1,imgname-cm-vijay-dhanush-1780411783023.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ತಮಿಳುನಾಡಿನಲ್ಲಿ ಮತ್ತೆ ಬಿರುಗಾಳಿ? ವಿಜಯ್ ಸಿಎಂ ಆಗಿರೋ ಬೆನ್ನಲ್ಲೇ ಮತ್ತೊಬ...</h3>
+                                    <span>02 Jun 2026, 08:36 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/kannada-news-e91b433876">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4dnrg4fsgx6xjj4xqejwv2,imgname-yash-kind-gesture-goes-viral-1780412506627.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ಕ್ಯಾನ್ಸರ್‌ನಿಂದ ಪೀಡಿತ ಅಭಿಮಾನಿಗೆ ವಿಡಿಯೋ ಕಾಲ್ ಮಾಡಿ ಧೈರ್ಯ ತುಂಬಿದ ನಟ...</h3>
+                                    <span>02 Jun 2026, 08:32 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/karna-serial-9c52603059">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4c5zdvnqm7fa2p8nyy73aj,imgname-karna-serial-01-1780410940859.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>Karna Serial: ಫಸ್ಟ್​ ನೈಟ್​ ಹೇಗಾಯ್ತು ಕೇಳಿದ ಅಜ್ಜಿ! ಕರ್ಣ-ನಿಧಿ ಏನಂದ್...</h3>
+                                    <span>02 Jun 2026, 08:08 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/100-ott-7-a133790ae0">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4c0cc0hn1manddyhx2v4bx,imgname-chj-1780410757504.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>₹100 ಕೋಟಿ ಸಿನಿಮಾ... ಆದರೆ OTT ಹಕ್ಕು ಕೇವಲ ₹7 ಕೋಟಿ: ಕನ್ನಡ ಚಿತ್ರರಂಗದ...</h3>
+                                    <span>02 Jun 2026, 08:02 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/kannada-news-003c9fa381">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4aq8h6b6naagkyh5j2x5cn,imgname-priya-sudeep-about-sanvi-1780409410086.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ಸಾನ್ವಿಯ ಮದುವೆ ಮಾಡಲ್ಲ: ಬಹುದೊಡ್ಡ ಗುಟ್ಟು ರಿವೀಲ್‌ ಮಾಡಿದ ಅಮ್ಮ ಪ್ರಿಯಾ...</h3>
+                                    <span>02 Jun 2026, 07:40 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/kannada-news-b3b7890341">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01k88qjcv3hjvp0vp4jv6y86eh,imgname-ram-charan-1761229747043.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>&#039;ಪೆದ್ದಿ&#039; ಮೊದ್ಲೇ ಬಂದಿದ್ರೆ ಒಳ್ಳೆ ಸಂಬಂಧ ಬರ್ತಿತ್ತು: ಉಪಾಸನಾ ಜೊತೆ ಮದುವ...</h3>
+                                    <span>02 Jun 2026, 06:57 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/kannada-news-b586b511ab">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01karc3j9hrmgr21sd6wqnd701,imgname-kissing-1763902081329.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ಸಿನಿಮಾ, ಸೀರಿಯಲ್‌ನಲ್ಲಿ ಕಿಸ್‌ ಮಾಡೋದು ನಿಜಾನಾ? ಇದರ ಹಿಂದಿದ್ದಾರೆ ನಡುಕ...</h3>
+                                    <span>02 Jun 2026, 03:29 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/seetharaama-serial-d57a40d576">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt3kmmfnv18wynyg9crqevxj,imgname-new-project---2026-06-02t124932.943-1780385206773.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>Seetharaama Serial ತಂದುಕೊಟ್ಟ ಜನಪ್ರಿಯತೆ; ಬಾಲನಟಿ ರೀತು ಸಿಂಗ್‌ ಪಾಲಿಗ...</h3>
+                                    <span>02 Jun 2026, 01:04 PM</span>
+                                </a>
+                                                    </div>
+                    </section>
+                                                        <section class="ref-topic-section">
+                        <div class="ref-col-head">
+                            <h2>ತಂತ್ರಜ್ಞಾನ</h2>
+                            <a href="/category/technology">More</a>
+                        </div>
+                        <div class="ref-topic-grid">
+                                                            <a class="ref-topic-card" href="/article/kannada-news-d1d468037a">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01ks29m187c2r1qbkqcck42mpq,imgname-peddi-advance-booking-1779267405063.jfif" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ರಾಮ್ ಚರಣ್ &#039;ಪೆದ್ದಿ&#039; ಸಿನಿಮಾ ಹಿಟ್ ಆಗಲು ಎಷ್ಟು ಕೋಟಿ ಕಲೆಕ್ಷನ್ ಬೇಕು? ಇಲ...</h3>
+                                    <span>02 Jun 2026, 11:28 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/kannada-news-24e3cbc8d1">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kswk26g0ejhmm5811fz3659c,imgname-siddaramaiah-kc-venugopal-1780149721600.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ಸಿದ್ದರಾಮಯ್ಯಕ್ಕೆ ಮಹತ್ವದ ಜವಾಬ್ದಾರಿ ಕೊಟ್ಟ ಹೈಕಮಾಂಡ್, ಕಾಂಗ್ರೆಸ್ ಕಾರ್ಯ...</h3>
+                                    <span>02 Jun 2026, 10:55 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/7-c65a248a07">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01k41h4f8tbxazjwhym0n7zvd6,imgname-bmrcl-yellow-line-1756693151002.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ಬೆಂಗಳೂರು ಮೆಟ್ರೋ ಪ್ರಯಾಣಿಕರಿಗೆ ಸಿಹಿ ಸುದ್ದಿ, ಪೀಕ್ ಹವರ್‌ನಲ್ಲಿ 7 ನಿಮಿ...</h3>
+                                    <span>02 Jun 2026, 10:33 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/kannada-news-bc245769bd">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01h8c8h842rnrb4tgh5tzk8acn,imgname-gayathri-gupta.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ನೂರಕ್ಕೂ ಹೆಚ್ಚು ಬಾರಿ ರೇ*ಪ್ ಯತ್ನ, ಅಪ್ಪನೇ ಥಳಿಸಿದ್ರು: ನರಕ ದರ್ಶನ ಮಾಡಿ...</h3>
+                                    <span>02 Jun 2026, 10:28 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/kannada-news-ed7672cb10">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kq9jbccfv1jtq5pbcr3wq8xd,imgname-mla-iqbal-hussain-dk-shivakumar-1777363956111.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ಡಿ.ಕೆ.ಶಿವಕುಮಾರ್‌ ಮುಖ್ಯಮಂತ್ರಿ ಆಗುತ್ತಿರುವುದು‌ ನನ್ನ ಅದೃಷ್ಟ: ಶಾಸಕ ಇಕ...</h3>
+                                    <span>02 Jun 2026, 09:48 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/kannada-news-535bd31062">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01ddjk1pk92xt4qchr50vprfma,imgname-dc-cover-thn9j28h3546o780eu73scfgs0-20180909231207-medi-jpeg.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ನಟ ಮಾತ್ರವಲ್ಲ, ಸಂಸ್ಕೃತ ಪಂಡಿತನಂತೆ ಮಾತನಾಡಿದ ಫಿಟ್ನೆಸ್ ಹೀರೋ ವಿದ್ಯುತ್:...</h3>
+                                    <span>02 Jun 2026, 08:30 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/12-8aea3a7c84">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01knr7mqe563szes47rt27134g,imgname-india-airport-charges-cut-25-percent-flight-ticket-price-impact-domestic-airfare-atf-fuel-cost-airlines-update-1-1775708560837.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ಅಮೆರಿಕದ ಕಠಿಣ ನಿಯಮಗಳಿಂದ ಬೇಸತ್ತು 12 ವರ್ಷಗಳ ಜೀವನ ತೊರೆದು: ಭಾರತಕ್ಕೆ ಮ...</h3>
+                                    <span>02 Jun 2026, 08:11 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/2-91c95a9871">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01h7y4af7f4e03pfs2m2jerm0v,imgname-asianet-news--11-.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ಮಳೆಗಾಲ ಆರಂಭಕ್ಕೂ ಮೊದಲೇ ರೈತರ 2 ಲಕ್ಷ ರೂ ಸಾಲ ಮನ್ನ, ಮಹಾ ಸರ್ಕಾರದಿಂದ ಮಹ...</h3>
+                                    <span>02 Jun 2026, 07:51 PM</span>
+                                </a>
+                                                    </div>
+                    </section>
+                                                        <section class="ref-topic-section">
+                        <div class="ref-col-head">
+                            <h2>ಫ್ಯಾಕ್ಟ್ ಚೆಕ್</h2>
+                            <a href="/category/fact-check">More</a>
+                        </div>
+                        <div class="ref-topic-grid">
+                                                            <a class="ref-topic-card" href="/article/kannada-news-e1dd192f24">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4g9q4w0y0kdnb0xm7bsrj9,imgname-south-indian-food-chiblu-idli-1780415257755.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ಹಳ್ಳಿ ಶೈಲಿಯ ಮೃದುವಾದ &#039;ಚಿಬ್ಲು ಇಡ್ಲಿ&#039; ಮೇಕಿಂಗ್ ವಿಡಿಯೋ ವೈರಲ್; ಬಾಯಲ್ಲಿ...</h3>
+                                    <span>02 Jun 2026, 09:27 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/88-75abc16930">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4dxj53czhz483heb3ec5e7,imgname-90-year-old-bicycle-bill-1780412762274.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ಒಂದು ಸಿಗರೇಟ್‌ಗಿಂತಲೂ ಕಡಿಮೆ ಬೆಲೆಗೆ ಬ್ರ್ಯಾಂಡೆಡ್ ಸೈಕಲ್; 88 ವರ್ಷಗಳ ಹಿ...</h3>
+                                    <span>02 Jun 2026, 08:37 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/kannada-news-e700886241">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4at76c479q1e3c6g7nptg4,imgname-screenshot-2026-06-02-185652-1780409507019.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ಭದ್ರಾ ಹುಲಿ ಸಂರಕ್ಷಿತ ಪ್ರದೇಶದಲ್ಲಿ ಪುಂಡಾಟ: ಖಾಸಗಿ ಜೀಪಿನಲ್ಲಿ ಅಕ್ರಮ ಪ್...</h3>
+                                    <span>02 Jun 2026, 07:49 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/kannada-news-9dde75ab06">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01km35yzfz3520ddfxgb8whhag,imgname-screenshot-2026-03-19-181406-1773928414719.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ಜಮೀರ್-ಸಿರಾಜ್ ಆಡಿಯೋದಲ್ಲಿ ಬಿಜೆಪಿ ಅಭ್ಯರ್ಥಿ ಹೆಸರು: ಸ್ಫೋಟಕ ಟ್ವಿಸ್ಟ್ ಕ...</h3>
+                                    <span>02 Jun 2026, 07:36 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/kannada-news-75047eaf82">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kpfntgzs37jghkra9ht42fv9,imgname-fotojet--73--1776495182841.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ಫೆಡರಲ್ ಕೋರ್ಟ್ ಆವರಣದಲ್ಲಿ ಪೊಲೀಸ್ ಜೊತೆ ಮಹಿಳಾ ಜಡ್ಜ್ ಸರಸ, ಸುಳ್ಳು ಹೇಳಿ...</h3>
+                                    <span>02 Jun 2026, 05:15 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/viral-video-62b90bdaf9">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt413a2zq7kygm3yw15n7bm7,imgname-xh-1780399319135.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>Viral Video: ಮೂಡ್ ಆಫ್ ಆಗಿದೆಯಾ? ಈ ಅಪ್ಪ-ಮಗಳ ವಿಡಿಯೋ ಒಮ್ಮೆ ನೋಡಿ!</h3>
+                                    <span>02 Jun 2026, 04:52 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/kissing-scene-b5ff65357b">
+                                    <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt3zyevyeyb1vqt5jqqhr28n,imgname-cjh-1780398111614.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>Kissing Scene: ಶಾಹಿದ್-ಟಾಕ್ಸಿಕ್ ಬ್ಯೂಟಿಯ ಬೈಕ್ ಕಿಸ್ ಹಿಂದಿನ ಅಸಲಿ ಕಥೆ...</h3>
+                                    <span>02 Jun 2026, 04:35 PM</span>
+                                </a>
+                                                            <a class="ref-topic-card" href="/article/kannada-news-931b6dad31">
+                                    <img src="https://geo.dailymotion.com/player/x1tbu.html?video=xacq9vg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                                    <h3>ಜಮೀರ್ ಖಾನ್‌ಗೆ &#039;ಕೈ&#039; ಕೊಟ್ಟ ಆಡಿಯೋ; ಇತ್ತ ಸಿದ್ದರಾಮಯ್ಯ ಆಪ್ತನಿಗೆ ಕೊಟ್ರು...</h3>
+                                    <span>02 Jun 2026, 01:20 PM</span>
+                                </a>
+                                                    </div>
+                    </section>
+                            </div>
+        </section>
+
+        <!-- Sponsor block before dense grid -->
+        <div class="hp-sponsor-block">
+            <div class="hp-sponsor-block__inner">
+                <div class="hp-sponsor-block__cta">
+                    <h2>📱 WhatsApp ಸುದ್ದಿ ಅಲರ್ಟ್</h2>
+                    <p>ತಾಜಾ ಕನ್ನಡ ಸುದ್ದಿ ನೇರ ನಿಮ್ಮ ಫೋನಿಗೆ – ಉಚಿತ!</p>
+                    <a class="button" href="/contact.php">Subscribe →</a>
+                </div>
+                <div class="hp-sponsor-block__ad">
+                    <span class="hp-sponsor-block__adlabel">SPONSOR</span>
+                        <aside class="ad-slot ad-slot--article" aria-label="Advertisement">
+                    <div style="margin: 20px auto; text-align: center; max-width: 300px; overflow: hidden;" aria-label="Advertisement">
+              <script>
+                atOptions = {
+                  'key' : '9aec88a46e19f5cf7198fdb3621d56de',
+                  'format' : 'iframe',
+                  'height' : 250,
+                  'width' : 300,
+                  'params' : {}
+                };
+              </script>
+              <script src="https://www.highperformanceformat.com/9aec88a46e19f5cf7198fdb3621d56de/invoke.js"></script>
+            </div>
+            </aside>
+                    </div>
+
+            </div>
+        </div>
+
+        <!-- All News Dense Grid -->
+        <section class="ref-dense-section">
+            <div class="section-title">
+                <h2>All News Grid</h2>
+                <a href="/feed.xml">Live Feed</a>
+            </div>
+            <div class="ref-news-grid">
+                                    <a class="ref-news-cell is-wide" href="/article/12-8aea3a7c84">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01knr7mqe563szes47rt27134g,imgname-india-airport-charges-cut-25-percent-flight-ticket-price-impact-domestic-airfare-atf-fuel-cost-airlines-update-1-1775708560837.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ತಂತ್ರಜ್ಞಾನ</span>
+                        <h3>ಅಮೆರಿಕದ ಕಠಿಣ ನಿಯಮಗಳಿಂದ ಬೇಸತ್ತು 12 ವರ್ಷಗಳ ಜೀವನ ತೊರೆದು: ಭಾರತಕ್ಕೆ ಮರಳಿದ ಸ್ಟಾರ್ಟ್ಅಪ್ ಸಹ-ಸಂಸ್ಥಾಪಕ!</h3>
+                        <small>02 Jun 2026, 08:11 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/karna-serial-9c52603059">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4c5zdvnqm7fa2p8nyy73aj,imgname-karna-serial-01-1780410940859.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ಸಿನಿಮಾ</span>
+                        <h3>Karna Serial: ಫಸ್ಟ್​ ನೈಟ್​ ಹೇಗಾಯ್ತು ಕೇಳಿದ ಅಜ್ಜಿ! ಕರ್ಣ-ನಿಧಿ ಏನಂದ್ರು;...</h3>
+                        <small>02 Jun 2026, 08:08 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/100-ott-7-a133790ae0">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4c0cc0hn1manddyhx2v4bx,imgname-chj-1780410757504.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ಸಿನಿಮಾ</span>
+                        <h3>₹100 ಕೋಟಿ ಸಿನಿಮಾ... ಆದರೆ OTT ಹಕ್ಕು ಕೇವಲ ₹7 ಕೋಟಿ: ಕನ್ನಡ ಚಿತ್ರರಂಗದಲ್ಲಿ...</h3>
+                        <small>02 Jun 2026, 08:02 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/swiggy-c2ac2cf3c4">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4bj6vs7pd58hjcc2s9ygez,imgname-swiggy-food-order-on-ipl-2026-1780410293113.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ಕ್ರೀಡೆ</span>
+                        <h3>Swiggy: ಐಪಿಎಲ್‌ ಸೀಸನ್‌ನಲ್ಲಿ ಕೋಟ್ಯಂತರ ಮೊತ್ತದ ಫುಡ್‌ ತಿಂದು ತೇಗಿದ ಕ್ರಿಕೆ...</h3>
+                        <small>02 Jun 2026, 07:58 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/2-91c95a9871">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01h7y4af7f4e03pfs2m2jerm0v,imgname-asianet-news--11-.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ತಂತ್ರಜ್ಞಾನ</span>
+                        <h3>ಮಳೆಗಾಲ ಆರಂಭಕ್ಕೂ ಮೊದಲೇ ರೈತರ 2 ಲಕ್ಷ ರೂ ಸಾಲ ಮನ್ನ, ಮಹಾ ಸರ್ಕಾರದಿಂದ ಮಹತ್ವದ...</h3>
+                        <small>02 Jun 2026, 07:51 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/kannada-news-e700886241">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4at76c479q1e3c6g7nptg4,imgname-screenshot-2026-06-02-185652-1780409507019.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ಫ್ಯಾಕ್ಟ್ ಚೆಕ್</span>
+                        <h3>ಭದ್ರಾ ಹುಲಿ ಸಂರಕ್ಷಿತ ಪ್ರದೇಶದಲ್ಲಿ ಪುಂಡಾಟ: ಖಾಸಗಿ ಜೀಪಿನಲ್ಲಿ ಅಕ್ರಮ ಪ್ರವೇಶ...</h3>
+                        <small>02 Jun 2026, 07:49 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/eye-care-routine-490fcacbb2">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kr346w95dsf7g9989aacw1sr,imgname-eye-meakup-4-1778221543717.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ತಾಜಾ ಸುದ್ದಿ</span>
+                        <h3>Eye Care Routine: ಕಾಂತದಂತೆ ಸೆಳೆಯುವ ಕಣ್ಣುಗಳು ನಿಮ್ಮದಾಗಬೇಕೆ? ಈ ಟಿಪ್ಸ್ ಫ...</h3>
+                        <small>02 Jun 2026, 07:41 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/kannada-news-003c9fa381">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4aq8h6b6naagkyh5j2x5cn,imgname-priya-sudeep-about-sanvi-1780409410086.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ಸಿನಿಮಾ</span>
+                        <h3>ಸಾನ್ವಿಯ ಮದುವೆ ಮಾಡಲ್ಲ: ಬಹುದೊಡ್ಡ ಗುಟ್ಟು ರಿವೀಲ್‌ ಮಾಡಿದ ಅಮ್ಮ ಪ್ರಿಯಾ ಸುದೀ...</h3>
+                        <small>02 Jun 2026, 07:40 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/kannada-news-9dde75ab06">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01km35yzfz3520ddfxgb8whhag,imgname-screenshot-2026-03-19-181406-1773928414719.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ಫ್ಯಾಕ್ಟ್ ಚೆಕ್</span>
+                        <h3>ಜಮೀರ್-ಸಿರಾಜ್ ಆಡಿಯೋದಲ್ಲಿ ಬಿಜೆಪಿ ಅಭ್ಯರ್ಥಿ ಹೆಸರು: ಸ್ಫೋಟಕ ಟ್ವಿಸ್ಟ್ ಕೊಟ್ಟ...</h3>
+                        <small>02 Jun 2026, 07:36 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell is-wide" href="/article/karna-serial-f5bffc0e7e">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4a7yh4sxzbrd5d1w381hp5,imgname-bhavya-gowda-1780408908324.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ತಂತ್ರಜ್ಞಾನ</span>
+                        <h3>Karna Serial ನಿಧಿಗೆ ಡಬಲ್​ ಧಮಾಕಾ: ಒಂದೇ ಬಾರಿ ಎರಡೆರಡು ಅವಾರ್ಡ್​ ಪಡೆದ ಭವ್ಯಾ ಗೌಡ</h3>
+                        <small>02 Jun 2026, 07:32 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/45-eb60895bad">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01hp0ssherer68hy9hpajdfy5p,imgname-BharatPe-1707276551639.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ವ್ಯಾಪಾರ</span>
+                        <h3>ಬ್ಯಾಂಕ್‌ ಖಾತೆಯಲ್ಲಿ ದುಡ್ಡಿಲ್ಲದಿದ್ರೂ ಹಣ ಪಾವತಿಸಿ! ಯುಪಿಐನಲ್ಲೇ ಸಿಗಲಿದೆ 45...</h3>
+                        <small>02 Jun 2026, 07:13 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/kannada-news-57cffdd5ff">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01k4wp2b5v03z6v8krfh3yrqaf,imgname-gnghmn-1757604293819.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ಕರ್ನಾಟಕ</span>
+                        <h3>ಹಿಂದುಗಳ ಮೇಲೆ ದೌರ್ಜನ್ಯ ನಡೆದರೆ ಠಾಣೆಗೂ ಮುತ್ತಿಗೆ: ಬಿ.ವೈ.ವಿಜಯೇಂದ್ರ ಎಚ್ಚರಿ...</h3>
+                        <small>02 Jun 2026, 07:11 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/epfo-epf-b6785a64a8">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt48c0cwv5mnt4p8afn2tj40,imgname-epf-interest-credit-1780406944155.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ವ್ಯಾಪಾರ</span>
+                        <h3>EPFO: ಎರಡು ತಿಂಗಳಾದ್ರೂ ಬರದ ಹಣ, ನಿಮ್ಮ ಖಾತೆಗೆ EPF ಬಡ್ಡಿ ಜಮೆ ಆಗುವುದು ಯಾವ...</h3>
+                        <small>02 Jun 2026, 07:04 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/0-29-12-8dfae27d37">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt48gmnzyx3c7149vfjwpsqj,imgname-spiritual-guru-abhishek-mishra-arrest-1780407095998.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ಭಾರತ</span>
+                        <h3>ಹಾಲು ಕುಡಿಸಿ ಮಹಿಳೆಯರ ಮೇಲೆ ಲೈ0ಗಿಕ ದೌರ್ಜನ್ಯ ಎಸಗಿದ 29ರ ಧಾರ್ಮಿಕ ಗುರು,12 ವ...</h3>
+                        <small>02 Jun 2026, 07:01 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/egg-storage-e4de32a307">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt44accd58shynat2ab9hp5x,imgname-fotojet---2026-06-02t174745.551-1780402696589.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ತಾಜಾ ಸುದ್ದಿ</span>
+                        <h3>Egg Storage: ಫ್ರಿಡ್ಜ್‌ನಲ್ಲಿಟ್ಟ ಮೊಟ್ಟೆ ಬೇಗ ಹಾಳಾಗ್ತಿದ್ಯಾ? ಹಾಗಿದ್ರೆ ಈ ತ...</h3>
+                        <small>02 Jun 2026, 07:00 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/kannada-news-b3b7890341">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01k88qjcv3hjvp0vp4jv6y86eh,imgname-ram-charan-1761229747043.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ಸಿನಿಮಾ</span>
+                        <h3>&#039;ಪೆದ್ದಿ&#039; ಮೊದ್ಲೇ ಬಂದಿದ್ರೆ ಒಳ್ಳೆ ಸಂಬಂಧ ಬರ್ತಿತ್ತು: ಉಪಾಸನಾ ಜೊತೆ ಮದುವೆ ಬಗ...</h3>
+                        <small>02 Jun 2026, 06:57 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/tv-actresses-10-3ae39f7ec4">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt46pnx5320qd2pw9vnzpa2n,imgname-chc-1780405196709.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ತಂತ್ರಜ್ಞಾನ</span>
+                        <h3>TV Actresses: ಸೀರಿಯಲ್ ಲೋಕದ ಟಾಪ್ 10 ಗ್ಲಾಮರಸ್ ನಟಿಯರು: ಇವರ ಮುಂದೆ ಹೀರೋಯಿ...</h3>
+                        <small>02 Jun 2026, 06:34 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/wife-rituals-de205af9e0">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt45rke30qechk7p5h81jwra,imgname-wife-rituals-1780404211139.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ತಾಜಾ ಸುದ್ದಿ</span>
+                        <h3>Wife Rituals : ಗಂಡ ಕೆಲ್ಸಕ್ಕೆ ಹೋಗ್ತಿದ್ದಂತೆ ಹೆಂಡ್ತಿಯಾದವಳು ಈ ಕೆಲ್ಸ ಮಾಡ್...</h3>
+                        <small>02 Jun 2026, 06:25 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell is-wide" href="/article/5-9b7866f224">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt454kj5ywhfmbqaa94va70q,imgname-annamalai--1--1780403555909.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ತಂತ್ರಜ್ಞಾನ</span>
+                        <h3>ಬರೋಬ್ಬರಿ 5 ಪುಟಗಳ ಸುದೀರ್ಘ ರಾಜೀನಾಮೆ ಪತ್ರ ಸಲ್ಲಿಸಿದ ಬಳಿಕ ಗೃಹ ಸಚಿವ ಅಮಿತ್ ಶಾ ಭೇಟಿಯಾದ ಅಣ್ಣಾಮಲೈ!</h3>
+                        <small>02 Jun 2026, 06:24 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/osm-cbse-e76f08e0ce">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01ksyeemmq0wg1yd9kc9g7wwwn,imgname-cbse-class-12-marksheet-controversy-board-exam-trust-crisis-osm-revaluation-student-anxiety-1780211995287.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ತಂತ್ರಜ್ಞಾನ</span>
+                        <h3>OSM ಪೋರ್ಟಲ್ ಹಗರಣದ ಬೆನ್ನಲ್ಲೇ ಕೇಂದ್ರ ಆಪರೇಷನ್‌: CBSE ಅಧ್ಯಕ್ಷ, ಕಾರ್ಯದರ್ಶ...</h3>
+                        <small>02 Jun 2026, 06:21 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/kannada-news-6b3e66f768">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt43gwrgngfhf9g4fz0251dh,imgname-virat-kohli-visit-premanand-maharaj-mutt--2--1780401861391.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ತಾಜಾ ಸುದ್ದಿ</span>
+                        <h3>ವಿರಾಟ್ ಕೊಹ್ಲಿ-ಅನುಷ್ಕಾ ಶರ್ಮಾ ಪದೇ ಪದೇ ಬೃಂದಾವನಕ್ಕೆ ಹೋಗುವುದೇಕೆ? ಪ್ರೇಮಾನಂ...</h3>
+                        <small>02 Jun 2026, 06:08 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/4-384d8b7b49">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01jpz0knhs80f37ca3bm3h7s61,imgname-bengaluru-rain.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ತಂತ್ರಜ್ಞಾನ</span>
+                        <h3>ಜೂನ್ 4 ರಿಂದ ಈ ರಾಜ್ಯಗಳಲ್ಲಿ ಭಾರಿ ಮಳೆ, ಹವಾಮಾನ ಇಲಾಖೆ ಮುನ್ಸೂಚನೆ ಬೆನ್ನಲ್ಲೇ...</h3>
+                        <small>02 Jun 2026, 06:04 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/35-50-1d750dfdc5">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt3xkp140hs4ygvwwzrawvv9,imgname-train-passenger-alleges--15-overcharge-on--35-cake-purchase-1780395661348.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ತಂತ್ರಜ್ಞಾನ</span>
+                        <h3>₹35 ಕೇಕ್‌ಗೆ ₹50 ಯಾಕೆ? ವ್ಯಾಪಾರಿ ಕೊಟ್ಟ ಉತ್ತರ ಕೇಳಿ ದಂಗಾದ ಪ್ರಯಾಣಿಕ!</h3>
+                        <small>02 Jun 2026, 06:02 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/kannada-news-23da1927c0">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01k4wq0ft5bcc84ze6n51e9ppk,imgname-difference-between-puchka-and-panipuri-1757605281605.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ತಾಜಾ ಸುದ್ದಿ</span>
+                        <h3>ಈ ಸೆಕೆಯಲ್ಲಿ ಪಾನಿಪುರಿ, ಚಾಟ್ಸ್ ತಿನ್ನುತ್ತೀರಾ? ಮೆಚ್ಚಿನ ಆಹಾರವೇ ವಿಷ ಆಗಬಹುದ...</h3>
+                        <small>02 Jun 2026, 05:48 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/1-14-rbi-14f193ccff">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt196mq0dsms2bfe5s0y1rtv,imgname-1-gram-gold-locket-designs-1780307153632.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ವ್ಯಾಪಾರ</span>
+                        <h3>1.14 ಲಕ್ಷ ಕೋಟಿ ರೂಪಾಯಿ ಮೌಲ್ಯದ ಚಿನ್ನ ಮಾರಾಟ ಮಾಡಿದ್ದೇಕೆ RBI</h3>
+                        <small>02 Jun 2026, 05:48 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/kannada-news-957d0f318e">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01ke9gvn831sm04q06yrjpv529,imgname-----------------------2026-01-06t165158.634-1767698715907.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ಭಾರತ</span>
+                        <h3>ಮೋದಿ ಸರ್ಕಾರದ ಸಾಧನೆಗಳನ್ನು ಜನರಿಗೆ ತಲುಪಿಸಿ; ಬಿಜೆಪಿ ಕಾರ್ಯಕರ್ತರಿಗೆ ರೇಣುಕಾ...</h3>
+                        <small>02 Jun 2026, 05:47 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/dk-shivakumar-5e6fffe07c">
+                        <img src="https://geo.dailymotion.com/player/x1tbu.html?video=xacqbqu" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ಕರ್ನಾಟಕ</span>
+                        <h3>Dk Shivakumar ತುಂಟಾಟದ ಕಥೆ ತೆರೆದಿಟ್ಟ ಗೆಳೆಯ! &#039;ಕ್ರೇಜಿಸ್ಟಾರ್&#039; ಕಷ್ಟದಲ್ಲಿದ...</h3>
+                        <small>02 Jun 2026, 05:33 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell is-wide" href="/article/kannada-news-4d9c310af4">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01gxacphd5f0g2e36jgxnae9tb,imgname-otpz5z75-1680754820517.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ತಂತ್ರಜ್ಞಾನ</span>
+                        <h3>ಕರಾವಳಿಗೆ ಖುಷಿ, ಸೂರತ್-ಮಂಗಳೂರು ಸ್ಪೆಷಲ್ ರೈಲು ಶಾಶ್ವತ ಸೇವೆಗೆ ಪರಿವರ್ತಿಸಿದ ರೈಲ್ವೆ ಇಲಾಖೆ, ಗೋವಾ ಈಗ ಹತ್ತಿರ...</h3>
+                        <small>02 Jun 2026, 05:31 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/kannada-news-d450bc1a66">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kq1w5sne9yj5zwx1qf0myzwj,imgname-mahindra-scorpio-classic-1-1777105823406.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ವ್ಯಾಪಾರ</span>
+                        <h3>ಸ್ಕಾರ್ಪಿಯೋ, ಥಾರ್ ಅಬ್ಬರಕ್ಕೆ ನಡುಗಿದ ಆಟೋ ಮಾರುಕಟ್ಟೆ: ಖುಷಿಯಿಂದ ಹಿಗ್ಗಿದ ಆನ...</h3>
+                        <small>02 Jun 2026, 05:26 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/kannada-news-f8e1ddf3d5">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01g975x17kzyppr01r9h4rdkry,imgname-ks-eshwarappa.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ಭಾರತ</span>
+                        <h3>ಶರಾವತಿ ಪಂಪ್ಡ್ ಸ್ಟೋರೇಜ್ ಬಗ್ಗೆ ಸಮೀಕ್ಷೆ ಸರಿಯಲ್ಲ: ಗುಡುಗಿದ ಕೆ.ಎಸ್.ಈಶ್ವರಪ್...</h3>
+                        <small>02 Jun 2026, 05:22 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/thalapathy-vijay-714a7f7c00">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kr88x7k0q1g7de1g8kt4kjw2,imgname-tamil-nadu-cm-vijay-first-speech-secular-social-justice-tvk-govt-transparency-10-lakh-crore-debt-news-3-1778394242656.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ವಿಶ್ವ</span>
+                        <h3>Thalapathy Vijay: ಫಸ್ಟ್ ಭಾಷಣದಲ್ಲೇ ತಮಿಳುನಾಡು ರಾಜಕೀಯದಲ್ಲಿ ಬಿರುಗಾಳಿ‌ ಎಬ...</h3>
+                        <small>02 Jun 2026, 05:19 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/kannada-news-75047eaf82">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kpfntgzs37jghkra9ht42fv9,imgname-fotojet--73--1776495182841.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ಫ್ಯಾಕ್ಟ್ ಚೆಕ್</span>
+                        <h3>ಫೆಡರಲ್ ಕೋರ್ಟ್ ಆವರಣದಲ್ಲಿ ಪೊಲೀಸ್ ಜೊತೆ ಮಹಿಳಾ ಜಡ್ಜ್ ಸರಸ, ಸುಳ್ಳು ಹೇಳಿದ್ರೂ...</h3>
+                        <small>02 Jun 2026, 05:15 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/panipuri-recipe-8f8690d2ae">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt40csf9j4djgjgzr5w49ybr,imgname-panipuri---june-2-1780398581225.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ತಾಜಾ ಸುದ್ದಿ</span>
+                        <h3>Panipuri Recipe: ಸ್ಟ್ರೀಟ್‌ನಲ್ಲೇ ಸಿಗೋ ಥರ ಮನೇಲಿ ಪಾನಿಪೂರಿ ಮಾಡೋದು ಹೇಗೆ?...</h3>
+                        <small>02 Jun 2026, 05:12 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/kannada-news-1d475c1794">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt426dhsj48rvza6c0cjkdq1,imgname-thumbnail---2026-06-02t170752.601-1780400469560.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ವಿಶ್ವ</span>
+                        <h3>ವಿದೇಶದಲ್ಲಿ ಭಾರತದ ಮಾನ ಕಳೆದ ಮಹಿಳೆ: ಜಪಾನ್ ಜೈಲು ಪಾಲಾಗುವುದರಿಂದ ಬಚಾವ್ ಮಾಡಿ...</h3>
+                        <small>02 Jun 2026, 05:12 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/snake-droppings-05558a8757">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kq4tyqsctthnvvk1pnpap0z9,imgname-whatsapp-image-2026-04-26-at-5.30.24-pm-1777205206828.jpeg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ತಾಜಾ ಸುದ್ದಿ</span>
+                        <h3>Snake Droppings: ಪಕ್ಷಿ ಹಿಕ್ಕೆ ಎಂದು ಮೋಸ ಹೋಗ್ಬೇಡಿ! ಆ ರೀತಿ ಇದ್ರೆ ಪಕ್ಕಾ...</h3>
+                        <small>02 Jun 2026, 04:53 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/viral-video-62b90bdaf9">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt413a2zq7kygm3yw15n7bm7,imgname-xh-1780399319135.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ಫ್ಯಾಕ್ಟ್ ಚೆಕ್</span>
+                        <h3>Viral Video: ಮೂಡ್ ಆಫ್ ಆಗಿದೆಯಾ? ಈ ಅಪ್ಪ-ಮಗಳ ವಿಡಿಯೋ ಒಮ್ಮೆ ನೋಡಿ!</h3>
+                        <small>02 Jun 2026, 04:52 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell is-wide" href="/article/15-e78cb62be4">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt40yxd6d061nshbbr1jrbfj,imgname-mangaluru-1780399175078.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ಭಾರತ</span>
+                        <h3>ಮಂಗಳೂರು ಪಾಲಿಕೆ ಚುನಾವಣೆ ವಿಳಂಬ, 15 ತಿಂಗಳಾದರೂ ಚುನಾವಣೆ ನಡೆಸದ ಸರ್ಕಾರಕ್ಕೆ ಹೈಕೋರ್ಟ್ ನೋಟಿಸ್</h3>
+                        <small>02 Jun 2026, 04:50 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/kissing-scene-b5ff65357b">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt3zyevyeyb1vqt5jqqhr28n,imgname-cjh-1780398111614.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ಫ್ಯಾಕ್ಟ್ ಚೆಕ್</span>
+                        <h3>Kissing Scene: ಶಾಹಿದ್-ಟಾಕ್ಸಿಕ್ ಬ್ಯೂಟಿಯ ಬೈಕ್ ಕಿಸ್ ಹಿಂದಿನ ಅಸಲಿ ಕಥೆ: ವೈ...</h3>
+                        <small>02 Jun 2026, 04:35 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/11-e1a6866c28">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kswj9b3q8vjp6da636me2hcq,imgname-dk-shivakumar-new-karnataka-chief-minister-1780148907124.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ಭಾರತ</span>
+                        <h3>ನಾಳೆ ಡಿ.ಕೆ. ಶಿವಕುಮಾರ್ ಸಿಎಂ ಆಗಿ ಪ್ರಮಾಣ ವಚನ: ಹೈಕಮಾಂಡ್‌ನಿಂದ 11 ಸಚಿವರ ಪಟ...</h3>
+                        <small>02 Jun 2026, 04:26 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/20-639d9fb58a">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kszvbz0vwx694fz1p8561tk5,imgname-red-and-black-retro-landscape-youtube-thumbnail-background--1--1780259093531.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ತಂತ್ರಜ್ಞಾನ</span>
+                        <h3>ಟಿ20ಯಲ್ಲಿ ಡಬಲ್ ಸೆಂಚುರಿ ಬಾರಿಸೋ ಮೊದಲ ಆಟಗಾರ ಇವನೇ ನೋಡಿ! ಲಲಿತ್ ಮೋದಿ ಅಚ್ಚರ...</h3>
+                        <small>02 Jun 2026, 04:16 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/sushmita-sen-10-060b62274d">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01jdms1mcmxty6sh0y6h7kq82q,imgname-fotojet--9-.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ತಂತ್ರಜ್ಞಾನ</span>
+                        <h3>Sushmita Sen: ಲಲಿತ್ ಮೋದಿ ಮಾತ್ರವಲ್ಲ, ಈ 10 ಜನರ ಜೊತೆಗೂ ಇತ್ತು ನಟಿ ಸುಶ್ಮಿ...</h3>
+                        <small>02 Jun 2026, 04:15 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/kannada-news-631e85cfa5">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01k9s8d0w1td47atgeyjhrgqpd,imgname-new-project--30--1762858009473.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ತಾಜಾ ಸುದ್ದಿ</span>
+                        <h3>ಗೆಜ್ಜೆ ಸದ್ದು, ಶಂಖನಾದ, ಮಳೆ ಮಾಯ! ಮಂತ್ರಾಲಯದಲ್ಲಿ ಮಾಸ್ಟರ್ ಆನಂದ್‌ಗೆ ಆದ ದೈವ...</h3>
+                        <small>02 Jun 2026, 04:12 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/kannada-news-40e0af232a">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt3ybnd6xm18mt3y5qp1xg93,imgname-kiccha-sudeep-1780396447141.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ವಿಶ್ವ</span>
+                        <h3>ಕಿಚ್ಚ ಸುದೀಪ್ ಗೆ ಪತ್ನಿ ಕಂಡ್ರೆ ಭಯಾನಾ? ದಾಂಪತ್ಯದ ಗುಟ್ಟು ಬಿಚ್ಚಿಟ್ಟ ಪ್ರಿಯಾ</h3>
+                        <small>02 Jun 2026, 04:11 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/kannada-news-8cadb10172">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kgcvgr5zf05vntyym9enktry,imgname-bigg-boss-jhanvi-1769958039743.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ತಾಜಾ ಸುದ್ದಿ</span>
+                        <h3>ಬಿಜೆಪಿ, ಕಾಂಗ್ರೆಸ್‌ ಬಿಟ್ಟು ಜೆಡಿಎಸ್‌ಗೆ ಸೇರಿದ್ಯಾಕೆ? ಟ್ರೋಲರ್ಸ್‌ಗೆ ಬಿಗ್‌ಬ...</h3>
+                        <small>02 Jun 2026, 04:04 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/650-1b666c63d9">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt3xyy273xm206b5yv1rk4g0,imgname-royal-enfield-bullet-650-1780396030023.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ವ್ಯಾಪಾರ</span>
+                        <h3>ರಾಯಲ್ ಆಗಿ ರೈಡ್ ಮಾಡಿ ರಾಯಲ್ ಎನ್‌ಫೀಲ್ಡ್ 650, ಕೈಗೆಟುಕುವ ದರಲ್ಲಿ ಬೈಕ್ ಬಿಡು...</h3>
+                        <small>02 Jun 2026, 04:02 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell is-wide" href="/article/24-4-3-e80d8ad87e">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01k0gwrjmwtt8zae7c8ssgk4mn,imgname-thane-railway-station-1752913693340.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ತಂತ್ರಜ್ಞಾನ</span>
+                        <h3>ಮಂಗಳೂರು-ಹೈದರಾಬಾದ್ ನಡುವೆ ವಿಶೇಷ ಎಕ್ಸ್‌ಪ್ರೆಸ್ ರೈಲು, 24ಕೋಚ್‌,4 ಟ್ರಿಪ್,3 ರಾಜ್ಯ, ಸಂಪೂರ್ಣ ವೇಳಾಪಟ್ಟಿ ಇಲ್...</h3>
+                        <small>02 Jun 2026, 03:53 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/3-7d3bbabefa">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kpaqm5tkf2npbc9w9jh6khrx,imgname-fridge-cover-designs-1-1776329299795.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ತಾಜಾ ಸುದ್ದಿ</span>
+                        <h3>ಖಾಲಿ ಜಾಗವಿದೆಯೆಂದು ಏನೇನೋ ಎಸಿಬೇಡಿ, ಫ್ರಿಡ್ಜ್ ಮೇಲೆ ಕೇವಲ ಈ 3 ವಸ್ತುವನ್ನಿಡಿ...</h3>
+                        <small>02 Jun 2026, 03:52 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/ipl-2026-5-76cc1b413d">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01ksn4d5pa8hc1zkwzhf5jhaew,imgname-20260527400l-1779899471562.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ತಂತ್ರಜ್ಞಾನ</span>
+                        <h3>IPL 2026 ಟೂರ್ನಿಯಲ್ಲಿ ಅತಿ ದೊಡ್ಡ ಸಿಕ್ಸರ್ ಬಾರಿಸಿದ ಟಾಪ್-5 ಬ್ಯಾಟರ್‌ಗಳಿವರು...</h3>
+                        <small>02 Jun 2026, 03:32 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/kannada-news-b586b511ab">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01karc3j9hrmgr21sd6wqnd701,imgname-kissing-1763902081329.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ಸಿನಿಮಾ</span>
+                        <h3>ಸಿನಿಮಾ, ಸೀರಿಯಲ್‌ನಲ್ಲಿ ಕಿಸ್‌ ಮಾಡೋದು ನಿಜಾನಾ? ಇದರ ಹಿಂದಿದ್ದಾರೆ ನಡುಕ ಹುಟ್...</h3>
+                        <small>02 Jun 2026, 03:29 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/2026-5-4ce8f7d18b">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kac29q8ehrh100qk7q140c0f,imgname-surya-grahan-4-1763489144078.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ತಾಜಾ ಸುದ್ದಿ</span>
+                        <h3>ಆಗಸ್ಟ್‌ 2026 ಸೂರ್ಯಗ್ರಹಣ: ಈ 5 ರಾಶಿಗೆ ಅದೃಷ್ಟದ ಬಾಗಿಲು ತೆರೆಯಲಿದೆ, ಹಣ-ಯಶಸ...</h3>
+                        <small>02 Jun 2026, 03:26 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/virat-kohli-67f754cff9">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt3v39bqed7194912rddjqvf,imgname-new-project---2026-06-02t150338.811-1780393026935.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ತಾಜಾ ಸುದ್ದಿ</span>
+                        <h3>‌ಅಂಬಾನಿ ಫಂಕ್ಷನ್‌ಗೂ ಹೋಗದ Virat Kohli ಆ ಪವಾಡದಿಂದಲೇ ಪ್ರೇಮಾನಂದ್ ಗುರೂಜಿ ಬ...</h3>
+                        <small>02 Jun 2026, 03:11 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/ipl-ab754c577b">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt0r4zk0c4t21x1bgywgey4b,imgname-vaibhav-sooryavanshi-1780289273439.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ತಂತ್ರಜ್ಞಾನ</span>
+                        <h3>ವೈಭವ್ ಸೂರ್ಯವಂಶಿ IPLನಿಂದ ಗಳಿಸಿದ ಆದಾಯದಲ್ಲಿ ಸರ್ಕಾರಕ್ಕೆ ಎಷ್ಟು ಟ್ಯಾಕ್ಸ್ ಕ...</h3>
+                        <small>02 Jun 2026, 03:04 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/kannada-news-79f5bbe76d">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt3t26zky6qh5zg54nr4a86t,imgname-cockroach-1780391943154.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ತಾಜಾ ಸುದ್ದಿ</span>
+                        <h3>ನೀವು ವಾಕರಿಸೋ ಜಿರಳೆ ನಿಮ್ಮ ಲಿಫ್ಸ್ಟಿಕ್ ನಲ್ಲಿ! ಯಾವೆಲ್ಲ ಬ್ಯೂಟಿ ಪ್ರಾಡಕ್ಟ್...</h3>
+                        <small>02 Jun 2026, 02:57 PM</small>
+                    </a>
+
+                                    <a class="ref-news-cell" href="/article/kannada-news-7e0be073f9">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kszyfz2z5pe1w171th9ez1xk,imgname-vaibhav-sooryavanshi-1780262370399.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <span>ತಂತ್ರಜ್ಞಾನ</span>
+                        <h3>ಐಪಿಎಲ್‌ ಯಶಸ್ಸಿನ ಬೆನ್ನಲ್ಲೇ ಜಾಹೀರಾತು ಕಂಪನಿಗಳ ಪಾಲಿಗೆ ದುಬಾರಿಯಾದ ವೈಭವ್‌ ಸ...</h3>
+                        <small>02 Jun 2026, 02:54 PM</small>
+                    </a>
+
+                            </div>
+        </section>
+
+        <!-- More Stories Grid -->
+        <section class="ref-more-section">
+            <div class="section-title">
+                <h2>More Stories</h2>
+                <a href="/sitemap.xml">Sitemap</a>
+            </div>
+            <div class="ref-more-grid">
+                                    <a class="ref-more-card" href="/article/14-fd3288ff60">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kswed6j5e4c3sbkmpr1saqt7,imgname-whatsapp-image-2026-05-30-at-5.58.08-pm-1780144839237.jpeg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ಭಾರತ</strong>
+                        <h3>14 ಸಚಿವರ ಸೇರ್ಪಡೆ ಕುರಿತು ದೆಹಲಿಯಲ್ಲಿ ಮತ್ತೊಂದು ಸುತ್ತಿನ ಮೀಟಿಂಗ್, ಯಾರು ಹೆಸರು ಫೈ...</h3>
+                        <span>02 Jun 2026, 09:49 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/kannada-news-ed7672cb10">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kq9jbccfv1jtq5pbcr3wq8xd,imgname-mla-iqbal-hussain-dk-shivakumar-1777363956111.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ತಂತ್ರಜ್ಞಾನ</strong>
+                        <h3>ಡಿ.ಕೆ.ಶಿವಕುಮಾರ್‌ ಮುಖ್ಯಮಂತ್ರಿ ಆಗುತ್ತಿರುವುದು‌ ನನ್ನ ಅದೃಷ್ಟ: ಶಾಸಕ ಇಕ್ಬಾಲ್ ಹುಸೇ...</h3>
+                        <span>02 Jun 2026, 09:48 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/kannada-news-e1dd192f24">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4g9q4w0y0kdnb0xm7bsrj9,imgname-south-indian-food-chiblu-idli-1780415257755.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ಫ್ಯಾಕ್ಟ್ ಚೆಕ್</strong>
+                        <h3>ಹಳ್ಳಿ ಶೈಲಿಯ ಮೃದುವಾದ &#039;ಚಿಬ್ಲು ಇಡ್ಲಿ&#039; ಮೇಕಿಂಗ್ ವಿಡಿಯೋ ವೈರಲ್; ಬಾಯಲ್ಲಿಟ್ಟರೆ ಕರಗು...</h3>
+                        <span>02 Jun 2026, 09:27 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/viral-video-0e2e436569">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4gjfn7w9gargywd4xk0cw3,imgname-xgg-1780415544999.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ಭಾರತ</strong>
+                        <h3>Viral Video: ಐಫೆಲ್ ಟವರ್ ಮುಂದೆ ಭಾರತೀಯ ಮಹಿಳೆಯರ ಸೀರೆ ಕ್ಯಾಟ್‌ವಾಕ್: ಡ್ಯಾನ್ಸ್‌ಗಿ...</h3>
+                        <span>02 Jun 2026, 09:26 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/kannada-news-7585bd5fd5">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4fx7s6ms92fcqvcbg4pprg,imgname-bhatkal-murinakatte-reconstruction-1780414848806.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ಕರ್ನಾಟಕ</strong>
+                        <h3>ಜಿಲ್ಲಾಡಳಿತದಿಂದ ಭಟ್ಕಳದ &#039;ಮುರಿನಕಟ್ಟೆ&#039; ಮರು ನಿರ್ಮಾಣ; ಹಿಂದು-ಮುಸ್ಲಿಂ ಮುಖಂಡರ ಒಮ್ಮತ...</h3>
+                        <span>02 Jun 2026, 09:10 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/nivedita-gowda-cd9c690506">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4f12pp1fedcqehsg4bky2k,imgname-nivedita-gowda-1780413926101.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ತಾಜಾ ಸುದ್ದಿ</strong>
+                        <h3>ಬಿಗ್​ಬಾಸ್​ ಬೆಡಗಿ Nivedita Gowda ಸೊಂಟದ ಚೈನಿನ ಮೇಲೆ ನೆಟ್ಟಿಗರ ಕಣ್ಣು- ಅಂಥದ್ದೇನು...</h3>
+                        <span>02 Jun 2026, 08:56 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/72-717508da27">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4eb1z7gqe78hjk1695rzda,imgname-nehru-and-pm-modi-1780413204455.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ಭಾರತ</strong>
+                        <h3>ಕಾಂಗ್ರೆಸ್​ನ​ 72 ವರ್ಷಗಳ ದಾಖಲೆ ಮುರಿದು ಬೀಗಿದ ಪ್ರಧಾನಿ ನರೇಂದ್ರ ಮೋದಿ: ಏನಿದು ರೆಕಾ...</h3>
+                        <span>02 Jun 2026, 08:43 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/88-75abc16930">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4dxj53czhz483heb3ec5e7,imgname-90-year-old-bicycle-bill-1780412762274.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ಫ್ಯಾಕ್ಟ್ ಚೆಕ್</strong>
+                        <h3>ಒಂದು ಸಿಗರೇಟ್‌ಗಿಂತಲೂ ಕಡಿಮೆ ಬೆಲೆಗೆ ಬ್ರ್ಯಾಂಡೆಡ್ ಸೈಕಲ್; 88 ವರ್ಷಗಳ ಹಿಂದಿನ &#039;ಸೈಕಲ...</h3>
+                        <span>02 Jun 2026, 08:37 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/kannada-news-1f35f40bec">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4cznvfbazht1pnz3f48cv1,imgname-cm-vijay-dhanush-1780411783023.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ಸಿನಿಮಾ</strong>
+                        <h3>ತಮಿಳುನಾಡಿನಲ್ಲಿ ಮತ್ತೆ ಬಿರುಗಾಳಿ? ವಿಜಯ್ ಸಿಎಂ ಆಗಿರೋ ಬೆನ್ನಲ್ಲೇ ಮತ್ತೊಬ್ಬ ಸ್ಟಾರ್...</h3>
+                        <span>02 Jun 2026, 08:36 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/kannada-news-e91b433876">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4dnrg4fsgx6xjj4xqejwv2,imgname-yash-kind-gesture-goes-viral-1780412506627.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ಸಿನಿಮಾ</strong>
+                        <h3>ಕ್ಯಾನ್ಸರ್‌ನಿಂದ ಪೀಡಿತ ಅಭಿಮಾನಿಗೆ ವಿಡಿಯೋ ಕಾಲ್ ಮಾಡಿ ಧೈರ್ಯ ತುಂಬಿದ ನಟ ಯಶ್, ವಿಡಿಯ...</h3>
+                        <span>02 Jun 2026, 08:32 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/kannada-news-535bd31062">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01ddjk1pk92xt4qchr50vprfma,imgname-dc-cover-thn9j28h3546o780eu73scfgs0-20180909231207-medi-jpeg.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ತಂತ್ರಜ್ಞಾನ</strong>
+                        <h3>ನಟ ಮಾತ್ರವಲ್ಲ, ಸಂಸ್ಕೃತ ಪಂಡಿತನಂತೆ ಮಾತನಾಡಿದ ಫಿಟ್ನೆಸ್ ಹೀರೋ ವಿದ್ಯುತ್: ಯೋಗಾತ್ಸವದ...</h3>
+                        <span>02 Jun 2026, 08:30 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/kannada-news-fb2071a203">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4chcjfwpxqe3fab8g75vsm,imgname-thumbnail---2026-06-02t200935.907-1780411314767.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ತಾಜಾ ಸುದ್ದಿ</strong>
+                        <h3>ಶಾರ್ಟ್‌ಕಟ್ ಆದ್ರೂ ಅಂಟಾರ್ಟಿಕಾ ಮಾರ್ಗವನ್ನು ಪೈಲಟ್‌ಗಳು ಮುಟ್ಟಲ್ಲ! ಎಲ್ರೂ ಹೆದರೋದ್ಯಾ...</h3>
+                        <span>02 Jun 2026, 08:20 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/12-8aea3a7c84">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01knr7mqe563szes47rt27134g,imgname-india-airport-charges-cut-25-percent-flight-ticket-price-impact-domestic-airfare-atf-fuel-cost-airlines-update-1-1775708560837.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ತಂತ್ರಜ್ಞಾನ</strong>
+                        <h3>ಅಮೆರಿಕದ ಕಠಿಣ ನಿಯಮಗಳಿಂದ ಬೇಸತ್ತು 12 ವರ್ಷಗಳ ಜೀವನ ತೊರೆದು: ಭಾರತಕ್ಕೆ ಮರಳಿದ ಸ್ಟಾರ...</h3>
+                        <span>02 Jun 2026, 08:11 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/karna-serial-9c52603059">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4c5zdvnqm7fa2p8nyy73aj,imgname-karna-serial-01-1780410940859.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ಸಿನಿಮಾ</strong>
+                        <h3>Karna Serial: ಫಸ್ಟ್​ ನೈಟ್​ ಹೇಗಾಯ್ತು ಕೇಳಿದ ಅಜ್ಜಿ! ಕರ್ಣ-ನಿಧಿ ಏನಂದ್ರು; ಬೇಕಿತ್...</h3>
+                        <span>02 Jun 2026, 08:08 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/100-ott-7-a133790ae0">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4c0cc0hn1manddyhx2v4bx,imgname-chj-1780410757504.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ಸಿನಿಮಾ</strong>
+                        <h3>₹100 ಕೋಟಿ ಸಿನಿಮಾ... ಆದರೆ OTT ಹಕ್ಕು ಕೇವಲ ₹7 ಕೋಟಿ: ಕನ್ನಡ ಚಿತ್ರರಂಗದಲ್ಲಿ ಏನಾಗು...</h3>
+                        <span>02 Jun 2026, 08:02 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/swiggy-c2ac2cf3c4">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4bj6vs7pd58hjcc2s9ygez,imgname-swiggy-food-order-on-ipl-2026-1780410293113.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ಕ್ರೀಡೆ</strong>
+                        <h3>Swiggy: ಐಪಿಎಲ್‌ ಸೀಸನ್‌ನಲ್ಲಿ ಕೋಟ್ಯಂತರ ಮೊತ್ತದ ಫುಡ್‌ ತಿಂದು ತೇಗಿದ ಕ್ರಿಕೆಟ್‌ ಫ್...</h3>
+                        <span>02 Jun 2026, 07:58 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/2-91c95a9871">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01h7y4af7f4e03pfs2m2jerm0v,imgname-asianet-news--11-.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ತಂತ್ರಜ್ಞಾನ</strong>
+                        <h3>ಮಳೆಗಾಲ ಆರಂಭಕ್ಕೂ ಮೊದಲೇ ರೈತರ 2 ಲಕ್ಷ ರೂ ಸಾಲ ಮನ್ನ, ಮಹಾ ಸರ್ಕಾರದಿಂದ ಮಹತ್ವದ ಆದೇಶ</h3>
+                        <span>02 Jun 2026, 07:51 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/kannada-news-e700886241">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4at76c479q1e3c6g7nptg4,imgname-screenshot-2026-06-02-185652-1780409507019.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ಫ್ಯಾಕ್ಟ್ ಚೆಕ್</strong>
+                        <h3>ಭದ್ರಾ ಹುಲಿ ಸಂರಕ್ಷಿತ ಪ್ರದೇಶದಲ್ಲಿ ಪುಂಡಾಟ: ಖಾಸಗಿ ಜೀಪಿನಲ್ಲಿ ಅಕ್ರಮ ಪ್ರವೇಶ, ಕಾಡಾ...</h3>
+                        <span>02 Jun 2026, 07:49 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/eye-care-routine-490fcacbb2">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kr346w95dsf7g9989aacw1sr,imgname-eye-meakup-4-1778221543717.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ತಾಜಾ ಸುದ್ದಿ</strong>
+                        <h3>Eye Care Routine: ಕಾಂತದಂತೆ ಸೆಳೆಯುವ ಕಣ್ಣುಗಳು ನಿಮ್ಮದಾಗಬೇಕೆ? ಈ ಟಿಪ್ಸ್ ಫಾಲೋ ಮಾ...</h3>
+                        <span>02 Jun 2026, 07:41 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/kannada-news-003c9fa381">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4aq8h6b6naagkyh5j2x5cn,imgname-priya-sudeep-about-sanvi-1780409410086.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ಸಿನಿಮಾ</strong>
+                        <h3>ಸಾನ್ವಿಯ ಮದುವೆ ಮಾಡಲ್ಲ: ಬಹುದೊಡ್ಡ ಗುಟ್ಟು ರಿವೀಲ್‌ ಮಾಡಿದ ಅಮ್ಮ ಪ್ರಿಯಾ ಸುದೀಪ್‌ ಹೇ...</h3>
+                        <span>02 Jun 2026, 07:40 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/kannada-news-9dde75ab06">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01km35yzfz3520ddfxgb8whhag,imgname-screenshot-2026-03-19-181406-1773928414719.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ಫ್ಯಾಕ್ಟ್ ಚೆಕ್</strong>
+                        <h3>ಜಮೀರ್-ಸಿರಾಜ್ ಆಡಿಯೋದಲ್ಲಿ ಬಿಜೆಪಿ ಅಭ್ಯರ್ಥಿ ಹೆಸರು: ಸ್ಫೋಟಕ ಟ್ವಿಸ್ಟ್ ಕೊಟ್ಟ ಶ್ರೀನ...</h3>
+                        <span>02 Jun 2026, 07:36 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/karna-serial-f5bffc0e7e">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt4a7yh4sxzbrd5d1w381hp5,imgname-bhavya-gowda-1780408908324.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ತಂತ್ರಜ್ಞಾನ</strong>
+                        <h3>Karna Serial ನಿಧಿಗೆ ಡಬಲ್​ ಧಮಾಕಾ: ಒಂದೇ ಬಾರಿ ಎರಡೆರಡು ಅವಾರ್ಡ್​ ಪಡೆದ ಭವ್ಯಾ ಗೌಡ</h3>
+                        <span>02 Jun 2026, 07:32 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/45-eb60895bad">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01hp0ssherer68hy9hpajdfy5p,imgname-BharatPe-1707276551639.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ವ್ಯಾಪಾರ</strong>
+                        <h3>ಬ್ಯಾಂಕ್‌ ಖಾತೆಯಲ್ಲಿ ದುಡ್ಡಿಲ್ಲದಿದ್ರೂ ಹಣ ಪಾವತಿಸಿ! ಯುಪಿಐನಲ್ಲೇ ಸಿಗಲಿದೆ 45 ದಿನಗಳ...</h3>
+                        <span>02 Jun 2026, 07:13 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/kannada-news-57cffdd5ff">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01k4wp2b5v03z6v8krfh3yrqaf,imgname-gnghmn-1757604293819.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ಕರ್ನಾಟಕ</strong>
+                        <h3>ಹಿಂದುಗಳ ಮೇಲೆ ದೌರ್ಜನ್ಯ ನಡೆದರೆ ಠಾಣೆಗೂ ಮುತ್ತಿಗೆ: ಬಿ.ವೈ.ವಿಜಯೇಂದ್ರ ಎಚ್ಚರಿಕೆ</h3>
+                        <span>02 Jun 2026, 07:11 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/epfo-epf-b6785a64a8">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt48c0cwv5mnt4p8afn2tj40,imgname-epf-interest-credit-1780406944155.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ವ್ಯಾಪಾರ</strong>
+                        <h3>EPFO: ಎರಡು ತಿಂಗಳಾದ್ರೂ ಬರದ ಹಣ, ನಿಮ್ಮ ಖಾತೆಗೆ EPF ಬಡ್ಡಿ ಜಮೆ ಆಗುವುದು ಯಾವಾಗ? ಇಲ...</h3>
+                        <span>02 Jun 2026, 07:04 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/0-29-12-8dfae27d37">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt48gmnzyx3c7149vfjwpsqj,imgname-spiritual-guru-abhishek-mishra-arrest-1780407095998.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ಭಾರತ</strong>
+                        <h3>ಹಾಲು ಕುಡಿಸಿ ಮಹಿಳೆಯರ ಮೇಲೆ ಲೈ0ಗಿಕ ದೌರ್ಜನ್ಯ ಎಸಗಿದ 29ರ ಧಾರ್ಮಿಕ ಗುರು,12 ವಿಡಿಯೋ...</h3>
+                        <span>02 Jun 2026, 07:01 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/egg-storage-e4de32a307">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt44accd58shynat2ab9hp5x,imgname-fotojet---2026-06-02t174745.551-1780402696589.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ತಾಜಾ ಸುದ್ದಿ</strong>
+                        <h3>Egg Storage: ಫ್ರಿಡ್ಜ್‌ನಲ್ಲಿಟ್ಟ ಮೊಟ್ಟೆ ಬೇಗ ಹಾಳಾಗ್ತಿದ್ಯಾ? ಹಾಗಿದ್ರೆ ಈ ತಪ್ಪುಗಳ...</h3>
+                        <span>02 Jun 2026, 07:00 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/kannada-news-b3b7890341">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01k88qjcv3hjvp0vp4jv6y86eh,imgname-ram-charan-1761229747043.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ಸಿನಿಮಾ</strong>
+                        <h3>&#039;ಪೆದ್ದಿ&#039; ಮೊದ್ಲೇ ಬಂದಿದ್ರೆ ಒಳ್ಳೆ ಸಂಬಂಧ ಬರ್ತಿತ್ತು: ಉಪಾಸನಾ ಜೊತೆ ಮದುವೆ ಬಗ್ಗೆ ರಾ...</h3>
+                        <span>02 Jun 2026, 06:57 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/tv-actresses-10-3ae39f7ec4">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt46pnx5320qd2pw9vnzpa2n,imgname-chc-1780405196709.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ತಂತ್ರಜ್ಞಾನ</strong>
+                        <h3>TV Actresses: ಸೀರಿಯಲ್ ಲೋಕದ ಟಾಪ್ 10 ಗ್ಲಾಮರಸ್ ನಟಿಯರು: ಇವರ ಮುಂದೆ ಹೀರೋಯಿನ್‌ಗಳೂ...</h3>
+                        <span>02 Jun 2026, 06:34 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/wife-rituals-de205af9e0">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt45rke30qechk7p5h81jwra,imgname-wife-rituals-1780404211139.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ತಾಜಾ ಸುದ್ದಿ</strong>
+                        <h3>Wife Rituals : ಗಂಡ ಕೆಲ್ಸಕ್ಕೆ ಹೋಗ್ತಿದ್ದಂತೆ ಹೆಂಡ್ತಿಯಾದವಳು ಈ ಕೆಲ್ಸ ಮಾಡ್ಬಾರದು</h3>
+                        <span>02 Jun 2026, 06:25 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/5-9b7866f224">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt454kj5ywhfmbqaa94va70q,imgname-annamalai--1--1780403555909.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ತಂತ್ರಜ್ಞಾನ</strong>
+                        <h3>ಬರೋಬ್ಬರಿ 5 ಪುಟಗಳ ಸುದೀರ್ಘ ರಾಜೀನಾಮೆ ಪತ್ರ ಸಲ್ಲಿಸಿದ ಬಳಿಕ ಗೃಹ ಸಚಿವ ಅಮಿತ್ ಶಾ ಭೇಟ...</h3>
+                        <span>02 Jun 2026, 06:24 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/osm-cbse-e76f08e0ce">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01ksyeemmq0wg1yd9kc9g7wwwn,imgname-cbse-class-12-marksheet-controversy-board-exam-trust-crisis-osm-revaluation-student-anxiety-1780211995287.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ತಂತ್ರಜ್ಞಾನ</strong>
+                        <h3>OSM ಪೋರ್ಟಲ್ ಹಗರಣದ ಬೆನ್ನಲ್ಲೇ ಕೇಂದ್ರ ಆಪರೇಷನ್‌: CBSE ಅಧ್ಯಕ್ಷ, ಕಾರ್ಯದರ್ಶಿ ವರ್ಗ...</h3>
+                        <span>02 Jun 2026, 06:21 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/kannada-news-6b3e66f768">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt43gwrgngfhf9g4fz0251dh,imgname-virat-kohli-visit-premanand-maharaj-mutt--2--1780401861391.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ತಾಜಾ ಸುದ್ದಿ</strong>
+                        <h3>ವಿರಾಟ್ ಕೊಹ್ಲಿ-ಅನುಷ್ಕಾ ಶರ್ಮಾ ಪದೇ ಪದೇ ಬೃಂದಾವನಕ್ಕೆ ಹೋಗುವುದೇಕೆ? ಪ್ರೇಮಾನಂದ್ ಗುರ...</h3>
+                        <span>02 Jun 2026, 06:08 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/4-384d8b7b49">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01jpz0knhs80f37ca3bm3h7s61,imgname-bengaluru-rain.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ತಂತ್ರಜ್ಞಾನ</strong>
+                        <h3>ಜೂನ್ 4 ರಿಂದ ಈ ರಾಜ್ಯಗಳಲ್ಲಿ ಭಾರಿ ಮಳೆ, ಹವಾಮಾನ ಇಲಾಖೆ ಮುನ್ಸೂಚನೆ ಬೆನ್ನಲ್ಲೇ ಅಲರ್ಟ...</h3>
+                        <span>02 Jun 2026, 06:04 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/35-50-1d750dfdc5">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt3xkp140hs4ygvwwzrawvv9,imgname-train-passenger-alleges--15-overcharge-on--35-cake-purchase-1780395661348.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ತಂತ್ರಜ್ಞಾನ</strong>
+                        <h3>₹35 ಕೇಕ್‌ಗೆ ₹50 ಯಾಕೆ? ವ್ಯಾಪಾರಿ ಕೊಟ್ಟ ಉತ್ತರ ಕೇಳಿ ದಂಗಾದ ಪ್ರಯಾಣಿಕ!</h3>
+                        <span>02 Jun 2026, 06:02 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/kannada-news-23da1927c0">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01k4wq0ft5bcc84ze6n51e9ppk,imgname-difference-between-puchka-and-panipuri-1757605281605.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ತಾಜಾ ಸುದ್ದಿ</strong>
+                        <h3>ಈ ಸೆಕೆಯಲ್ಲಿ ಪಾನಿಪುರಿ, ಚಾಟ್ಸ್ ತಿನ್ನುತ್ತೀರಾ? ಮೆಚ್ಚಿನ ಆಹಾರವೇ ವಿಷ ಆಗಬಹುದು ಜೋಕೆ...</h3>
+                        <span>02 Jun 2026, 05:48 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/1-14-rbi-14f193ccff">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt196mq0dsms2bfe5s0y1rtv,imgname-1-gram-gold-locket-designs-1780307153632.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ವ್ಯಾಪಾರ</strong>
+                        <h3>1.14 ಲಕ್ಷ ಕೋಟಿ ರೂಪಾಯಿ ಮೌಲ್ಯದ ಚಿನ್ನ ಮಾರಾಟ ಮಾಡಿದ್ದೇಕೆ RBI</h3>
+                        <span>02 Jun 2026, 05:48 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/kannada-news-957d0f318e">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01ke9gvn831sm04q06yrjpv529,imgname-----------------------2026-01-06t165158.634-1767698715907.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ಭಾರತ</strong>
+                        <h3>ಮೋದಿ ಸರ್ಕಾರದ ಸಾಧನೆಗಳನ್ನು ಜನರಿಗೆ ತಲುಪಿಸಿ; ಬಿಜೆಪಿ ಕಾರ್ಯಕರ್ತರಿಗೆ ರೇಣುಕಾಚಾರ್ಯ...</h3>
+                        <span>02 Jun 2026, 05:47 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/dk-shivakumar-5e6fffe07c">
+                        <img src="https://geo.dailymotion.com/player/x1tbu.html?video=xacqbqu" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ಕರ್ನಾಟಕ</strong>
+                        <h3>Dk Shivakumar ತುಂಟಾಟದ ಕಥೆ ತೆರೆದಿಟ್ಟ ಗೆಳೆಯ! &#039;ಕ್ರೇಜಿಸ್ಟಾರ್&#039; ಕಷ್ಟದಲ್ಲಿದ್ದಾಗ ಕ...</h3>
+                        <span>02 Jun 2026, 05:33 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/kannada-news-4d9c310af4">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01gxacphd5f0g2e36jgxnae9tb,imgname-otpz5z75-1680754820517.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ತಂತ್ರಜ್ಞಾನ</strong>
+                        <h3>ಕರಾವಳಿಗೆ ಖುಷಿ, ಸೂರತ್-ಮಂಗಳೂರು ಸ್ಪೆಷಲ್ ರೈಲು ಶಾಶ್ವತ ಸೇವೆಗೆ ಪರಿವರ್ತಿಸಿದ ರೈಲ್ವೆ...</h3>
+                        <span>02 Jun 2026, 05:31 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/kannada-news-d450bc1a66">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kq1w5sne9yj5zwx1qf0myzwj,imgname-mahindra-scorpio-classic-1-1777105823406.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ವ್ಯಾಪಾರ</strong>
+                        <h3>ಸ್ಕಾರ್ಪಿಯೋ, ಥಾರ್ ಅಬ್ಬರಕ್ಕೆ ನಡುಗಿದ ಆಟೋ ಮಾರುಕಟ್ಟೆ: ಖುಷಿಯಿಂದ ಹಿಗ್ಗಿದ ಆನಂದ್‌ ಮ...</h3>
+                        <span>02 Jun 2026, 05:26 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/kannada-news-f8e1ddf3d5">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01g975x17kzyppr01r9h4rdkry,imgname-ks-eshwarappa.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ಭಾರತ</strong>
+                        <h3>ಶರಾವತಿ ಪಂಪ್ಡ್ ಸ್ಟೋರೇಜ್ ಬಗ್ಗೆ ಸಮೀಕ್ಷೆ ಸರಿಯಲ್ಲ: ಗುಡುಗಿದ ಕೆ.ಎಸ್.ಈಶ್ವರಪ್ಪ</h3>
+                        <span>02 Jun 2026, 05:22 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/thalapathy-vijay-714a7f7c00">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kr88x7k0q1g7de1g8kt4kjw2,imgname-tamil-nadu-cm-vijay-first-speech-secular-social-justice-tvk-govt-transparency-10-lakh-crore-debt-news-3-1778394242656.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ವಿಶ್ವ</strong>
+                        <h3>Thalapathy Vijay: ಫಸ್ಟ್ ಭಾಷಣದಲ್ಲೇ ತಮಿಳುನಾಡು ರಾಜಕೀಯದಲ್ಲಿ ಬಿರುಗಾಳಿ‌ ಎಬ್ಬಿಸಿದ...</h3>
+                        <span>02 Jun 2026, 05:19 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/kannada-news-75047eaf82">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kpfntgzs37jghkra9ht42fv9,imgname-fotojet--73--1776495182841.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ಫ್ಯಾಕ್ಟ್ ಚೆಕ್</strong>
+                        <h3>ಫೆಡರಲ್ ಕೋರ್ಟ್ ಆವರಣದಲ್ಲಿ ಪೊಲೀಸ್ ಜೊತೆ ಮಹಿಳಾ ಜಡ್ಜ್ ಸರಸ, ಸುಳ್ಳು ಹೇಳಿದ್ರೂ ಸಿಕ್ಕ...</h3>
+                        <span>02 Jun 2026, 05:15 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/panipuri-recipe-8f8690d2ae">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt40csf9j4djgjgzr5w49ybr,imgname-panipuri---june-2-1780398581225.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ತಾಜಾ ಸುದ್ದಿ</strong>
+                        <h3>Panipuri Recipe: ಸ್ಟ್ರೀಟ್‌ನಲ್ಲೇ ಸಿಗೋ ಥರ ಮನೇಲಿ ಪಾನಿಪೂರಿ ಮಾಡೋದು ಹೇಗೆ? ಅದನ್ನಷ...</h3>
+                        <span>02 Jun 2026, 05:12 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/kannada-news-1d475c1794">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt426dhsj48rvza6c0cjkdq1,imgname-thumbnail---2026-06-02t170752.601-1780400469560.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ವಿಶ್ವ</strong>
+                        <h3>ವಿದೇಶದಲ್ಲಿ ಭಾರತದ ಮಾನ ಕಳೆದ ಮಹಿಳೆ: ಜಪಾನ್ ಜೈಲು ಪಾಲಾಗುವುದರಿಂದ ಬಚಾವ್ ಮಾಡಿದ್ದು ಇ...</h3>
+                        <span>02 Jun 2026, 05:12 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/snake-droppings-05558a8757">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kq4tyqsctthnvvk1pnpap0z9,imgname-whatsapp-image-2026-04-26-at-5.30.24-pm-1777205206828.jpeg" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ತಾಜಾ ಸುದ್ದಿ</strong>
+                        <h3>Snake Droppings: ಪಕ್ಷಿ ಹಿಕ್ಕೆ ಎಂದು ಮೋಸ ಹೋಗ್ಬೇಡಿ! ಆ ರೀತಿ ಇದ್ರೆ ಪಕ್ಕಾ ಹಾವಿನ...</h3>
+                        <span>02 Jun 2026, 04:53 PM</span>
+                    </a>
+
+                                    <a class="ref-more-card" href="/article/viral-video-62b90bdaf9">
+                        <img src="https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-01kt413a2zq7kygm3yw15n7bm7,imgname-xh-1780399319135.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/images/newsroom-fallback.png';">
+                        <strong>ಫ್ಯಾಕ್ಟ್ ಚೆಕ್</strong>
+                        <h3>Viral Video: ಮೂಡ್ ಆಫ್ ಆಗಿದೆಯಾ? ಈ ಅಪ್ಪ-ಮಗಳ ವಿಡಿಯೋ ಒಮ್ಮೆ ನೋಡಿ!</h3>
+                        <span>02 Jun 2026, 04:52 PM</span>
+                    </a>
+
+                            </div>
+        </section>
+
+        <!-- Footer sponsor strip -->
+            <aside class="ad-slot ad-slot--wide" aria-label="Advertisement">
+                    <div style="margin: 20px auto; text-align: center; max-width: 300px; overflow: hidden;" aria-label="Advertisement">
+              <script>
+                atOptions = {
+                  'key' : '9aec88a46e19f5cf7198fdb3621d56de',
+                  'format' : 'iframe',
+                  'height' : 250,
+                  'width' : 300,
+                  'params' : {}
+                };
+              </script>
+              <script src="https://www.highperformanceformat.com/9aec88a46e19f5cf7198fdb3621d56de/invoke.js"></script>
+            </div>
+            </aside>
+        </div>
+</main>
+
+<script>
+    (function(){
+        const slider = document.getElementById('heroSlider');
+        if(!slider) return;
+        const slides = slider.querySelectorAll('.hero-tile');
+        const dots = slider.querySelectorAll('.slider-dot');
+        if(!slides.length || !dots.length) return;
+        let current = 0;
+        function show(index){
+            slides.forEach((s, i) => s.classList.toggle('active', i === index));
+            dots.forEach((d, i) => d.classList.toggle('active', i === index));
+        }
+        function next(){
+            current = (current + 1) % slides.length;
+            show(current);
+        }
+        let timer = setInterval(next, 5000);
+        dots.forEach((dot, i) => dot.addEventListener('click', () => {
+            clearInterval(timer);
+            current = i;
+            show(current);
+            timer = setInterval(next, 5000);
+        }));
+    })();
+</script>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <a class="brand brand--footer" href="/">
+                    <span class="brand__mark">M</span>
+                    <span><strong>MIYIZE</strong><em>Kannada News</em></span>
+                </a>
+                <p>ವೇಗದ, ವಿಶ್ವಾಸಾರ್ಹ ಕನ್ನಡ ಸುದ್ದಿ. RSS ಮೂಲಗಳಿಂದ ಸುದ್ದಿಯನ್ನು ಸಂಗ್ರಹಿಸಿ, ಮೂಲದ ಲಿಂಕ್ ಮತ್ತು ಕ್ರೆಡಿಟ್ ಜೊತೆಗೆ ಪ್ರಕಟಿಸಲಾಗುತ್ತದೆ.</p>
+            </div>
+            <div>
+                <h2>ವಿಭಾಗಗಳು</h2>
+                <div class="footer-links">
+                                            <a href="/">ತಾಜಾ ಸುದ್ದಿ</a>
+                                            <a href="/category/karnataka">ಕರ್ನಾಟಕ</a>
+                                            <a href="/category/india">ಭಾರತ</a>
+                                            <a href="/category/world">ವಿಶ್ವ</a>
+                                            <a href="/category/politics">ರಾಜಕೀಯ</a>
+                                            <a href="/category/business">ವ್ಯಾಪಾರ</a>
+                                            <a href="/category/sports">ಕ್ರೀಡೆ</a>
+                                            <a href="/category/cinema">ಸಿನಿಮಾ</a>
+                                            <a href="/category/technology">ತಂತ್ರಜ್ಞಾನ</a>
+                                            <a href="/category/health">ಆರೋಗ್ಯ</a>
+                                            <a href="/category/education">ಶಿಕ್ಷಣ</a>
+                                            <a href="/category/crime">ಅಪರಾಧ</a>
+                                            <a href="/category/fact-check">ಫ್ಯಾಕ್ಟ್ ಚೆಕ್</a>
+                                            <a href="/category/agriculture">ಕೃಷಿ</a>
+                                            <a href="/category/lifestyle">ಜೀವನಶೈಲಿ</a>
+                                            <a href="/category/automobile">ಆಟೋಮೊಬೈಲ್</a>
+                                            <a href="/category/career">ಉದ್ಯೋಗ</a>
+                                            <a href="/category/astrology">ಭವಿಷ್ಯ</a>
+                                            <a href="/category/trends">ಟ್ರೆಂಡಿಂಗ್</a>
+                                    </div>
+            </div>
+            <div>
+                <h2>ಸೈಟ್</h2>
+                <div class="footer-links">
+                    <a href="/about.php">About</a>
+                    <a href="/contact.php">Contact</a>
+                    <a href="/privacy.php">Privacy</a>
+                    <a href="/feed.xml">RSS</a>
+                    <a href="/sitemap.xml">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Client-side rate-limited background refresh trigger
+        (function() {
+            const last = "2026-06-03T12:59:32.349Z";
+            if (!last || (Date.now() - new Date(last).getTime() > 30000)) {
+                fetch('/api/agent-cron.php').catch(function() {});
+            }
+        })();
+    </script>
+    <script src="/assets/js/app.js" defer></script>
+    <!-- Vercel Web Analytics -->
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <!-- Vercel Speed Insights -->
+    <script>
+        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+    <!-- Adsterra Social Bar -->
+    <script src="https://pl29618721.effectivecpmnetwork.com/fa/71/40/fa7140f8fd70d945a91e09d88365efae.js"></script>
+</body>
+</html>
+    

@@ -90,6 +90,10 @@
       "destination": "/api/rss.php"
     },
     {
+      "source": "/api/social-image.php",
+      "destination": "/api/social-image.php"
+    },
+    {
       "source": "/",
       "destination": "/api/index.php"
     },

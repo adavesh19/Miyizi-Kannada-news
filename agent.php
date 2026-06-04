@@ -307,11 +307,16 @@ foreach ($categories as $catSlug => $catData) {
             // Trigger Make.com webhook for social media auto-posting
             $webhookUrl = getenv('MIYIZE_MAKE_WEBHOOK') ?: '';
             if ($webhookUrl !== '' && filter_var($webhookUrl, FILTER_VALIDATE_URL)) {
+                // Use the direct source image URL (e.g. asianetnews.com) — always a valid public image
+                $srcImage = (string) ($article['image'] ?? '');
+                if (!$srcImage || !str_starts_with($srcImage, 'http')) {
+                    $srcImage = 'https://miyizi-kannada-news.vercel.app/assets/images/newsroom-fallback.png';
+                }
                 $webhookData = json_encode([
                     'title'          => $article['title'],
-                    'social_caption' => $article['social_caption'] ?? $article['summary'],
+                    'social_caption' => ($article['social_caption'] ?? $article['summary']) . "\n\n" . MIYIZE_SITE_URL . '/article/' . $article['slug'],
                     'article_url'    => MIYIZE_SITE_URL . '/article/' . $article['slug'],
-                    'image_url'      => article_image($article)
+                    'image_url'      => $srcImage
                 ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 
                 $ch = curl_init($webhookUrl);
