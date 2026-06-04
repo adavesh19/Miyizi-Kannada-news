@@ -65,34 +65,46 @@ function gemini_write_article(array $article): ?array {
     $cat     = (string) ($article['category_label'] ?? '');
 
     $prompt = <<<PROMPT
-You are a professional Kannada news journalist and social media manager.
-Title: {$title}
-Summary: {$summary}
-Source: {$source}
-Category: {$cat}
+You are a professional senior Kannada journalist at a major newspaper. Your job is to write complete, detailed, and highly informative news articles in Kannada that are 700-1000 words long.
+
+Topic Details:
+- Title: {$title}
+- Summary: {$summary}
+- Source: {$source}
+- Category: {$cat}
 
 Output MUST be a valid JSON object with EXACTLY three string keys: "title", "article" and "social_caption". Do not output any markdown formatting like ```json.
 
 "title" rules:
-- Translate and rewrite the original title into a compelling, accurate Kannada headline.
-- Max 100 characters. Pure Kannada script only.
+- Rewrite the original title into an accurate, compelling Kannada headline.
+- Max 100 characters. Pure Kannada script only. No Hindi, no English.
 
 "article" rules:
-- Expand the topic into a detailed 400-800 word Kannada news article with 5-8 paragraphs.
-- Weave highly-searched Kannada keywords for SEO ("ಕನ್ನಡ ಸುದ್ದಿ", etc).
-- Use rich, formal Kannada. Separate paragraphs with a blank line (\n\n).
+- Write a LONG, DETAILED 700-1000 word Kannada article. SHORT articles are NOT acceptable.
+- Use your own general knowledge to expand and enrich the topic beyond just the summary.
+- Structure the article with ALL of the following sections:
+  1. Opening paragraph (3-4 sentences) introducing the news with context.
+  2. "ಮುಖ್ಯ ಮಾಹಿತಿ" (Key Information) section: Use an HTML table with 2 columns to present 5-6 key facts as a structured table. Example: <table><tr><th>ವಿಷಯ</th><th>ವಿವರ</th></tr><tr><td>ದಿನಾಂಕ</td><td>...</td></tr></table>
+  3. "ಹಿನ್ನೆಲೆ" (Background) section (2-3 paragraphs): Explain the background and history of this topic.
+  4. "ಪ್ರಮುಖ ಅಂಶಗಳು" (Key Points) section: A bullet list (<ul><li>...</li></ul>) with at least 5 detailed points about this news.
+  5. "ಪ್ರಭಾವ ಮತ್ತು ಮಹತ್ವ" (Impact and Significance) section (2 paragraphs): What does this mean for Karnataka and India?
+  6. Closing paragraph with a forward-looking conclusion.
+- Weave highly-searched SEO keywords naturally: "ಕನ್ನಡ ಸುದ್ದಿ", "ಕರ್ನಾಟಕ", "ಇಂದಿನ ಸುದ್ದಿ", "ತಾಜಾ ಸುದ್ದಿ".
+- Use rich, formal Kannada throughout. Separate paragraphs with \n\n.
+- Format section headings with <h2>heading</h2> tags.
+- NEVER use placeholder text or say "more details to follow". Always write complete, informative content.
 
 "social_caption" rules:
-- Write a highly viral, engaging social media caption in Kannada (max 280 characters).
-- Include 1-2 emojis and 3-5 trending hashtags (e.g., #KannadaNews #{$cat}).
-- Do NOT include the link (we will append the link automatically).
+- Write a viral, engaging Kannada social media caption (max 250 characters).
+- Include 2 emojis and 4-5 trending hashtags like #KannadaNews #Karnataka #{$cat}.
+- Make it sound exciting and urgent. Do NOT include any URL.
 PROMPT;
 
     $payload = json_encode([
         'contents' => [['parts' => [['text' => $prompt]]]],
         'generationConfig' => [
-            'temperature' => 0.75,
-            'maxOutputTokens' => 2048,
+            'temperature' => 0.80,
+            'maxOutputTokens' => 4096,
             'responseMimeType' => 'application/json',
         ],
     ]);
@@ -115,15 +127,47 @@ PROMPT;
     return null;
 }
 
-// ── Template-based article writer (fallback, no AI key needed) ────────────────
+// ── Template-based article writer (rich fallback) ────────────────────────────
 function template_write_article(array $article): string {
     $title   = (string) ($article['title'] ?? '');
     $summary = (string) ($article['summary'] ?? '');
     $source  = (string) ($article['source'] ?? 'ಮೂಲ');
     $cat     = (string) ($article['category_label'] ?? 'ಸುದ್ದಿ');
     $catSlug = (string) ($article['category'] ?? 'latest');
+    $date    = date('d M Y');
 
-    return generate_dynamic_kannada_body($title, $summary, $source, $cat, $catSlug);
+    $cleanSummary = trim(strip_tags($summary));
+    if ($cleanSummary === '') { $cleanSummary = $title; }
+
+    $body  = "<p>{$title} ಕುರಿತಾದ ಈ ಮಹತ್ವದ ವರದಿ {$source} ಮೂಲದಿಂದ ಬಂದಿದ್ದು, ಕರ್ನಾಟಕ ಮತ್ತು ಭಾರತಾದ್ಯಂತ ಇಂದಿನ ಸುದ್ದಿಯಲ್ಲಿ ಪ್ರಮುಖ ಸ್ಥಾನ ಪಡೆದಿದೆ. {$cleanSummary}</p>\n\n";
+
+    $body .= "<h2>ಮುಖ್ಯ ಮಾಹಿತಿ</h2>\n";
+    $body .= "<table><tr><th>ವಿಷಯ</th><th>ವಿವರ</th></tr>";
+    $body .= "<tr><td>ದಿನಾಂಕ</td><td>{$date}</td></tr>";
+    $body .= "<tr><td>ಮೂಲ</td><td>{$source}</td></tr>";
+    $body .= "<tr><td>ವಿಭಾಗ</td><td>{$cat}</td></tr>";
+    $body .= "<tr><td>ಪ್ರಕಾರ</td><td>ತಾಜಾ ಸುದ್ದಿ</td></tr>";
+    $body .= "<tr><td>ಭಾಷೆ</td><td>ಕನ್ನಡ</td></tr>";
+    $body .= "</table>\n\n";
+
+    $body .= "<h2>ಹಿನ್ನೆಲೆ</h2>\n";
+    $body .= "<p>{$cat} ಕ್ಷೇತ್ರದಲ್ಲಿ ಈ ರೀತಿಯ ಬೆಳವಣಿಗೆಗಳು ಕರ್ನಾಟಕ ಮತ್ತು ರಾಷ್ಟ್ರ ಮಟ್ಟದಲ್ಲಿ ವ್ಯಾಪಕ ಪ್ರಭಾವ ಬೀರುತ್ತಿವೆ. ಇಂದಿನ ಸುದ್ದಿ ಪ್ರಕಾರ, ಈ ವಿಷಯ ಈಗ ಸಾರ್ವಜನಿಕ ಚರ್ಚೆಯ ಕೇಂದ್ರಬಿಂದುವಾಗಿದೆ.</p>\n\n";
+    $body .= "<p>{$cleanSummary} ಈ ವಿಷಯದ ಕುರಿತು ತಜ್ಞರು ಮತ್ತು ಸಾರ್ವಜನಿಕರ ನಡುವೆ ವ್ಯಾಪಕ ಚರ್ಚೆ ನಡೆಯುತ್ತಿದ್ದು, ಮುಂದಿನ ದಿನಗಳಲ್ಲಿ ಇದು ಇನ್ನಷ್ಟು ಚರ್ಚೆಗೆ ಒಳಗಾಗಲಿದೆ ಎಂದು ನಿರೀಕ್ಷಿಸಲಾಗಿದೆ.</p>\n\n";
+
+    $body .= "<h2>ಪ್ರಮುಖ ಅಂಶಗಳು</h2>\n";
+    $body .= "<ul>";
+    $body .= "<li>{$title} ಎಂಬ ವಿಷಯ ಕನ್ನಡ ಸುದ್ದಿ ಜಗತ್ತಿನಲ್ಲಿ ಇಂದು ಪ್ರಮುಖ ಚರ್ಚೆಗೆ ಕಾರಣವಾಗಿದೆ.</li>";
+    $body .= "<li>{$source} ಪ್ರಕಾರ ಈ ಬೆಳವಣಿಗೆ ಅಧಿಕೃತವಾಗಿ ದೃಢಪಟ್ಟಿದ್ದು, ಸಂಬಂಧಪಟ್ಟ ಎಲ್ಲ ಪಕ್ಷಗಳು ಇದನ್ನು ಗಮನಿಸಿವೆ.</li>";
+    $body .= "<li>{$cat} ವಿಭಾಗದಲ್ಲಿ ಇದು ಮಹತ್ವದ ಬೆಳವಣಿಗೆ ಎಂದು ವಿಶ್ಲೇಷಕರು ಅಭಿಪ್ರಾಯಪಟ್ಟಿದ್ದಾರೆ.</li>";
+    $body .= "<li>ಕರ್ನಾಟಕ ಮತ್ತು ದೇಶಾದ್ಯಂತ ಈ ವಿಷಯ ವ್ಯಾಪಕ ಗಮನ ಸೆಳೆದಿದ್ದು, ಸಾಮಾಜಿಕ ಮಾಧ್ಯಮದಲ್ಲಿ ಟ್ರೆಂಡ್ ಆಗಿದೆ.</li>";
+    $body .= "<li>ಈ ವರದಿ ಕರ್ನಾಟಕದ ಜನರ ಮೇಲೆ ನೇರ ಪ್ರಭಾವ ಬೀರಲಿದ್ದು, ಮುಂದಿನ ದಿನಗಳಲ್ಲಿ ಹೊಸ ಬೆಳವಣಿಗೆಗಳು ನಿರೀಕ್ಷಿತ.</li>";
+    $body .= "</ul>\n\n";
+
+    $body .= "<h2>ಪ್ರಭಾವ ಮತ್ತು ಮಹತ್ವ</h2>\n";
+    $body .= "<p>ಈ ತಾಜಾ ಸುದ್ದಿ ಕರ್ನಾಟಕದ ಸಾರ್ವಜನಿಕ ಜೀವನದ ಮೇಲೆ ಮಹತ್ವದ ಪ್ರಭಾವ ಬೀರಲಿದೆ. {$cat} ಕ್ಷೇತ್ರದಲ್ಲಿ ಕೆಲಸ ಮಾಡುತ್ತಿರುವ ತಜ್ಞರು ಈ ಬೆಳವಣಿಗೆಯನ್ನು ನಿಕಟವಾಗಿ ಗಮನಿಸುತ್ತಿದ್ದಾರೆ.</p>\n\n";
+    $body .= "<p>ಕನ್ನಡ ಓದುಗರಿಗೆ ಈ ವಿಷಯ ಅರ್ಥಮಾಡಿಕೊಳ್ಳಲು MIYIZE ಕನ್ನಡ ಸುದ್ದಿ ಸದಾ ಸಜ್ಜಾಗಿದ್ದು, ಇಂದಿನ ಸುದ್ದಿ, ತಾಜಾ ಸುದ್ದಿ ಮತ್ತು ಮುಖ್ಯ ಮಾಹಿತಿಗಾಗಿ ನಮ್ಮ ವೆಬ್‌ಸೈಟ್ ಭೇಟಿ ನೀಡಿ. ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ {$source} ಮೂಲ ಲಿಂಕ್ ಗಮನಿಸಿ.</p>\n";
+
+    return $body;
 }
 
 function http_post(string $url, string $body, array $headers = []): ?string {
@@ -150,22 +194,23 @@ function get_article_image(array $article): string {
     return "https://loremflickr.com/800/450/india,news,{$query}";
 }
 
-// ── Key points generator ──────────────────────────────────────────────────────
+// ── Key points generator (rich version) ──────────────────────────────────────
 function generate_key_points(array $article, string $fullContent): array {
     $title   = (string) ($article['title'] ?? '');
     $source  = (string) ($article['source'] ?? '');
     $cat     = (string) ($article['category_label'] ?? '');
     $date    = format_kn_date((string) ($article['published_at'] ?? ''));
-    $paras   = array_filter(array_map('trim', explode("\n\n", $fullContent)));
-    $first   = (string) array_shift($paras);
+    $paras   = array_filter(array_map('trim', explode("\n\n", strip_tags($fullContent))));
+    $first   = (string) (array_shift($paras) ?? $title);
+    $first   = mb_substr($first, 0, 180);
 
-    return [
-        substr($title, 0, 120),
-        "{$source} ಪ್ರಕಟಿಸಿರುವ ವರದಿಯ ಪ್ರಮುಖ ಮುಖ್ಯಾಂಶಗಳು.",
-        "ವಿಷಯಕ್ಕೆ ಸಂಬಂಧಿಸಿದ ಮುಂದಿನ ವಿವರಗಳನ್ನು ನಿರಂತರವಾಗಿ ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ.",
-        "ಲಭ್ಯವಾಗುವ ಹೊಸ ಮಾಹಿತಿಯೊಂದಿಗೆ ಈ ಪುಟವನ್ನು ನವೀಕರಿಸಲಾಗುತ್ತದೆ.",
-        "ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕೆಳಗೆ ನೀಡಲಾದ ಮೂಲ ಲಿಂಕ್ ಅನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿ."
-    ];
+    return array_filter([
+        mb_substr($title, 0, 150),
+        $first,
+        "{$source} ವರದಿಯ ಪ್ರಕಾರ ಈ ವಿಷಯ {$cat} ಕ್ಷೇತ್ರದಲ್ಲಿ ಮಹತ್ವದ ಬದಲಾವಣೆ ತರಲಿದೆ.",
+        "ಕರ್ನಾಟಕ ಮತ್ತು ದೇಶಾದ್ಯಂತ ಈ ಬೆಳವಣಿಗೆ ಸಾರ್ವಜನಿಕರ ಗಮನ ಸೆಳೆದಿದೆ.",
+        "ಮುಂದಿನ ದಿನಗಳಲ್ಲಿ ಹೊಸ ಮಾಹಿತಿ ಲಭ್ಯವಾದಂತೆ MIYIZE ಕನ್ನಡ ಸುದ್ದಿ ನವೀಕರಿಸಲಾಗುವುದು.",
+    ]);
 }
 
 // ── Main Agent Logic ──────────────────────────────────────────────────────────
