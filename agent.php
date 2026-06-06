@@ -54,62 +54,105 @@ function agent_log(string $level, string $msg): void {
     if (PHP_SAPI === 'cli') { echo $line . PHP_EOL; }
 }
 
-// ── Gemini AI Writer (free tier) ──────────────────────────────────────────────
+// ── Groq AI Writer (free, fast, Llama 3.3 70B) ────────────────────────────────
 function gemini_write_article(array $article): ?array {
-    $apiKey = getenv('MIYIZE_GEMINI_KEY') ?: getenv('GEMINI_API_KEY') ?: '';
-    if ($apiKey === '') { return null; }
+    // Try Groq first, then fall back to Gemini
+    $groqKey   = getenv('MIYIZE_GROQ_KEY') ?: '';
+    $geminiKey = getenv('MIYIZE_GEMINI_KEY') ?: getenv('GEMINI_API_KEY') ?: '';
 
+    if ($groqKey !== '') {
+        return groq_write_article($article, $groqKey);
+    }
+    if ($geminiKey !== '') {
+        return gemini_api_write_article($article, $geminiKey);
+    }
+    return null;
+}
+
+function build_article_prompt(array $article): string {
     $title   = (string) ($article['title'] ?? '');
     $summary = (string) ($article['summary'] ?? '');
     $source  = (string) ($article['source'] ?? '');
     $cat     = (string) ($article['category_label'] ?? '');
 
-    $prompt = <<<PROMPT
-You are a professional senior Kannada journalist at a major newspaper. Your job is to write complete, detailed, and highly informative news articles in Kannada that are 700-1000 words long.
+    return <<<PROMPT
+You are a professional senior Kannada journalist. Write a complete, detailed, highly informative news article in Kannada (700-1000 words).
 
-Topic Details:
+Topic:
 - Title: {$title}
 - Summary: {$summary}
 - Source: {$source}
 - Category: {$cat}
 
-Output MUST be a valid JSON object with EXACTLY three string keys: "title", "article" and "social_caption". Do not output any markdown formatting like ```json.
+Output ONLY a valid JSON object with exactly three keys: "title", "article", "social_caption". No markdown, no code fences.
 
-"title" rules:
-- Rewrite the original title into an accurate, compelling Kannada headline.
-- Max 100 characters. Pure Kannada script only. No Hindi, no English.
+"title": Rewrite title as compelling Kannada headline. Max 100 chars. Pure Kannada script only. No Hindi, no English.
 
-"article" rules:
-- Write a LONG, DETAILED 700-1000 word Kannada article. SHORT articles are NOT acceptable.
-- Use your own general knowledge to expand and enrich the topic beyond just the summary.
-- Structure the article with ALL of the following sections:
-  1. Opening paragraph (3-4 sentences) introducing the news with context.
-  2. "ಮುಖ್ಯ ಮಾಹಿತಿ" (Key Information) section: Use an HTML table with 2 columns to present 5-6 key facts as a structured table. Example: <table><tr><th>ವಿಷಯ</th><th>ವಿವರ</th></tr><tr><td>ದಿನಾಂಕ</td><td>...</td></tr></table>
-  3. "ಹಿನ್ನೆಲೆ" (Background) section (2-3 paragraphs): Explain the background and history of this topic.
-  4. "ಪ್ರಮುಖ ಅಂಶಗಳು" (Key Points) section: A bullet list (<ul><li>...</li></ul>) with at least 5 detailed points about this news.
-  5. "ಪ್ರಭಾವ ಮತ್ತು ಮಹತ್ವ" (Impact and Significance) section (2 paragraphs): What does this mean for Karnataka and India?
-  6. Closing paragraph with a forward-looking conclusion.
-- Weave highly-searched SEO keywords naturally: "ಕನ್ನಡ ಸುದ್ದಿ", "ಕರ್ನಾಟಕ", "ಇಂದಿನ ಸುದ್ದಿ", "ತಾಜಾ ಸುದ್ದಿ".
-- Use rich, formal Kannada throughout. Separate paragraphs with \n\n.
-- Format section headings with <h2>heading</h2> tags.
-- NEVER use placeholder text or say "more details to follow". Always write complete, informative content.
+"article": Write LONG DETAILED 700-1000 word Kannada article with these sections:
+1. Opening paragraph (3-4 sentences with context)
+2. <h2>ಮುಖ್ಯ ಮಾಹಿತಿ</h2> - HTML table with 5-6 key facts: <table><tr><th>ವಿಷಯ</th><th>ವಿವರ</th></tr>...</table>
+3. <h2>ಹಿನ್ನೆಲೆ</h2> - 2-3 paragraphs of background and history
+4. <h2>ಪ್ರಮುಖ ಅಂಶಗಳು</h2> - bullet list <ul><li>at least 5 detailed points</li></ul>
+5. <h2>ಪ್ರಭಾವ ಮತ್ತು ಮಹತ್ವ</h2> - 2 paragraphs on impact for Karnataka and India
+6. Closing paragraph with forward-looking conclusion
+Use SEO keywords: "ಕನ್ನಡ ಸುದ್ದಿ", "ಕರ್ನಾಟಕ", "ಇಂದಿನ ಸುದ್ದಿ", "ತಾಜಾ ಸುದ್ದಿ". Separate paragraphs with \n\n. NEVER use placeholder text.
 
-"social_caption" rules:
-- Write a viral, engaging Kannada social media caption (max 250 characters).
-- Include 2 emojis and 4-5 trending hashtags like #KannadaNews #Karnataka #{$cat}.
-- Make it sound exciting and urgent. Do NOT include any URL.
+"social_caption": Viral Kannada caption max 250 chars, 2 emojis, 4-5 hashtags like #KannadaNews #Karnataka #{$cat}. No URL.
 PROMPT;
+}
 
+function groq_write_article(array $article, string $apiKey): ?array {
+    $prompt  = build_article_prompt($article);
     $payload = json_encode([
-        'contents' => [['parts' => [['text' => $prompt]]]],
-        'generationConfig' => [
-            'temperature' => 0.80,
-            'maxOutputTokens' => 4096,
+        'model'       => 'llama-3.3-70b-versatile',
+        'messages'    => [
+            ['role' => 'system', 'content' => 'You are a professional Kannada journalist. Always respond with valid JSON only.'],
+            ['role' => 'user',   'content' => $prompt],
+        ],
+        'temperature'       => 0.80,
+        'max_tokens'        => 4096,
+        'response_format'   => ['type' => 'json_object'],
+    ], JSON_UNESCAPED_UNICODE);
+
+    $response = http_post(
+        'https://api.groq.com/openai/v1/chat/completions',
+        $payload,
+        ['Content-Type: application/json', 'Authorization: Bearer ' . $apiKey]
+    );
+
+    if (!$response) {
+        agent_log('warn', 'Groq API returned no response');
+        return null;
+    }
+
+    $data = json_decode($response, true);
+    $text = $data['choices'][0]['message']['content'] ?? '{}';
+    $json = json_decode($text, true);
+
+    if (is_array($json) && !empty($json['article'])) {
+        agent_log('info', 'Groq AI wrote article successfully');
+        return [
+            'content' => trim($json['article']),
+            'social'  => trim($json['social_caption'] ?? ''),
+            'title'   => trim($json['title'] ?? ''),
+        ];
+    }
+    agent_log('warn', 'Groq response parse failed: ' . substr($text, 0, 200));
+    return null;
+}
+
+function gemini_api_write_article(array $article, string $apiKey): ?array {
+    $prompt  = build_article_prompt($article);
+    $payload = json_encode([
+        'contents'          => [['parts' => [['text' => $prompt]]]],
+        'generationConfig'  => [
+            'temperature'      => 0.80,
+            'maxOutputTokens'  => 4096,
             'responseMimeType' => 'application/json',
         ],
     ]);
 
-    $url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=' . $apiKey;
+    $url      = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=' . $apiKey;
     $response = http_post($url, $payload, ['Content-Type: application/json']);
     if (!$response) { return null; }
 
@@ -118,6 +161,7 @@ PROMPT;
     $json = json_decode($text, true);
 
     if (is_array($json) && !empty($json['article'])) {
+        agent_log('info', 'Gemini API wrote article successfully');
         return [
             'content' => trim($json['article']),
             'social'  => trim($json['social_caption'] ?? ''),
@@ -126,6 +170,8 @@ PROMPT;
     }
     return null;
 }
+
+
 
 // ── Template-based article writer (rich fallback) ────────────────────────────
 function template_write_article(array $article): string {
