@@ -94,6 +94,10 @@
       "destination": "/api/social-image.php"
     },
     {
+      "source": "/admin",
+      "destination": "/api/admin-trigger.php"
+    },
+    {
       "source": "/",
       "destination": "/api/index.php"
     },
@@ -105,7 +109,7 @@
   "crons": [
     {
       "path": "/api/agent-cron.php",
-      "schedule": "0 0 * * *"
+      "schedule": "0 */4 * * *"
     }
   ]
 }
