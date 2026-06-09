@@ -151,13 +151,25 @@ render_header($catSlug);
                 foreach ($paras as $pIdx => $p) {
                     if ($p === '<!-- AD_SLOT -->') { continue; }
 
-                    $safeP = e($p);
-                    $safeP = str_replace(
-                        ['&lt;span class=&quot;highlight&quot;&gt;', '&lt;/span&gt;'],
-                        ['<span class="highlight">', '</span>'],
-                        $safeP
-                    );
-                    echo "<p>{$safeP}</p>\n";
+                    // Allow safe structural HTML from AI (headings, tables, lists)
+                    $allowedTags = '<h2><h3><h4><table><thead><tbody><tr><th><td><ul><ol><li><strong><em><b><i><br><span><p><a>';
+                    $safeP = strip_tags($p, $allowedTags);
+                    // Sanitize href in <a> tags only (keep relative/https links)
+                    $safeP = preg_replace_callback('/<a\s[^>]*>/i', function($m) {
+                        $tag = $m[0];
+                        // Remove all attributes except href and target
+                        preg_match('/href=["\']([^"\']*)["\']/', $tag, $href);
+                        $url = htmlspecialchars($href[1] ?? '', ENT_QUOTES, 'UTF-8');
+                        return $url ? "<a href=\"{$url}\" rel=\"noopener\" target=\"_blank\">" : '<a>';
+                    }, $safeP) ?? $safeP;
+
+                    // If the paragraph IS a block element, render as-is; otherwise wrap in <p>
+                    $isBlock = (bool) preg_match('/^\s*<(h[2-6]|table|ul|ol)/i', $safeP);
+                    if ($isBlock) {
+                        echo $safeP . "\n";
+                    } else {
+                        echo "<p>{$safeP}</p>\n";
+                    }
 
                     // Dynamic automated ad placing every 3 paragraphs
                     if (($pIdx + 1) % $adInterval === 0 && ($pIdx + 1) < $total) {

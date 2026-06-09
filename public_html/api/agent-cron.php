@@ -1,27 +1,21 @@
 <?php
 declare(strict_types=1);
 
-// Check authentication
+// ── Strict CRON_SECRET authentication ─────────────────────────────────────────
+// Vercel Cron sends: Authorization: Bearer {CRON_SECRET}
+// Direct browser calls are REJECTED with 401.
 $cronSecret = getenv('CRON_SECRET') ?: '';
-$reqSecret  = $_SERVER['HTTP_AUTHORIZATION'] ?? '';
-$isAuthenticated = ($cronSecret && $reqSecret === 'Bearer ' . $cronSecret) || PHP_SAPI === 'cli';
+$authHeader = $_SERVER['HTTP_AUTHORIZATION'] ?? '';
+$isCronAuth = $cronSecret !== '' && $authHeader === 'Bearer ' . $cronSecret;
+$isCli      = PHP_SAPI === 'cli';
 
-if (!$isAuthenticated) {
-    // Enforce 30 seconds rate limit based on state.json
-    $statePath = dirname(__DIR__) . '/data/state.json';
-    if (file_exists($statePath)) {
-        $state = json_decode((string) file_get_contents($statePath), true);
-        $last = isset($state['last_refresh_at']) ? strtotime((string) $state['last_refresh_at']) : 0;
-        if (time() - $last < 30) {
-            http_response_code(429);
-            header('Content-Type: application/json');
-            exit(json_encode([
-                'status'  => 'ignored',
-                'message' => 'Rate limit: last refresh was less than 30 seconds ago.',
-                'last_refresh' => date('c', $last),
-            ]));
-        }
-    }
+if (!$isCronAuth && !$isCli) {
+    http_response_code(401);
+    header('Content-Type: application/json');
+    exit(json_encode([
+        'error'   => 'Unauthorized',
+        'message' => 'This endpoint requires a valid CRON_SECRET Authorization header.',
+    ]));
 }
 
 header('Content-Type: application/json');

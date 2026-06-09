@@ -26,8 +26,8 @@ define('MIYIZE_AI_API_KEY', getenv('MIYIZE_AI_API_KEY') ?: getenv('OPENAI_API_KE
 define('MIYIZE_AI_API_URL', getenv('MIYIZE_AI_API_URL') ?: 'https://api.openai.com/v1/responses');
 define('MIYIZE_AI_MODEL', getenv('MIYIZE_AI_MODEL') ?: '');
 
-// Make.com Auto Poster Webhook
-putenv("MIYIZE_MAKE_WEBHOOK=https://hook.us2.make.com/d5lcxh7hlrxeetp3ktenmbim1w24jjwf");
+// Make.com Auto Poster Webhook — set MIYIZE_MAKE_WEBHOOK in Vercel Environment Variables
+// Do NOT hardcode the webhook URL here.
 
 function miyize_google_news_url(?string $query = null): string
 {

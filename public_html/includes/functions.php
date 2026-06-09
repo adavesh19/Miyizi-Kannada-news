@@ -54,11 +54,57 @@ function read_json_file(string $path, array $fallback = []): array
 
 function write_json_file(string $path, array $data): void
 {
+    $json = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+
+    // ── Try GitHub API first (persistent across Vercel deployments) ───────────
+    $ghToken = getenv('MIYIZE_GITHUB_TOKEN') ?: '';
+    $ghRepo  = getenv('MIYIZE_GITHUB_REPO')  ?: 'adavesh19/Miyizi-Kannada-news';
+
+    if ($ghToken !== '' && $json !== false) {
+        // Map local path to repo-relative path
+        $repoRoot    = dirname(__DIR__, 2); // project root
+        $relPath     = ltrim(str_replace('\\', '/', substr($path, strlen($repoRoot))), '/');
+        $apiUrl      = "https://api.github.com/repos/{$ghRepo}/contents/{$relPath}";
+
+        // Get current SHA (needed for update)
+        $shaContext = stream_context_create(['http' => [
+            'method'  => 'GET',
+            'header'  => "Authorization: Bearer {$ghToken}\r\nUser-Agent: MiyiziAgent/2.0\r\nAccept: application/vnd.github+json",
+            'timeout' => 10,
+            'ignore_errors' => true,
+        ]]);
+        $shaResp = @file_get_contents($apiUrl, false, $shaContext);
+        $sha     = ($shaResp ? (json_decode($shaResp, true)['sha'] ?? null) : null);
+
+        // Commit via GitHub API
+        $payload = json_encode(array_filter([
+            'message' => 'chore: auto-update ' . basename($path) . ' [skip ci]',
+            'content' => base64_encode($json),
+            'sha'     => $sha,
+            'branch'  => 'master',
+        ]));
+
+        $putContext = stream_context_create(['http' => [
+            'method'  => 'PUT',
+            'header'  => "Authorization: Bearer {$ghToken}\r\nUser-Agent: MiyiziAgent/2.0\r\nContent-Type: application/json\r\nAccept: application/vnd.github+json\r\nContent-Length: " . strlen($payload),
+            'content' => $payload,
+            'timeout' => 15,
+            'ignore_errors' => true,
+        ]]);
+
+        $result = @file_get_contents($apiUrl, false, $putContext);
+        if ($result !== false) {
+            return; // Success — GitHub has the data, Vercel will redeploy
+        }
+    }
+
+    // ── Fallback: write to /tmp (ephemeral, but better than nothing) ──────────
     ensure_data_dir();
     $tmp = $path . '.tmp';
-    @file_put_contents($tmp, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
+    @file_put_contents($tmp, $json);
     @rename($tmp, $path);
 }
+
 
 function normalize_space(string $value): string
 {
